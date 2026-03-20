@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import { EXTRA_QUESTIONS } from "./questions";
 
 // ═══════════════════════════════════════════════════════════════
 // TERMY — The Addictive VC Terms Training Game
@@ -84,7 +85,7 @@ const StickerCenturion = ({ size = 80 }) => (<svg width={size} height={size} vie
 const StickerPerfectionist = ({ size = 80 }) => (<svg width={size} height={size} viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#E8F5F0" stroke="#50A888" strokeWidth="1.5"/><circle cx="50" cy="46" r="28" fill="#C0E8D8" stroke="#50A888" strokeWidth="1"/><circle cx="50" cy="46" r="20" fill="#E0F4EC" stroke="#50A888" strokeWidth="1"/><circle cx="50" cy="46" r="12" fill="#A0D8C0" stroke="#50A888" strokeWidth="1"/><circle cx="50" cy="46" r="4" fill="#50A888"/></svg>);
 
 const ACHIEVEMENT_STICKERS = { first_blood: StickerFirstWin, streak_5: StickerOnFire, streak_10: StickerUnstoppable, streak_20: StickerLegendary, cat_master_lp: StickerLiquidationLord, cat_master_ad: StickerDilutionShield, cat_master_vsop: StickerVSOPVirtuoso, cat_master_exit: StickerExitArtist, speed_demon: StickerSpeedDemon, scholar: StickerScholar, centurion: StickerCenturion, perfectionist: StickerPerfectionist };
-const CATEGORY_ICONS = { "Liquidation Preferences": Icons.money, "Anti-Dilution": Icons.shield, "ESOP & VSOP": Icons.people, "Exit & Transfer Rights": Icons.door, "Convertible Instruments": Icons.loop, "Governance & Control": Icons.scale, "Valuation & Economics": Icons.chart, "Pre-emption & Pro-rata": Icons.pie, "Advanced Scenarios": Icons.brain };
+const CATEGORY_ICONS = { "Liquidation Preferences": Icons.money, "Anti-Dilution": Icons.shield, "ESOP & VSOP": Icons.people, "Exit & Transfer Rights": Icons.door, "Convertible Instruments": Icons.loop, "Governance & Control": Icons.scale, "Valuation & Economics": Icons.chart, "Pre-emption & Pro-rata": Icons.pie, "Advanced Scenarios": Icons.brain, "Fund Mechanics": Icons.money, "Negotiation Tactics": Icons.sword };
 
 function StreakFire({ count }) {
   if (count <= 0) return <div style={{display:'flex',alignItems:'center',gap:4,opacity:.4}}>{Icons.fire("#B2BEC3", 32)}<span style={{fontFamily:"'Baloo 2',cursive",fontSize:20,color:'#B2BEC3'}}>0</span></div>;
@@ -302,7 +303,8 @@ const DAILY_QUESTS = [
 
 const TAUNTS = ["Maximilian just earned 45 XP...","Sarah is on a 21-day streak!","3 players passed you this week","Jonas is 2 questions from ranking up","Your streak freezes if you skip today","Lena just unlocked Dilution Shield"];
 
-const CATEGORIES = [...new Set(QUESTIONS.map(q => q.category))];
+const ALL_QUESTIONS = [...QUESTIONS, ...EXTRA_QUESTIONS];
+const CATEGORIES = [...new Set(ALL_QUESTIONS.map(q => q.category))];
 const getLevel = xp => { for (let i = RANKS.length - 1; i >= 0; i--) { if (xp >= RANKS[i].xp) return RANKS[i]; } return RANKS[0]; };
 const getNextLevel = xp => { for (const r of RANKS) { if (xp < r.xp) return r; } return null; };
 const shuffleArray = arr => { const s = [...arr]; for (let i = s.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [s[i],s[j]]=[s[j],s[i]]; } return s; };
@@ -342,7 +344,7 @@ export default function App() {
 
   useEffect(() => { const cl = getLevel(gs.xp).name; if (cl !== prevLvl.current) { playLevelUpSound(); setShowLevelUp(true); setShowConfetti(true); setTimeout(() => { setShowLevelUp(false); setShowConfetti(false); }, 4000); prevLvl.current = cl; } }, [gs.xp]);
 
-  const startRound = (cat=null) => { if (gs.hearts<=0) { notify("No hearts! Wait for recharge.","danger"); return; } let pool = cat ? QUESTIONS.filter(q=>q.category===cat) : [...QUESTIONS]; pool = shuffleArray(pool).slice(0, Math.min(10, pool.length)); setRs({ questions:pool, currentIndex:0, answers:[], selectedAnswer:null, showExplanation:false, roundCategory:cat, roundCorrect:0, roundTotal:0, questionStartTime:Date.now(), combo:0 }); go("game"); };
+  const startRound = (cat=null) => { if (gs.hearts<=0) { notify("No hearts! Wait for recharge.","danger"); return; } let pool = cat ? ALL_QUESTIONS.filter(q=>q.category===cat) : [...ALL_QUESTIONS]; pool = shuffleArray(pool).slice(0, Math.min(10, pool.length)); setRs({ questions:pool, currentIndex:0, answers:[], selectedAnswer:null, showExplanation:false, roundCategory:cat, roundCorrect:0, roundTotal:0, questionStartTime:Date.now(), combo:0 }); go("game"); };
 
   const answer = idx => {
     if (rs.showExplanation) return;
