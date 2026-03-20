@@ -101,11 +101,16 @@ Termy — a German VC terms training game built with React + Vite. Frontend-only
 
 - Entry: `src/main.tsx` → renders `<App />`
 - Main component: `src/App.jsx` — self-contained single-file app (plain JSX, no TypeScript):
-  - **SVG Icon Components**: 20+ custom SVG icons, 6 rank avatars (BabyOyster, SeaTurtle, SeahorseKnight, Griffin, Phoenix, Dragon), 12 achievement stickers
-  - **Game Engine**: Questions, categories, levels, XP system, streaks, achievements, daily quests, hearts/lives system
+  - **SVG Icon Components**: 20+ custom SVG icons, 16 rank creature avatars across 4 tiers, 12 achievement stickers
+  - **16-Rank System** (4 tiers): Origin (Intern→Analyst), Predator (Senior Analyst→VP), Mythical (Senior VP→Principal), Legendary (Partner→Founding Partner)
+  - **Rank creatures**: BabyOyster, Pufferfish, Octopus, Shark, Wolf, Eagle, Lion, WarElephant, GriffinRank, Kraken, PhoenixRank, Hydra, Wyvern, IceDragon, ShadowDragon, BloodDragon
+  - **Legendary tier**: Dark backgrounds, glowing CSS animations (glowHydra, glowWyvern, glowIceDragon, glowShadowDragon, glowBloodDragon), BloodDragon has breathing scale animation
+  - **XP thresholds**: 0, 100, 250, 500, 800, 1200, 1800, 2500, 3500, 5000, 7000, 10000, 15000, 20000, 30000, 50000
+  - **Game Engine**: Questions, categories, RANKS array, XP system, streaks, achievements, daily quests, hearts/lives system
+  - **Helper functions**: `getLevel(xp)` returns current rank from RANKS, `getNextLevel(xp)` returns next rank
   - **Screens**: Home, Category Select, Game (quiz), Results, Library, League
   - **Styling**: Inline CSS via `<style>` in component (Nunito + Baloo 2 fonts, warm color palette)
-- Design: Warm/playful Duolingo-inspired aesthetic with gradient backgrounds, animated fire streak, pulsing hearts, shimmer effects, social pressure messages
-- Key features: 6 rank tiers, 12 collectible achievement stickers, combo system, XP boosts, confetti effects, FOMO banner, daily quests with progress bars, German market context
-- Dragon rank icon has `dragonGlow` CSS animation; locked stickers render at 40% opacity with grayscale filter
+- Design: Warm/playful Duolingo-inspired aesthetic with gradient backgrounds, animated fire streak, pulsing hearts, shimmer effects, social pressure messages, flame burst at 10+ streak
+- Key features: 16 rank tiers, 12 collectible achievement stickers, combo system, XP boosts, confetti effects, FOMO banner, daily quests with progress bars, German market context
+- Tier labels (Origin/Predator/Mythical/Legendary) shown in rank card and level-up overlay; locked stickers render at 40% opacity with grayscale filter
 - Preview path: `/` (root)
