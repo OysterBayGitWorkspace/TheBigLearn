@@ -109,6 +109,35 @@ const playWrongSound = () => {
   } catch (e) {}
 };
 
+const playLevelUpSound = () => {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = ctx.currentTime;
+    const hits = [
+      [261.6, 0, "square", 0.3, 0.12],
+      [329.6, 0.12, "square", 0.3, 0.12],
+      [523.3, 0.4, "triangle", 0.35, 0.18],
+      [659.3, 0.5, "triangle", 0.35, 0.18],
+      [784.0, 0.6, "triangle", 0.3, 0.25],
+      [1047, 0.6, "sine", 0.12, 0.4],
+    ];
+    hits.forEach(([freq, delay, type, vol, dur]) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, now + delay);
+      gain.gain.setValueAtTime(0, now + delay);
+      gain.gain.linearRampToValueAtTime(vol, now + delay + 0.01);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + delay + dur);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now + delay);
+      osc.stop(now + delay + dur + 0.05);
+    });
+    setTimeout(() => ctx.close(), 1200);
+  } catch (e) {}
+};
+
 const RESOURCE_LIBRARY = [
   { category: "Foundational VC Knowledge", items: [
     { title: "Venture Deals", author: "Brad Feld & Jason Mendelson", year: 2019, type: "Book", relevance: "The gold standard. Breaks down every term sheet clause with clarity. Start here.", rating: 5 },
@@ -257,7 +286,7 @@ export default function App() {
     return state.achievements;
   }, []);
 
-  useEffect(() => { const cl = getLevel(gs.xp).name; if (cl !== prevLvl.current) { setShowLevelUp(true); setShowConfetti(true); setTimeout(() => { setShowLevelUp(false); setShowConfetti(false); }, 4000); prevLvl.current = cl; } }, [gs.xp]);
+  useEffect(() => { const cl = getLevel(gs.xp).name; if (cl !== prevLvl.current) { playLevelUpSound(); setShowLevelUp(true); setShowConfetti(true); setTimeout(() => { setShowLevelUp(false); setShowConfetti(false); }, 4000); prevLvl.current = cl; } }, [gs.xp]);
 
   const startRound = (cat=null) => { if (gs.hearts<=0) { notify("No hearts! Wait for recharge.","danger"); return; } let pool = cat ? QUESTIONS.filter(q=>q.category===cat) : [...QUESTIONS]; pool = shuffleArray(pool).slice(0, Math.min(10, pool.length)); setRs({ questions:pool, currentIndex:0, answers:[], selectedAnswer:null, showExplanation:false, roundCategory:cat, roundCorrect:0, roundTotal:0, questionStartTime:Date.now(), combo:0 }); go("game"); };
 
