@@ -71,20 +71,20 @@ const playCorrectSound = () => {
   try {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     const now = ctx.currentTime;
-    [[880, 0], [1318.5, 0.1]].forEach(([freq, delay]) => {
+    [[1174.7, 0, "triangle", 0.35], [1174.7*2, 0, "sine", 0.1], [1760, 0.08, "triangle", 0.35], [1760*2, 0.08, "sine", 0.1]].forEach(([freq, delay, type, vol]) => {
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
-      osc.type = "sine";
+      osc.type = type;
       osc.frequency.setValueAtTime(freq, now + delay);
       gain.gain.setValueAtTime(0, now + delay);
-      gain.gain.linearRampToValueAtTime(0.2, now + delay + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.18);
+      gain.gain.linearRampToValueAtTime(vol, now + delay + 0.01);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.15);
       osc.connect(gain);
       gain.connect(ctx.destination);
       osc.start(now + delay);
-      osc.stop(now + delay + 0.2);
+      osc.stop(now + delay + 0.18);
     });
-    setTimeout(() => ctx.close(), 500);
+    setTimeout(() => ctx.close(), 400);
   } catch (e) {}
 };
 
