@@ -311,7 +311,7 @@ const shuffleArray = arr => { const s = [...arr]; for (let i = s.length-1; i > 0
 
 export default function App() {
   const [screen, setScreen] = useState("home");
-  const [gs, setGs] = useState({ xp:0, totalCorrect:0, totalAnswered:0, bestStreak:0, currentStreak:0, fastAnswers:0, libraryViewed:false, perfectRounds:0, masteredQuestions:[], achievements:[], hearts:5, questProgress:{dq1:0,dq2:0,dq3:0}, catsToday:[], todayAnswered:0 });
+  const [gs, setGs] = useState({ xp:0, totalCorrect:0, totalAnswered:0, bestStreak:0, currentStreak:0, fastAnswers:0, libraryViewed:false, perfectRounds:0, masteredQuestions:[], achievements:[], questProgress:{dq1:0,dq2:0,dq3:0}, catsToday:[], todayAnswered:0 });
   const [rs, setRs] = useState({ questions:[], currentIndex:0, answers:[], selectedAnswer:null, showExplanation:false, roundCategory:null, roundCorrect:0, roundTotal:0, questionStartTime:null, combo:0 });
   const [activeBoost, setActiveBoost] = useState(null);
   const [showLevelUp, setShowLevelUp] = useState(false);
@@ -344,7 +344,7 @@ export default function App() {
 
   useEffect(() => { const cl = getLevel(gs.xp).name; if (cl !== prevLvl.current) { playLevelUpSound(); setShowLevelUp(true); setShowConfetti(true); setTimeout(() => { setShowLevelUp(false); setShowConfetti(false); }, 4000); prevLvl.current = cl; } }, [gs.xp]);
 
-  const startRound = (cat=null) => { if (gs.hearts<=0) { notify("No hearts! Wait for recharge.","danger"); return; } let pool = cat ? ALL_QUESTIONS.filter(q=>q.category===cat) : [...ALL_QUESTIONS]; pool = shuffleArray(pool).slice(0, Math.min(10, pool.length)); setRs({ questions:pool, currentIndex:0, answers:[], selectedAnswer:null, showExplanation:false, roundCategory:cat, roundCorrect:0, roundTotal:0, questionStartTime:Date.now(), combo:0 }); go("game"); };
+  const startRound = (cat=null) => { let pool = cat ? ALL_QUESTIONS.filter(q=>q.category===cat) : [...ALL_QUESTIONS]; pool = shuffleArray(pool).slice(0, Math.min(10, pool.length)); setRs({ questions:pool, currentIndex:0, answers:[], selectedAnswer:null, showExplanation:false, roundCategory:cat, roundCorrect:0, roundTotal:0, questionStartTime:Date.now(), combo:0 }); go("game"); };
 
   const answer = idx => {
     if (rs.showExplanation) return;
@@ -359,7 +359,6 @@ export default function App() {
     if (ok && xp) { setXpFloat({ val:xp, show:true, key:Date.now() }); setTimeout(() => setXpFloat(p=>({...p,show:false})), 1200); }
     const newMastered = (ok && !gs.masteredQuestions.includes(q.id)) ? [...gs.masteredQuestions, q.id] : gs.masteredQuestions;
     const u = { ...gs, xp:gs.xp+xp, totalCorrect:gs.totalCorrect+(ok?1:0), totalAnswered:gs.totalAnswered+1, bestStreak:Math.max(gs.bestStreak,ns), currentStreak:ns, fastAnswers:gs.fastAnswers+((fast&&ok)?1:0), masteredQuestions:newMastered, todayAnswered:gs.todayAnswered+1 };
-    if (!ok) { u.hearts=Math.max(0,gs.hearts-1); if(u.hearts===0) notify("Out of hearts!","danger"); }
     const qp={...gs.questProgress}; qp.dq1=Math.min(u.todayAnswered,5); if(ok&&ns>=3) qp.dq2=3;
     const cats=[...(gs.catsToday||[])]; if(!cats.includes(q.category)) cats.push(q.category); qp.dq3=Math.min(cats.length,2);
     u.questProgress=qp; u.catsToday=cats;
@@ -370,7 +369,6 @@ export default function App() {
   };
 
   const nextQ = () => {
-    if(gs.hearts<=0){go("results");return;}
     if(rs.currentIndex+1>=rs.questions.length){
       if(rs.roundCorrect===rs.roundTotal&&rs.roundTotal>=5){playPerfectRoundSound();setGs(p=>{const u={...p,perfectRounds:p.perfectRounds+1};u.achievements=checkAch(u);return u;});setShowConfetti(true);setTimeout(()=>setShowConfetti(false),3000);}
       if(Math.random()>.4){const b=[10,15,20,25,30,50][Math.floor(Math.random()*6)];setChestXP(b);setShowChest(true);setGs(p=>({...p,xp:p.xp+b}));}
@@ -401,11 +399,11 @@ export default function App() {
 
       {screen==="home"&&<div className="container">
         <div className="hero"><div className="hero-blob b1"/><div className="hero-blob b2"/><div className="hero-icon">{Icons.lightning("#FF7B54",44)}</div><h1 className="hero-title">VC DOJO</h1><p className="hero-sub">Master German VC Deal Terms</p></div>
-        <div className="vitals-bar"><StreakFire count={gs.bestStreak}/><div className="hearts-row">{Array.from({length:5}).map((_,i)=><span key={i} className={`hrt ${i<gs.hearts?"hrt-on":"hrt-off"}`}><svg width="22" height="22" viewBox="0 0 32 32"><path d="M16 28C12 24 4 18 4 12a6 6 0 0112 0 6 6 0 0112 0c0 6-8 12-12 16z" fill={i<gs.hearts?"#E8626C":"#E0D8D0"} stroke={i<gs.hearts?"#D0464E":"#C8C0B8"} strokeWidth="1.5"/></svg></span>)}{gs.hearts<5&&<span className="hrt-timer">+1 in 30m</span>}</div></div>
+        <div className="vitals-bar"><StreakFire count={gs.bestStreak}/></div>
         <div className="rank-card" style={isLegendary?{background:lv.bg,border:`2px solid ${lv.border||'#806020'}`}:{}}><div className="rank-ava"><RIcon size={52}/></div><div className="rank-info"><div className="rank-tier" style={{fontSize:10,letterSpacing:2,fontWeight:700,textTransform:'uppercase',color:isLegendary?lv.color:'var(--text-light)',marginBottom:1}}>{lv.tier}</div><div className="rank-name" style={{color:lv.color}}>{lv.name}</div><div className="rank-xp" style={isLegendary?{color:'#B8B0A8'}:{}}>{gs.xp.toLocaleString()} XP</div>{nlv&&<><div className="rank-bar"><div className="rank-fill" style={{width:`${pct}%`,background:`linear-gradient(90deg,${lv.color},${nlv.color})`}}/></div><div className="rank-next" style={isLegendary?{color:'#A0A0A0'}:{}}>{nlv.xp-gs.xp} XP to {nlv.name}</div></>}</div></div>
         <div className="taunt"><div className="taunt-dot"/><span>{TAUNTS[tauntIdx]}</span></div>
-        <button className="cta" onClick={()=>{if(gs.hearts>0)go("categorySelect");else notify("No hearts!","danger");}} disabled={gs.hearts<=0}><div className="cta-shine"/>{Icons.sword("#fff",28)}<span>Start Training</span></button>
-        <div className="action-row"><button className="act-btn" onClick={()=>{if(gs.hearts>0)startRound();else notify("No hearts!","danger");}}>{Icons.dice("#B8A0D2",24)}<span>Random</span></button><button className="act-btn" onClick={()=>{go("library");setGs(p=>({...p,libraryViewed:true}));}}>{Icons.book("#5BB5A2",24)}<span>Library</span></button><button className="act-btn" onClick={()=>go("leaderboard")}>{Icons.trophy("#F4D06F",24)}<span>League</span></button></div>
+        <button className="cta" onClick={()=>go("categorySelect")}><div className="cta-shine"/>{Icons.sword("#fff",28)}<span>Start Training</span></button>
+        <div className="action-row"><button className="act-btn" onClick={()=>startRound()}>{Icons.dice("#B8A0D2",24)}<span>Random</span></button><button className="act-btn" onClick={()=>{go("library");setGs(p=>({...p,libraryViewed:true}));}}>{Icons.book("#5BB5A2",24)}<span>Library</span></button><button className="act-btn" onClick={()=>go("leaderboard")}>{Icons.trophy("#F4D06F",24)}<span>League</span></button></div>
         <div className="sec-head"><span className="sec-title">Daily Quests</span><span className="sec-timer">Resets in 6h</span></div>
         {DAILY_QUESTS.map(dq=>{const p=gs.questProgress[dq.id]||0;const d=p>=dq.target;return<div key={dq.id} className={`quest ${d?"quest-done":""}`}><div className="q-left">{dq.icon==="fire"?Icons.fire(d?"#5BB5A2":"#FF7B54",22):dq.icon==="sword"?Icons.sword(d?"#5BB5A2":"#FF7B54",22):Icons.book(d?"#5BB5A2":"#5BB5A2",22)}</div><div className="q-mid"><div className="q-title">{dq.title}{d&&Icons.check("#5BB5A2",16)}</div><div className="q-bar"><div className="q-fill" style={{width:`${Math.min(p/dq.target*100,100)}%`,background:d?"var(--teal)":"var(--coral)"}}/></div></div><div className="q-right"><div className={`q-reward ${d?"q-reward-d":""}`}>+{dq.xpReward}</div><div className="q-count">{p}/{dq.target}</div></div></div>;})}
         <div className="fomo"><div className="fomo-shine"/>{Icons.lightning("#B8A0D2",18)}<div className="fomo-text"><strong>Anti-Dilution Sprint</strong> — 2x XP this weekend<br/><span className="fomo-sub">247 players · Ends Sunday</span></div></div>
@@ -420,12 +418,12 @@ export default function App() {
       </div>}
 
       {screen==="game"&&rs.questions.length>0&&(()=>{const q=rs.questions[rs.currentIndex];const done=rs.showExplanation;const ok=rs.selectedAnswer===q.correct;return<div className="container">
-        <div className="game-top"><button className="close-btn" onClick={()=>go("home")}>{"\u2715"}</button><div className="dots">{rs.questions.map((_,i)=><div key={i} className={`dot ${i<rs.currentIndex?(rs.answers[i]?.isCorrect?"dot-ok":"dot-no"):i===rs.currentIndex?"dot-now":""}`}/>)}</div><div className="hearts-mini">{Array.from({length:5}).map((_,i)=><span key={i} style={{opacity:i<gs.hearts?1:.2}}><svg width="14" height="14" viewBox="0 0 32 32"><path d="M16 28C12 24 4 18 4 12a6 6 0 0112 0 6 6 0 0112 0c0 6-8 12-12 16z" fill={i<gs.hearts?"#E8626C":"#ddd"}/></svg></span>)}</div>{rs.combo>1&&<div className="combo">{Icons.fire("#FF7B54",14)} {rs.combo}x</div>}</div>
+        <div className="game-top"><button className="close-btn" onClick={()=>go("home")}>{"\u2715"}</button><div className="dots">{rs.questions.map((_,i)=><div key={i} className={`dot ${i<rs.currentIndex?(rs.answers[i]?.isCorrect?"dot-ok":"dot-no"):i===rs.currentIndex?"dot-now":""}`}/>)}</div>{rs.combo>1&&<div className="combo">{Icons.fire("#FF7B54",14)} {rs.combo}x</div>}</div>
         <div className="q-badges"><span className={`qb diff-${q.difficulty}`}>{"●".repeat(q.difficulty)} {["","Basics","Intermediate","Expert"][q.difficulty]}</span><span className="qb qb-cat">{q.category}</span>{q.type==="scenario"&&<span className="qb qb-sc">Scenario</span>}</div>
         <div className={`q-card ${shakeWrong?"shake":""}`}><p className="q-text">{q.question}</p></div>
         {!done&&gs.currentStreak>0&&<div className="streak-ind">{Icons.fire("#FF7B54",14)} {gs.currentStreak} in a row!</div>}
         <div className="opts">{q.options.map((opt,i)=>{let c="opt";if(done){if(i===q.correct)c+=" opt-ok";else if(i===rs.selectedAnswer)c+=" opt-no";else c+=" opt-dim";}return<button key={i} className={c} onClick={()=>answer(i)} disabled={done}><span className="ol">{String.fromCharCode(65+i)}</span><span className="ot">{opt}</span>{done&&i===q.correct&&<span className="or">{Icons.check("#5BB5A2",20)}</span>}{done&&i===rs.selectedAnswer&&i!==q.correct&&<span className="or">{Icons.cross("#E8626C",20)}</span>}</button>;})}</div>
-        {done&&<div className="explain"><div className={`rb ${ok?"rb-ok":"rb-no"}`}>{ok?Icons.check("#5BB5A2",28):Icons.cross("#E8626C",28)}<div><div className="rl">{ok?`+${rs.answers[rs.answers.length-1]?.xpGain||0} XP`:"Not quite!"}</div>{ok&&rs.combo>1&&<div className="rc">Combo x{rs.combo}!</div>}{!ok&&<div className="heart-loss">{Icons.fire("#E8626C",14)} -1 Heart</div>}</div></div><div className="exp-card"><div className="el">Why?</div><p className="et">{q.explanation}</p></div>{q.germanContext&&<div className="de-card"><div className="gl">{Icons.deFlag()} German Context</div><p className="et">{q.germanContext}</p></div>}<button className="btn-next" onClick={nextQ}>{gs.hearts<=0?"Out of Hearts!":rs.currentIndex+1>=rs.questions.length?"See Results":"Next Question"} →</button></div>}
+        {done&&<div className="explain"><div className={`rb ${ok?"rb-ok":"rb-no"}`}>{ok?Icons.check("#5BB5A2",28):Icons.cross("#E8626C",28)}<div><div className="rl">{ok?`+${rs.answers[rs.answers.length-1]?.xpGain||0} XP`:"Not quite!"}</div>{ok&&rs.combo>1&&<div className="rc">Combo x{rs.combo}!</div>}</div></div><div className="exp-card"><div className="el">Why?</div><p className="et">{q.explanation}</p></div>{q.germanContext&&<div className="de-card"><div className="gl">{Icons.deFlag()} German Context</div><p className="et">{q.germanContext}</p></div>}<button className="btn-next" onClick={nextQ}>{rs.currentIndex+1>=rs.questions.length?"See Results":"Next Question"} →</button></div>}
         {!done&&gs.currentStreak>=3&&!activeBoost&&<button className="boost" onClick={()=>setActiveBoost("double")}>{Icons.lightning("#B8A0D2",18)} 2× XP Boost!</button>}
       </div>;})()}
 
@@ -496,10 +494,6 @@ const CSS = `
 .hero-title{font-family:'Baloo 2',cursive;font-size:56px;font-weight:800;line-height:1;position:relative;z-index:1;background:linear-gradient(135deg,var(--text) 40%,var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{font-size:14px;color:var(--text-light);position:relative;z-index:1;font-weight:600}
 .vitals-bar{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:480px;padding:10px 16px;background:var(--white);border:2px solid var(--border-light);border-radius:var(--r);margin:12px 0;box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.hearts-row{display:flex;align-items:center;gap:2px}
-.hrt{display:flex;transition:all .3s}.hrt-on{animation:hrtPump 2s ease-in-out infinite}.hrt-off{opacity:.25;filter:grayscale(1)}
-@keyframes hrtPump{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
-.hrt-timer{font-size:10px;color:var(--rose);font-weight:700;margin-left:4px}
 .streak-fire{position:relative;display:flex;align-items:center;gap:4px}
 .fire-glow{position:absolute;width:50px;height:50px;border-radius:50%;background:radial-gradient(circle,rgba(255,123,84,.3),transparent 70%);left:-8px;top:-8px;animation:fGlow 1.5s ease-in-out infinite}
 @keyframes fGlow{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
@@ -555,7 +549,6 @@ const CSS = `
 .close-btn{width:32px;height:32px;border-radius:50%;background:var(--border-light);color:var(--text-light);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}.close-btn:hover{background:var(--rose-soft);color:var(--rose)}
 .dots{display:flex;gap:3px;flex:1;flex-wrap:wrap}.dot{width:20px;height:5px;border-radius:100px;background:var(--border-light);transition:all .3s}
 .dot-now{background:var(--coral);transform:scaleY(1.4);box-shadow:0 0 6px rgba(255,123,84,.4)}.dot-ok{background:var(--teal)}.dot-no{background:var(--rose)}
-.hearts-mini{display:flex;gap:1px}
 .combo{display:flex;align-items:center;gap:3px;padding:3px 8px;background:var(--coral-soft);border-radius:100px;font-size:12px;font-weight:800;color:var(--coral);animation:cPulse .6s ease}
 @keyframes cPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
 .streak-ind{display:flex;align-items:center;justify-content:center;gap:4px;padding:4px 12px;background:var(--coral-soft);border-radius:100px;font-size:12px;font-weight:800;color:var(--coral);margin-bottom:8px;animation:cPulse .8s ease;width:fit-content;align-self:center}
@@ -578,7 +571,6 @@ const CSS = `
 .explain{width:100%;animation:slideIn .3s ease-out}
 .rb{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:var(--rs);margin-bottom:8px}.rb-ok{background:var(--teal-soft)}.rb-no{background:var(--rose-soft)}
 .rl{font-size:16px;font-weight:800}.rb-ok .rl{color:var(--teal)}.rb-no .rl{color:var(--rose)}.rc{font-size:12px;font-weight:700;color:var(--coral)}
-.heart-loss{font-size:12px;color:var(--rose);font-weight:700;display:flex;align-items:center;gap:4px}
 .exp-card{padding:14px 18px;background:var(--white);border:2px solid var(--border-light);border-radius:var(--rs);margin-bottom:8px}
 .el{font-family:'Baloo 2',cursive;font-size:14px;font-weight:700;color:var(--coral);margin-bottom:4px}.et{font-size:13px;color:var(--text-light);line-height:1.6;font-weight:600}
 .de-card{padding:14px 18px;background:var(--sand-soft);border:2px solid #E8DCC0;border-radius:var(--rs);margin-bottom:12px}
