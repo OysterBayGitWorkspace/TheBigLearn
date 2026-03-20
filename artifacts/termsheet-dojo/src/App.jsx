@@ -292,6 +292,7 @@ export default function App() {
   const [rs, setRs] = useState({ questions:[], currentIndex:0, answers:[], selectedAnswer:null, showExplanation:false, roundCategory:null, roundCorrect:0, roundTotal:0, questionStartTime:null, combo:0 });
   const [activeBoost, setActiveBoost] = useState(null);
   const [showLevelUp, setShowLevelUp] = useState(false);
+  const [flameUp, setFlameUp] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [newAch, setNewAch] = useState([]);
   const [showAchPopup, setShowAchPopup] = useState(false);
@@ -331,6 +332,7 @@ export default function App() {
     let xp = ok ? 20+q.difficulty*10+(fast?10:0)+Math.min(rs.combo*5,50) : 0;
     if (ok && activeBoost==="double") xp*=2;
     const ns = ok ? gs.currentStreak+1 : 0;
+    if (ok && ns === 10) { setFlameUp(true); setTimeout(() => setFlameUp(false), 1200); }
     if (ok && xp) { setXpFloat({ val:xp, show:true, key:Date.now() }); setTimeout(() => setXpFloat(p=>({...p,show:false})), 1200); }
     const u = { ...gs, xp:gs.xp+xp, totalCorrect:gs.totalCorrect+(ok?1:0), totalAnswered:gs.totalAnswered+1, bestStreak:Math.max(gs.bestStreak,ns), currentStreak:ns, fastAnswers:gs.fastAnswers+((fast&&ok)?1:0), categoryMastery:{...gs.categoryMastery,[q.category]:(gs.categoryMastery[q.category]||0)+(ok?1:0)}, todayAnswered:gs.todayAnswered+1 };
     if (!ok) { u.hearts=Math.max(0,gs.hearts-1); if(u.hearts===0) notify("Out of hearts!","danger"); }
@@ -363,7 +365,7 @@ export default function App() {
   const gap = above&&!above.isUser ? above.xp-gs.xp : 0;
 
   return (
-    <div className="app-root"><style>{CSS}</style><ConfettiBurst active={showConfetti}/>
+    <div className={`app-root${flameUp ? " flame-burst" : ""}${gs.currentStreak >= 10 ? " flame-glow" : ""}`}><style>{CSS}</style><ConfettiBurst active={showConfetti}/>
       {toast&&<div className={`toast toast-${toast.type}`}>{toast.type==="success"?Icons.check("#5BB5A2",20):toast.type==="danger"?Icons.cross("#E8626C",20):Icons.sparkle("#B8A0D2",20)}<span>{toast.msg}</span></div>}
       {showLevelUp&&<div className="overlay"><div className="level-up-card" style={{background:lv.name==="Managing Partner"?"#1a1028":lv.bg}}><div className="lu-icon"><RIcon size={80}/></div><div className="lu-label">RANK UP!</div><div className="lu-name" style={{color:lv.color}}>{lv.name}</div><div className="lu-sub">{lv.subtitle}</div></div></div>}
       {showAchPopup&&newAch.length>0&&<div className="ach-popup">{newAch.map(a=>{const S=ACHIEVEMENT_STICKERS[a.id];return<div key={a.id} className="ach-toast" style={{background:a.bgColor,borderColor:a.borderColor}}><span style={{display:'flex'}}>{S?<S size={36}/>:null}</span><div><div className="ach-label">Sticker Unlocked!</div><div className="ach-name">{a.name}</div></div></div>;})}</div>}
@@ -438,6 +440,9 @@ const CSS = `
 .screen-wrap{animation:slideIn .25s ease-out}.screen-exit{opacity:0;transform:translateY(8px);transition:all .18s}
 @keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes dragonGlow{0%,100%{filter:drop-shadow(0 0 6px #F4A63A) drop-shadow(0 0 14px #E8593C)}50%{filter:drop-shadow(0 0 12px #F9D054) drop-shadow(0 0 22px #E8723A)}}
+.flame-burst{animation:flameBurst 1.2s ease-out}
+@keyframes flameBurst{0%{box-shadow:inset 0 0 0 0 transparent}8%{box-shadow:inset 0 0 120px 60px rgba(255,123,84,.45),inset 0 0 200px 100px rgba(244,166,58,.25)}30%{box-shadow:inset 0 0 80px 30px rgba(255,123,84,.2),inset 0 0 160px 60px rgba(244,166,58,.1)}100%{box-shadow:inset 0 0 0 0 transparent}}
+.flame-glow{box-shadow:inset 0 -80px 80px -40px rgba(255,123,84,.08),inset 0 0 60px 20px rgba(244,166,58,.04);transition:box-shadow 1.2s ease}
 .overlay{position:fixed;inset:0;background:rgba(45,52,54,.5);backdrop-filter:blur(8px);z-index:1000;display:flex;align-items:center;justify-content:center;animation:fadeIn .3s}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .level-up-card{text-align:center;padding:40px 48px;border-radius:28px;border:3px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.15);animation:popIn .5s cubic-bezier(.34,1.56,.64,1)}
