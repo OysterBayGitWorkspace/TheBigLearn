@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Termsheet Dojo"
+version = "1.0.0"
+id = "artifacts/termsheet-dojo"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25595
+
+[services.development]
+run = "pnpm --filter @workspace/termsheet-dojo run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/termsheet-dojo", "run", "build" ]
+publicDir = "artifacts/termsheet-dojo/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25595"
+BASE_PATH = "/"

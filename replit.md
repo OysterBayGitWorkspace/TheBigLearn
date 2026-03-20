@@ -94,3 +94,18 @@ Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHea
 ### `scripts` (`@workspace/scripts`)
 
 Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.
+
+### `artifacts/termsheet-dojo` (`@workspace/termsheet-dojo`)
+
+Termsheet Dojo — a German VC terms training game built with React + Vite. Frontend-only app (no backend needed), uses localStorage for persistence.
+
+- Entry: `src/main.tsx` → renders `<App />`
+- Main component: `src/App.tsx` — contains the entire app in a single file:
+  - **SVG Icon Components**: 6 rank icons (BabyOyster, SeaTurtle, SeahorseKnight, Griffin, Phoenix, Dragon), 12 achievement stickers, 4 UI icons (IconSwords, IconDice, IconBooks, IconTrophy)
+  - **Game Engine**: Questions, categories, levels, XP system, streaks, achievements
+  - **Screens**: Home, Category Select, Game (quiz), Results, Library
+  - **Styling**: Inline CSS via `globalCSS` template string (Nunito + Baloo 2 fonts, warm color palette)
+- Design: Warm/playful aesthetic (Duolingo meets Notion), dot-grid background, coral/teal/lavender accents
+- Key features: 6 rank tiers, 12 collectible achievement stickers, combo system, XP boosts, confetti effects, German market context for each question
+- Dragon rank icon has `dragonGlow` CSS animation; locked stickers render at 40% opacity with grayscale filter
+- Preview path: `/` (root)
