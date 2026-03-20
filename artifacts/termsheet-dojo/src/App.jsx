@@ -67,6 +67,28 @@ function ConfettiBurst({ active }) {
   useEffect(() => { if (!active || !canvasRef.current) return; const canvas = canvasRef.current; const ctx = canvas.getContext("2d"); canvas.width = window.innerWidth; canvas.height = window.innerHeight; const colors = ["#FF7B54","#5BB5A2","#F4D06F","#B8A0D2","#E8626C","#7EC8B8"]; particles.current = Array.from({ length: 80 }, () => ({ x: canvas.width/2+(Math.random()-.5)*200, y: canvas.height/2, vx:(Math.random()-.5)*16, vy:-Math.random()*18-4, size:Math.random()*8+4, color:colors[Math.floor(Math.random()*colors.length)], rotation:Math.random()*360, rotSpeed:(Math.random()-.5)*12, life:1, shape:Math.random()>.5?"circle":"rect" })); const animate = () => { ctx.clearRect(0,0,canvas.width,canvas.height); let alive=false; for(const p of particles.current){if(p.life<=0)continue;alive=true;p.x+=p.vx;p.y+=p.vy;p.vy+=.4;p.vx*=.99;p.rotation+=p.rotSpeed;p.life-=.012;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rotation*Math.PI/180);ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=p.color;if(p.shape==="circle"){ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}else{ctx.fillRect(-p.size/2,-p.size/4,p.size,p.size/2);}ctx.restore();}if(alive)animRef.current=requestAnimationFrame(animate);}; animRef.current=requestAnimationFrame(animate); return()=>{if(animRef.current)cancelAnimationFrame(animRef.current);}; }, [active]); if(!active)return null; return <canvas ref={canvasRef} style={{position:"fixed",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none",zIndex:9999}}/>;
 }
 
+const playCorrectSound = () => {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = ctx.currentTime;
+    const notes = [523.25, 659.25, 783.99];
+    notes.forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, now + i * 0.09);
+      gain.gain.setValueAtTime(0, now + i * 0.09);
+      gain.gain.linearRampToValueAtTime(0.18, now + i * 0.09 + 0.03);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.09 + 0.25);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now + i * 0.09);
+      osc.stop(now + i * 0.09 + 0.3);
+    });
+    setTimeout(() => ctx.close(), 600);
+  } catch (e) {}
+};
+
 const RESOURCE_LIBRARY = [
   { category: "VC Foundations", items: [{ title: "Venture Deals", author: "Feld & Mendelson", year: 2019, type: "Book", relevance: "The gold standard. Start here.", rating: 5 },{ title: "Secrets of Sand Hill Road", author: "Kupor (a16z)", year: 2019, type: "Book", relevance: "Inside a16z. Fund mechanics.", rating: 5 },{ title: "The Power Law", author: "Mallaby", year: 2022, type: "Book", relevance: "History of venture capital.", rating: 5 }]},
   { category: "German / DACH", items: [{ title: "Praxishandbuch VC", author: "Weitnauer", year: 2022, type: "Book", relevance: "THE German VC legal reference.", rating: 5 },{ title: "GESSI / BAND Templates", author: "German Startups Assoc.", year: 2023, type: "Template", relevance: "Standard German term sheets.", rating: 5 }]},
@@ -178,6 +200,7 @@ export default function App() {
     if (rs.showExplanation) return;
     const q = rs.questions[rs.currentIndex]; const ok = idx===q.correct;
     const t = (Date.now()-rs.questionStartTime)/1000; const fast = t<5;
+    if (ok) { playCorrectSound(); }
     if (!ok) { setShakeWrong(true); setTimeout(() => setShakeWrong(false), 500); }
     let xp = ok ? 20+q.difficulty*10+(fast?10:0)+Math.min(rs.combo*5,50) : 0;
     if (ok && activeBoost==="double") xp*=2;
