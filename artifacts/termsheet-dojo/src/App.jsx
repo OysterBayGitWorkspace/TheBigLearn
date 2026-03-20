@@ -88,6 +88,27 @@ const playCorrectSound = () => {
   } catch (e) {}
 };
 
+const playWrongSound = () => {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = ctx.currentTime;
+    [[311, 0, 0.28], [233, 0.12, 0.28]].forEach(([freq, delay, vol]) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = "square";
+      osc.frequency.setValueAtTime(freq, now + delay);
+      gain.gain.setValueAtTime(0, now + delay);
+      gain.gain.linearRampToValueAtTime(vol, now + delay + 0.015);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.2);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now + delay);
+      osc.stop(now + delay + 0.22);
+    });
+    setTimeout(() => ctx.close(), 500);
+  } catch (e) {}
+};
+
 const RESOURCE_LIBRARY = [
   { category: "VC Foundations", items: [{ title: "Venture Deals", author: "Feld & Mendelson", year: 2019, type: "Book", relevance: "The gold standard. Start here.", rating: 5 },{ title: "Secrets of Sand Hill Road", author: "Kupor (a16z)", year: 2019, type: "Book", relevance: "Inside a16z. Fund mechanics.", rating: 5 },{ title: "The Power Law", author: "Mallaby", year: 2022, type: "Book", relevance: "History of venture capital.", rating: 5 }]},
   { category: "German / DACH", items: [{ title: "Praxishandbuch VC", author: "Weitnauer", year: 2022, type: "Book", relevance: "THE German VC legal reference.", rating: 5 },{ title: "GESSI / BAND Templates", author: "German Startups Assoc.", year: 2023, type: "Template", relevance: "Standard German term sheets.", rating: 5 }]},
@@ -200,7 +221,7 @@ export default function App() {
     const q = rs.questions[rs.currentIndex]; const ok = idx===q.correct;
     const t = (Date.now()-rs.questionStartTime)/1000; const fast = t<5;
     if (ok) { playCorrectSound(); }
-    if (!ok) { setShakeWrong(true); setTimeout(() => setShakeWrong(false), 500); }
+    if (!ok) { playWrongSound(); setShakeWrong(true); setTimeout(() => setShakeWrong(false), 500); }
     let xp = ok ? 20+q.difficulty*10+(fast?10:0)+Math.min(rs.combo*5,50) : 0;
     if (ok && activeBoost==="double") xp*=2;
     const ns = ok ? gs.currentStreak+1 : 0;
