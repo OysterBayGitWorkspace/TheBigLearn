@@ -138,6 +138,38 @@ const playLevelUpSound = () => {
   } catch (e) {}
 };
 
+const playPerfectRoundSound = () => {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = ctx.currentTime;
+    const tones = [
+      [440, 0, "sawtooth", 0.2, 0.08],
+      [554.4, 0.08, "sawtooth", 0.22, 0.08],
+      [659.3, 0.16, "sawtooth", 0.24, 0.08],
+      [880, 0.24, "sawtooth", 0.28, 0.12],
+      [1760, 0.24, "sine", 0.08, 0.2],
+      [130.8, 0.55, "sawtooth", 0.35, 0.35],
+      [65.4, 0.55, "sine", 0.25, 0.5],
+      [261.6, 0.6, "triangle", 0.15, 0.4],
+      [523.3, 0.65, "sine", 0.08, 0.35],
+    ];
+    tones.forEach(([freq, delay, type, vol, dur]) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, now + delay);
+      gain.gain.setValueAtTime(0, now + delay);
+      gain.gain.linearRampToValueAtTime(vol, now + delay + 0.015);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + delay + dur);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now + delay);
+      osc.stop(now + delay + dur + 0.05);
+    });
+    setTimeout(() => ctx.close(), 1500);
+  } catch (e) {}
+};
+
 const RESOURCE_LIBRARY = [
   { category: "Foundational VC Knowledge", items: [
     { title: "Venture Deals", author: "Brad Feld & Jason Mendelson", year: 2019, type: "Book", relevance: "The gold standard. Breaks down every term sheet clause with clarity. Start here.", rating: 5 },
@@ -314,7 +346,7 @@ export default function App() {
   const nextQ = () => {
     if(gs.hearts<=0){go("results");return;}
     if(rs.currentIndex+1>=rs.questions.length){
-      if(rs.roundCorrect===rs.roundTotal&&rs.roundTotal>=5){setGs(p=>{const u={...p,perfectRounds:p.perfectRounds+1};u.achievements=checkAch(u);return u;});setShowConfetti(true);setTimeout(()=>setShowConfetti(false),3000);}
+      if(rs.roundCorrect===rs.roundTotal&&rs.roundTotal>=5){playPerfectRoundSound();setGs(p=>{const u={...p,perfectRounds:p.perfectRounds+1};u.achievements=checkAch(u);return u;});setShowConfetti(true);setTimeout(()=>setShowConfetti(false),3000);}
       if(Math.random()>.4){const b=[10,15,20,25,30,50][Math.floor(Math.random()*6)];setChestXP(b);setShowChest(true);setGs(p=>({...p,xp:p.xp+b}));}
       go("results");return;
     }
