@@ -1,0 +1,23 @@
+The category mastery system is broken. It currently just counts total correct answers, so you get "12/10" which makes no sense. Fix it like this:
+1. Track unique questions mastered, not total correct count.
+Replace the categoryMastery object in gameState with masteredQuestions — a Set (stored as array) of question IDs that the player has answered correctly:
+js// In gameState initialization, replace categoryMastery with:
+masteredQuestions: []
+2. Add a unique ID to every question if they don't have one already. Use the index in the ALL_QUESTIONS array:
+jsconst ALL_QUESTIONS = [...QUESTIONS, ...EXTRA_QUESTIONS].map((q, i) => ({ ...q, id: q.id || `q_${i}` }));
+3. When a question is answered correctly, add its ID to masteredQuestions (if not already there):
+js// In the answer handler, when correct:
+if (ok && !u.masteredQuestions.includes(q.id)) {
+  u.masteredQuestions = [...u.masteredQuestions, q.id];
+}
+4. On the category select screen, calculate progress per category as:
+jsconst totalInCat = ALL_QUESTIONS.filter(q => q.category === cat).length;
+const masteredInCat = ALL_QUESTIONS.filter(q => q.category === cat && gs.masteredQuestions.includes(q.id)).length;
+Show masteredInCat / totalInCat instead of the current broken counter. The pips should reflect total questions in the category (or cap at 10-20 pips visually and fill proportionally).
+5. Update the pip display to be proportional:
+js// Instead of fixed 10 pips, show a progress bar or proportional pips:
+const pct = totalInCat > 0 ? (masteredInCat / totalInCat) * 100 : 0;
+Show it as "5/18" text and a single progress bar fill instead of individual dots, since some categories have 24 questions and 24 dots would look weird.
+6. Achievement conditions that reference categoryMastery need to be updated to check masteredQuestions instead. For example, "Liquidation Lord" should check if the player has mastered 8+ unique Liquidation Preference questions.
+7. Don't forget to update localStorage key to termy_v2 since the state shape changed — otherwise old saved state with categoryMastery will crash.
+Do not change anything else.

@@ -237,10 +237,10 @@ const ACHIEVEMENTS = [
   { id: "streak_5", name: "On Fire", desc: "5 in a row", bgColor: "#FFF0EB", borderColor: "#FF7B54", condition: s => s.bestStreak >= 5 },
   { id: "streak_10", name: "Unstoppable", desc: "10 in a row", bgColor: "#F0EBF5", borderColor: "#B8A0D2", condition: s => s.bestStreak >= 10 },
   { id: "streak_20", name: "Legendary", desc: "20 in a row", bgColor: "#FFF8E7", borderColor: "#F4D06F", condition: s => s.bestStreak >= 20 },
-  { id: "cat_master_lp", name: "Liquidation Lord", desc: "Master LP", bgColor: "#FFF0EB", borderColor: "#FF7B54", condition: s => (s.categoryMastery?.["Liquidation Preferences"]||0) >= 8 },
-  { id: "cat_master_ad", name: "Dilution Shield", desc: "Master AD", bgColor: "#E8F5F1", borderColor: "#5BB5A2", condition: s => (s.categoryMastery?.["Anti-Dilution"]||0) >= 8 },
-  { id: "cat_master_vsop", name: "VSOP Virtuoso", desc: "Master VSOP", bgColor: "#F0EBF5", borderColor: "#B8A0D2", condition: s => (s.categoryMastery?.["ESOP & VSOP"]||0) >= 8 },
-  { id: "cat_master_exit", name: "Exit Artist", desc: "Master Exit", bgColor: "#FDECEE", borderColor: "#E8626C", condition: s => (s.categoryMastery?.["Exit & Transfer Rights"]||0) >= 8 },
+  { id: "cat_master_lp", name: "Liquidation Lord", desc: "Master LP", bgColor: "#FFF0EB", borderColor: "#FF7B54", condition: s => ALL_QUESTIONS.filter(q => q.category==="Liquidation Preferences" && (s.masteredQuestions||[]).includes(q.id)).length >= 8 },
+  { id: "cat_master_ad", name: "Dilution Shield", desc: "Master AD", bgColor: "#E8F5F1", borderColor: "#5BB5A2", condition: s => ALL_QUESTIONS.filter(q => q.category==="Anti-Dilution" && (s.masteredQuestions||[]).includes(q.id)).length >= 8 },
+  { id: "cat_master_vsop", name: "VSOP Virtuoso", desc: "Master VSOP", bgColor: "#F0EBF5", borderColor: "#B8A0D2", condition: s => ALL_QUESTIONS.filter(q => q.category==="ESOP & VSOP" && (s.masteredQuestions||[]).includes(q.id)).length >= 8 },
+  { id: "cat_master_exit", name: "Exit Artist", desc: "Master Exit", bgColor: "#FDECEE", borderColor: "#E8626C", condition: s => ALL_QUESTIONS.filter(q => q.category==="Exit & Transfer Rights" && (s.masteredQuestions||[]).includes(q.id)).length >= 8 },
   { id: "speed_demon", name: "Speed Demon", desc: "5 fast answers", bgColor: "#FFF8E7", borderColor: "#F4D06F", condition: s => s.fastAnswers >= 5 },
   { id: "scholar", name: "Scholar", desc: "Visit library", bgColor: "#E8F5F1", borderColor: "#5BB5A2", condition: s => s.libraryViewed },
   { id: "centurion", name: "Centurion", desc: "100 answers", bgColor: "#FFF0EB", borderColor: "#FF7B54", condition: s => s.totalAnswered >= 100 },
@@ -303,7 +303,7 @@ const DAILY_QUESTS = [
 
 const TAUNTS = ["Maximilian just earned 45 XP...","Sarah is on a 21-day streak!","3 players passed you this week","Jonas is 2 questions from ranking up","Your streak freezes if you skip today","Lena just unlocked Dilution Shield"];
 
-const ALL_QUESTIONS = [...QUESTIONS, ...EXTRA_QUESTIONS];
+const ALL_QUESTIONS = [...QUESTIONS, ...EXTRA_QUESTIONS].map((q, i) => ({ ...q, id: q.id || `q_${i}` }));
 const CATEGORIES = [...new Set(ALL_QUESTIONS.map(q => q.category))];
 const getLevel = xp => { for (let i = RANKS.length - 1; i >= 0; i--) { if (xp >= RANKS[i].xp) return RANKS[i]; } return RANKS[0]; };
 const getNextLevel = xp => { for (const r of RANKS) { if (xp < r.xp) return r; } return null; };
@@ -311,7 +311,7 @@ const shuffleArray = arr => { const s = [...arr]; for (let i = s.length-1; i > 0
 
 export default function App() {
   const [screen, setScreen] = useState("home");
-  const [gs, setGs] = useState({ xp:0, totalCorrect:0, totalAnswered:0, bestStreak:0, currentStreak:0, fastAnswers:0, libraryViewed:false, perfectRounds:0, categoryMastery:{}, achievements:[], hearts:5, questProgress:{dq1:0,dq2:0,dq3:0}, catsToday:[], todayAnswered:0 });
+  const [gs, setGs] = useState({ xp:0, totalCorrect:0, totalAnswered:0, bestStreak:0, currentStreak:0, fastAnswers:0, libraryViewed:false, perfectRounds:0, masteredQuestions:[], achievements:[], hearts:5, questProgress:{dq1:0,dq2:0,dq3:0}, catsToday:[], todayAnswered:0 });
   const [rs, setRs] = useState({ questions:[], currentIndex:0, answers:[], selectedAnswer:null, showExplanation:false, roundCategory:null, roundCorrect:0, roundTotal:0, questionStartTime:null, combo:0 });
   const [activeBoost, setActiveBoost] = useState(null);
   const [showLevelUp, setShowLevelUp] = useState(false);
@@ -333,8 +333,8 @@ export default function App() {
   const notify = (msg, type="info") => { setToast({ msg, type }); setTimeout(() => setToast(null), 2800); };
 
   useEffect(() => { const t = setInterval(() => setTauntIdx(i => (i+1) % TAUNTS.length), 4500); return () => clearInterval(t); }, []);
-  useEffect(() => { try { const s = localStorage.getItem("termy_v1"); if (s) setGs(JSON.parse(s)); } catch {} }, []);
-  useEffect(() => { try { localStorage.setItem("termy_v1", JSON.stringify(gs)); } catch {} }, [gs]);
+  useEffect(() => { try { const s = localStorage.getItem("termy_v2"); if (s) setGs(JSON.parse(s)); } catch {} }, []);
+  useEffect(() => { try { localStorage.setItem("termy_v2", JSON.stringify(gs)); } catch {} }, [gs]);
 
   const checkAch = useCallback(state => {
     const n = []; for (const a of ACHIEVEMENTS) { if (!state.achievements.includes(a.id) && a.condition(state)) n.push(a); }
@@ -357,7 +357,8 @@ export default function App() {
     const ns = ok ? gs.currentStreak+1 : 0;
     if (ok && ns === 10) { setFlameUp(true); setTimeout(() => setFlameUp(false), 1200); }
     if (ok && xp) { setXpFloat({ val:xp, show:true, key:Date.now() }); setTimeout(() => setXpFloat(p=>({...p,show:false})), 1200); }
-    const u = { ...gs, xp:gs.xp+xp, totalCorrect:gs.totalCorrect+(ok?1:0), totalAnswered:gs.totalAnswered+1, bestStreak:Math.max(gs.bestStreak,ns), currentStreak:ns, fastAnswers:gs.fastAnswers+((fast&&ok)?1:0), categoryMastery:{...gs.categoryMastery,[q.category]:(gs.categoryMastery[q.category]||0)+(ok?1:0)}, todayAnswered:gs.todayAnswered+1 };
+    const newMastered = (ok && !gs.masteredQuestions.includes(q.id)) ? [...gs.masteredQuestions, q.id] : gs.masteredQuestions;
+    const u = { ...gs, xp:gs.xp+xp, totalCorrect:gs.totalCorrect+(ok?1:0), totalAnswered:gs.totalAnswered+1, bestStreak:Math.max(gs.bestStreak,ns), currentStreak:ns, fastAnswers:gs.fastAnswers+((fast&&ok)?1:0), masteredQuestions:newMastered, todayAnswered:gs.todayAnswered+1 };
     if (!ok) { u.hearts=Math.max(0,gs.hearts-1); if(u.hearts===0) notify("Out of hearts!","danger"); }
     const qp={...gs.questProgress}; qp.dq1=Math.min(u.todayAnswered,5); if(ok&&ns>=3) qp.dq2=3;
     const cats=[...(gs.catsToday||[])]; if(!cats.includes(q.category)) cats.push(q.category); qp.dq3=Math.min(cats.length,2);
@@ -415,7 +416,7 @@ export default function App() {
       {screen==="categorySelect"&&<div className="container">
         <button className="back" onClick={()=>go("home")}>{Icons.arrowLeft()} Back</button>
         <h2 className="pg-title">Pick a Topic</h2><p className="pg-desc">Up to 10 questions</p>
-        <div className="cat-grid">{CATEGORIES.map(cat=>{const m=gs.categoryMastery[cat]||0;const fn=CATEGORY_ICONS[cat]||Icons.flag;return<button key={cat} className="cat-card" onClick={()=>startRound(cat)}><div className="ci">{fn(undefined,32)}</div><span className="cn">{cat}</span><div className="cat-pips">{[...Array(10)].map((_,i)=><div key={i} className={`cp ${i<m?"cpf":""}`}/>)}</div><span className="cc">{m}/10</span></button>;})}</div>
+        <div className="cat-grid">{CATEGORIES.map(cat=>{const totalInCat=ALL_QUESTIONS.filter(q=>q.category===cat).length;const masteredInCat=ALL_QUESTIONS.filter(q=>q.category===cat&&gs.masteredQuestions.includes(q.id)).length;const pct=totalInCat>0?(masteredInCat/totalInCat)*100:0;const fn=CATEGORY_ICONS[cat]||Icons.flag;return<button key={cat} className="cat-card" onClick={()=>startRound(cat)}><div className="ci">{fn(undefined,32)}</div><span className="cn">{cat}</span><div className="cat-prog-bar"><div className="cat-prog-fill" style={{width:`${pct}%`}}/></div><span className="cc">{masteredInCat}/{totalInCat}</span></button>;})}</div>
       </div>}
 
       {screen==="game"&&rs.questions.length>0&&(()=>{const q=rs.questions[rs.currentIndex];const done=rs.showExplanation;const ok=rs.selectedAnswer===q.correct;return<div className="container">
@@ -548,7 +549,7 @@ const CSS = `
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;width:100%}
 .cat-card{display:flex;flex-direction:column;align-items:center;padding:18px 12px;background:var(--white);border:2px solid var(--border-light);border-radius:var(--r);transition:all .25s cubic-bezier(.34,1.56,.64,1);box-shadow:0 2px 8px rgba(0,0,0,.04)}.cat-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 8px 20px rgba(0,0,0,.08);border-color:var(--coral)}.cat-card:active{transform:scale(.97)}
 .ci{margin-bottom:6px}.cn{font-size:12px;font-weight:800;text-align:center;margin-bottom:6px}
-.cat-pips{display:flex;gap:3px}.cp{width:8px;height:8px;border-radius:3px;background:var(--border-light);transition:background .3s}.cpf{background:var(--sand)}
+.cat-prog-bar{width:100%;height:6px;border-radius:3px;background:var(--border-light);overflow:hidden;margin:6px 0 2px}.cat-prog-fill{height:100%;border-radius:3px;background:var(--sand);transition:width .4s ease}
 .cc{font-size:11px;color:var(--text-faint);font-weight:700;margin-top:4px}
 .game-top{display:flex;align-items:center;gap:8px;width:100%;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border-light)}
 .close-btn{width:32px;height:32px;border-radius:50%;background:var(--border-light);color:var(--text-light);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}.close-btn:hover{background:var(--rose-soft);color:var(--rose)}
