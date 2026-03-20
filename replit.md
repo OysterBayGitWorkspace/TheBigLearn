@@ -97,15 +97,15 @@ Utility scripts package. Each script is a `.ts` file in `src/` with a correspond
 
 ### `artifacts/termsheet-dojo` (`@workspace/termsheet-dojo`)
 
-Termsheet Dojo — a German VC terms training game built with React + Vite. Frontend-only app (no backend needed), uses localStorage for persistence.
+Termy — a German VC terms training game built with React + Vite. Frontend-only app (no backend needed), uses localStorage for persistence (key: `termy_v1`).
 
 - Entry: `src/main.tsx` → renders `<App />`
-- Main component: `src/App.tsx` — contains the entire app in a single file:
-  - **SVG Icon Components**: 6 rank icons (BabyOyster, SeaTurtle, SeahorseKnight, Griffin, Phoenix, Dragon), 12 achievement stickers, 4 UI icons (IconSwords, IconDice, IconBooks, IconTrophy)
-  - **Game Engine**: Questions, categories, levels, XP system, streaks, achievements
-  - **Screens**: Home, Category Select, Game (quiz), Results, Library
-  - **Styling**: Inline CSS via `globalCSS` template string (Nunito + Baloo 2 fonts, warm color palette)
-- Design: Warm/playful aesthetic (Duolingo meets Notion), dot-grid background, coral/teal/lavender accents
-- Key features: 6 rank tiers, 12 collectible achievement stickers, combo system, XP boosts, confetti effects, German market context for each question
+- Main component: `src/App.jsx` — self-contained single-file app (plain JSX, no TypeScript):
+  - **SVG Icon Components**: 20+ custom SVG icons, 6 rank avatars (BabyOyster, SeaTurtle, SeahorseKnight, Griffin, Phoenix, Dragon), 12 achievement stickers
+  - **Game Engine**: Questions, categories, levels, XP system, streaks, achievements, daily quests, hearts/lives system
+  - **Screens**: Home, Category Select, Game (quiz), Results, Library, League
+  - **Styling**: Inline CSS via `<style>` in component (Nunito + Baloo 2 fonts, warm color palette)
+- Design: Warm/playful Duolingo-inspired aesthetic with gradient backgrounds, animated fire streak, pulsing hearts, shimmer effects, social pressure messages
+- Key features: 6 rank tiers, 12 collectible achievement stickers, combo system, XP boosts, confetti effects, FOMO banner, daily quests with progress bars, German market context
 - Dragon rank icon has `dragonGlow` CSS animation; locked stickers render at 40% opacity with grayscale filter
 - Preview path: `/` (root)
