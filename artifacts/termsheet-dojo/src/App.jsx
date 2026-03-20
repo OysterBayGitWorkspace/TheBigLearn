@@ -168,28 +168,6 @@ const playPerfectRoundSound = () => {
     });
     setTimeout(() => ctx.close(), 1500);
   } catch (e) {}
-  try {
-    const synth = window.speechSynthesis;
-    synth.cancel();
-    const voices = synth.getVoices();
-    const maleVoice = voices.find(v => /male/i.test(v.name) && /en/i.test(v.lang)) || voices.find(v => /en/i.test(v.lang)) || null;
-    const u1 = new SpeechSynthesisUtterance("YOU ARE");
-    u1.pitch = 1.4;
-    u1.rate = 1.2;
-    u1.volume = 1.0;
-    if (maleVoice) u1.voice = maleVoice;
-    synth.speak(u1);
-    u1.onend = () => {
-      setTimeout(() => {
-        const u2 = new SpeechSynthesisUtterance("AMAZING");
-        u2.pitch = 0.1;
-        u2.rate = 0.6;
-        u2.volume = 1.0;
-        if (maleVoice) u2.voice = maleVoice;
-        synth.speak(u2);
-      }, 600);
-    };
-  } catch (e) {}
 };
 
 const RESOURCE_LIBRARY = [
