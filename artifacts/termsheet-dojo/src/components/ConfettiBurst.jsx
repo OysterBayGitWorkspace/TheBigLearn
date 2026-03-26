@@ -1,0 +1,8 @@
+import { useEffect, useRef } from 'react';
+
+function ConfettiBurst({ active }) {
+  const canvasRef = useRef(null); const particles = useRef([]); const animRef = useRef(null);
+  useEffect(() => { if (!active || !canvasRef.current) return; const canvas = canvasRef.current; const ctx = canvas.getContext("2d"); canvas.width = window.innerWidth; canvas.height = window.innerHeight; const colors = ["#FF7B54","#5BB5A2","#F4D06F","#B8A0D2","#E8626C","#7EC8B8"]; particles.current = Array.from({ length: 80 }, () => ({ x: canvas.width/2+(Math.random()-.5)*200, y: canvas.height/2, vx:(Math.random()-.5)*16, vy:-Math.random()*18-4, size:Math.random()*8+4, color:colors[Math.floor(Math.random()*colors.length)], rotation:Math.random()*360, rotSpeed:(Math.random()-.5)*12, life:1, shape:Math.random()>.5?"circle":"rect" })); const animate = () => { ctx.clearRect(0,0,canvas.width,canvas.height); let alive=false; for(const p of particles.current){if(p.life<=0)continue;alive=true;p.x+=p.vx;p.y+=p.vy;p.vy+=.4;p.vx*=.99;p.rotation+=p.rotSpeed;p.life-=.012;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rotation*Math.PI/180);ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=p.color;if(p.shape==="circle"){ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}else{ctx.fillRect(-p.size/2,-p.size/4,p.size,p.size/2);}ctx.restore();}if(alive)animRef.current=requestAnimationFrame(animate);}; animRef.current=requestAnimationFrame(animate); return()=>{if(animRef.current)cancelAnimationFrame(animRef.current);}; }, [active]); if(!active)return null; return <canvas ref={canvasRef} style={{position:"fixed",top:0,left:0,width:"100%",height:"100%",pointerEvents:"none",zIndex:9999}}/>;
+}
+
+export default ConfettiBurst;
