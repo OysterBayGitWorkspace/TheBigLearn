@@ -1,69 +1,93 @@
 import { ALL_QUESTIONS } from './questions.js';
 
-export const TOPICS = [
-  { id: "val", name: "Valuation & Economics", tier: 1, prerequisites: [], categories: ["Valuation & Economics"] },
-  { id: "esop", name: "ESOP & VSOP", tier: 1, prerequisites: [], categories: ["ESOP & VSOP"] },
-  { id: "found", name: "Foundational VC Knowledge", tier: 1, prerequisites: [], categories: ["German / DACH Market", "Online Resources", "Legal Deep Dives", "Foundational VC Knowledge"] },
-  { id: "lp", name: "Liquidation Preferences", tier: 2, prerequisites: ["val"], categories: ["Liquidation Preferences"] },
-  { id: "ad", name: "Anti-Dilution", tier: 2, prerequisites: ["val"], categories: ["Anti-Dilution"] },
-  { id: "pre", name: "Pre-emption & Pro-rata", tier: 2, prerequisites: ["val"], categories: ["Pre-emption & Pro-rata"] },
-  { id: "gov", name: "Governance & Control", tier: 2, prerequisites: ["esop"], categories: ["Governance & Control"] },
-  { id: "fund", name: "Fund Mechanics", tier: 2, prerequisites: ["val"], categories: ["Fund Mechanics"] },
-  { id: "neg", name: "Negotiation Tactics", tier: 2, prerequisites: ["val"], categories: ["Negotiation Tactics"] },
-  { id: "exit", name: "Exit & Transfer Rights", tier: 3, prerequisites: ["lp", "gov"], categories: ["Exit & Transfer Rights"] },
-  { id: "conv", name: "Convertible Instruments", tier: 3, prerequisites: ["ad", "val"], categories: ["Convertible Instruments"] },
-  { id: "adv", name: "Advanced Scenarios", tier: 3, prerequisites: ["lp", "ad", "exit"], categories: ["Advanced Scenarios"] },
+export const TIERS = [
+  {
+    id: "foundations",
+    name: "Foundations",
+    tier: 1,
+    description: "Definitions, recognition, basic concepts",
+    icon: "book",
+    color: { bg: 'var(--teal-soft)', border: 'var(--teal)', label: 'var(--teal)' },
+    unlockRequirement: null,
+  },
+  {
+    id: "intermediate",
+    name: "Intermediate",
+    tier: 2,
+    description: "Apply knowledge, calculations, short scenarios",
+    icon: "brain",
+    color: { bg: 'var(--sand-soft)', border: '#D8B050', label: '#C5A43E' },
+    unlockRequirement: { tierId: "foundations", percent: 70 },
+  },
+  {
+    id: "advanced",
+    name: "Advanced",
+    tier: 3,
+    description: "Complex scenarios, time pressure, edge cases",
+    icon: "fire",
+    color: { bg: 'var(--rose-soft)', border: 'var(--rose)', label: 'var(--rose)' },
+    unlockRequirement: { tierId: "intermediate", percent: 70 },
+  },
 ];
 
-const topicIndex = new Map(TOPICS.map(t => [t.id, t]));
+const tierIndex = new Map(TIERS.map(t => [t.id, t]));
 
-// Build category -> topic lookup
-const categoryToTopic = new Map();
-for (const topic of TOPICS) {
-  for (const cat of topic.categories) {
-    categoryToTopic.set(cat, topic);
-  }
+// Map difficulty level to tier ID
+const difficultyToTierId = { 1: "foundations", 2: "intermediate", 3: "advanced" };
+
+export function getQuestionsForTier(tierId) {
+  const tier = tierIndex.get(tierId);
+  if (!tier) return [];
+  return ALL_QUESTIONS.filter(q => difficultyToTierId[q.difficulty] === tierId);
 }
 
-export function getQuestionsForTopic(topicId) {
-  const topic = topicIndex.get(topicId);
-  if (!topic) return [];
-  return ALL_QUESTIONS.filter(q => topic.categories.includes(q.category));
-}
+export function isTierUnlocked(tierId, cardStates) {
+  const tier = tierIndex.get(tierId);
+  if (!tier) return false;
+  if (!tier.unlockRequirement) return true;
 
-export function getTopicForCategory(category) {
-  return categoryToTopic.get(category) || null;
-}
-
-export function isTopicUnlocked(topicId, cardStates) {
-  const topic = topicIndex.get(topicId);
-  if (!topic) return false;
-
-  // Tier 1 always unlocked
-  if (topic.tier === 1) return true;
-
-  // Migration UX: if user has ANY cards in this topic, keep it unlocked
-  const topicQuestions = getQuestionsForTopic(topicId);
-  const hasExistingProgress = topicQuestions.some(q => cardStates[q.id] && cardStates[q.id].state > 0);
+  // Migration UX: if user has ANY cards in this tier, keep it unlocked
+  const tierQuestions = getQuestionsForTier(tierId);
+  const hasExistingProgress = tierQuestions.some(q => cardStates[q.id] && cardStates[q.id].state > 0);
   if (hasExistingProgress) return true;
 
-  // Check all prerequisites are mastered
-  return topic.prerequisites.every(preId => isTopicMastered(preId, cardStates));
+  const { tierId: prereqId, percent: requiredPercent } = tier.unlockRequirement;
+  const progress = getTierProgress(prereqId, cardStates);
+  return progress.percent >= requiredPercent;
 }
 
-export function isTopicMastered(topicId, cardStates) {
-  const { total, mastered, percent } = getTopicProgress(topicId, cardStates);
-  return total > 0 && percent >= 80;
+export function isTierMastered(tierId, cardStates) {
+  const { total, percent } = getTierProgress(tierId, cardStates);
+  return total > 0 && percent >= 70;
 }
 
-export function getTopicProgress(topicId, cardStates) {
-  const topicQuestions = getQuestionsForTopic(topicId);
-  const total = topicQuestions.length;
-  const mastered = topicQuestions.filter(q => {
+export function getTierProgress(tierId, cardStates) {
+  const tierQuestions = getQuestionsForTier(tierId);
+  const total = tierQuestions.length;
+  const mastered = tierQuestions.filter(q => {
     const card = cardStates[q.id];
-    // state >= 2 means Review or Relearning
     return card && card.state >= 2;
   }).length;
   const percent = total > 0 ? Math.round((mastered / total) * 100) : 0;
   return { total, mastered, percent };
+}
+
+// Backward compatibility aliases
+export const TOPICS = TIERS;
+export const getQuestionsForTopic = getQuestionsForTier;
+export const isTopicUnlocked = isTierUnlocked;
+export const isTopicMastered = isTierMastered;
+export const getTopicProgress = getTierProgress;
+
+// Keep getTopicForCategory working for storage.js imports
+const categoryToTier = new Map();
+for (const q of ALL_QUESTIONS) {
+  if (!categoryToTier.has(q.category)) {
+    const tierId = difficultyToTierId[q.difficulty];
+    categoryToTier.set(q.category, tierIndex.get(tierId));
+  }
+}
+
+export function getTopicForCategory(category) {
+  return categoryToTier.get(category) || null;
 }

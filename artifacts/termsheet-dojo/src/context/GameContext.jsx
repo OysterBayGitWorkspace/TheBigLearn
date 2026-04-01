@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer, useEffect, useCallback, useRef } from 'react';
 import { createCard, gradeCard, answerToRating } from '../engine/fsrs';
 import { calculateXP } from '../engine/xp';
-import { buildLearnSession, buildReviewSession, getReviewCount } from '../engine/session';
+import { buildLearnSession, buildReviewSession, getReviewCount, addRetryToSession } from '../engine/session';
 import { loadState, persistState, persistCardStates, checkDailyReset } from '../storage';
 import { ACHIEVEMENTS } from '../data/achievements';
 import { DAILY_QUESTS } from '../data/constants';
@@ -84,6 +84,11 @@ function gameReducer(state, action) {
         }
       }
 
+      // If wrong, re-queue the question later in the session
+      const updatedQuestions = !isCorrect
+        ? addRetryToSession(session.questions, session.currentIndex, q.id)
+        : session.questions;
+
       const newState = {
         ...state,
         xp: state.xp + xpGain + questBonusXP,
@@ -102,6 +107,7 @@ function gameReducer(state, action) {
         activeBoost: state.activeBoost === 'double' ? null : state.activeBoost,
         session: {
           ...session,
+          questions: updatedQuestions,
           selectedAnswer: answerIndex,
           showExplanation: true,
           roundCorrect: session.roundCorrect + (isCorrect ? 1 : 0),

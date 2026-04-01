@@ -12,7 +12,7 @@ export async function fetchCloudState(userId) {
     .single();
 
   if (error && error.code === 'PGRST116') {
-    // No row exists yet — new user
+    // No row exists yet , new user
     return null;
   }
   if (error) {
@@ -52,7 +52,7 @@ export function scheduleSyncToCloud(userId, gameState) {
   }, 2000);
 }
 
-// Merge local and cloud state — last-write-wins based on timestamps
+// Merge local and cloud state , last-write-wins based on timestamps
 export function mergeStates(localState, cloudData) {
   if (!cloudData || !cloudData.game_state) return localState;
   if (!localState) return cloudData.game_state;
@@ -68,11 +68,11 @@ export function mergeStates(localState, cloudData) {
     : 0;
 
   if (cloudTime > localTime) {
-    // Cloud is newer — use cloud state but preserve _lastSyncedAt
+    // Cloud is newer , use cloud state but preserve _lastSyncedAt
     return { ...cloudData.game_state, _lastSyncedAt: new Date().toISOString() };
   }
 
-  // Local is newer — keep local
+  // Local is newer , keep local
   return { ...localState, _lastSyncedAt: new Date().toISOString() };
 }
 

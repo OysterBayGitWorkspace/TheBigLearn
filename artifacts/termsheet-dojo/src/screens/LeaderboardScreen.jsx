@@ -22,7 +22,7 @@ export default function LeaderboardScreen({ go }) {
     <div className="container">
       <button className="back" onClick={() => go("home")}>{Icons.arrowLeft()} Back</button>
       <h2 className="pg-title">{Icons.trophy("#F4D06F", 26)} Gold League</h2>
-      <p className="pg-desc">Top 3 promote — 4 days left</p>
+      <p className="pg-desc">Top 3 promote, 4 days left</p>
       <div className="lb-list">
         {lb.slice(0, 8).map(p => (
           <div key={p.rank} className={`lb-row ${p.isUser ? "lb-user" : ""}`}>
