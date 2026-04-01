@@ -1,6 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://iubiwzhybqztzgmwcfui.supabase.co';
-const supabaseAnonKey = 'sb_publishable_3RDIkZi2ORL_VjWcR5Ao-g_F_SMObfl';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.warn('Missing Supabase env vars. Auth and cloud sync will not work.');
+}
+
+export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '');
