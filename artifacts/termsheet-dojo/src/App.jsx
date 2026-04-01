@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { GameProvider, useGame } from "./context/GameContext";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 import { getLevel } from "./data/ranks";
 import { ACHIEVEMENTS } from "./data/achievements";
 import { Icons } from "./icons/icons";
@@ -11,6 +12,8 @@ import GameScreen from "./screens/GameScreen";
 import ResultsScreen from "./screens/ResultsScreen";
 import LeaderboardScreen from "./screens/LeaderboardScreen";
 import LibraryScreen from "./screens/LibraryScreen";
+import LoginScreen from "./screens/LoginScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 function ConfettiBurst({ active }) {
   const canvasRef = useRef(null); const particles = useRef([]); const animRef = useRef(null);
@@ -109,6 +112,8 @@ function AppInner() {
       {xpFloat.show && <div className="xp-float" key={xpFloat.key}>+{xpFloat.val} XP</div>}
 
       <div className={`screen-wrap ${trans ? "screen-exit" : ""}`}>
+        {screen === "login" && <LoginScreen go={go}/>}
+        {screen === "profile" && <ProfileScreen go={go}/>}
         {screen === "home" && <HomeScreen go={go}/>}
         {screen === "skillTree" && <SkillTreeScreen go={go}/>}
         {screen === "game" && <GameScreen go={go}/>}
@@ -122,7 +127,25 @@ function AppInner() {
 
 export default function App() {
   return (
-    <GameProvider>
+    <AuthProvider>
+      <AppWithAuth/>
+    </AuthProvider>
+  );
+}
+
+function AppWithAuth() {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#FFF8F0', fontFamily: "'Baloo 2', cursive", fontSize: 24, color: '#FF7B54' }}>
+        Loading...
+      </div>
+    );
+  }
+
+  return (
+    <GameProvider userId={user?.id || null}>
       <AppInner/>
     </GameProvider>
   );

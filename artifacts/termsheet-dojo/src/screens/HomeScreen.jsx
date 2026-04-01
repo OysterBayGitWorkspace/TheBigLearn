@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useGame } from '../context/GameContext';
+import { useAuth } from '../context/AuthContext';
 import { getReviewCount, buildReviewSession } from '../engine/session';
 import { getLevel, getNextLevel, RANKS } from '../data/ranks';
 import { ACHIEVEMENTS } from '../data/achievements';
@@ -36,8 +37,21 @@ export default function HomeScreen({ go }) {
   const totalQuestions = ALL_QUESTIONS.length;
   const totalMastered = Object.values(state.cardStates || {}).filter(c => c && c.state >= 2).length;
 
+  const { user } = useAuth();
+
   return (
     <div className="container">
+      {/* Account button */}
+      <div style={{width:'100%',maxWidth:480,display:'flex',justifyContent:'flex-end',padding:'8px 0'}}>
+        <button onClick={() => go(user ? 'profile' : 'login')} style={{
+          background: user ? 'var(--teal-soft)' : 'var(--coral-soft)',
+          border: `1.5px solid ${user ? 'var(--teal)' : 'var(--coral)'}`,
+          borderRadius: 100, padding: '6px 14px', fontSize: 12, fontWeight: 700,
+          color: user ? 'var(--teal)' : 'var(--coral)', cursor: 'pointer',
+        }}>
+          {user ? (user.email?.split('@')[0] || 'Profile') : 'Log in to save progress'}
+        </button>
+      </div>
       <div className="hero"><div className="hero-blob b1"/><div className="hero-blob b2"/><div className="hero-icon">{Icons.lightning("#FF7B54",44)}</div><h1 className="hero-title">VC DOJO</h1><p className="hero-sub">Master German VC Deal Terms</p></div>
       <div className="vitals-bar"><StreakFire count={state.bestStreak}/></div>
       <div className="rank-card" style={isLegendary?{background:lv.bg,border:`2px solid ${lv.border||'#806020'}`}:{}}><div className="rank-ava"><RIcon size={52}/></div><div className="rank-info"><div className="rank-tier" style={{fontSize:10,letterSpacing:2,fontWeight:700,textTransform:'uppercase',color:isLegendary?lv.color:'var(--text-light)',marginBottom:1}}>{lv.tier}</div><div className="rank-name" style={{color:lv.color}}>{lv.name}</div><div className="rank-xp" style={isLegendary?{color:'#B8B0A8'}:{}}>{state.xp.toLocaleString()} XP</div>{nlv&&<><div className="rank-bar"><div className="rank-fill" style={{width:`${pct}%`,background:`linear-gradient(90deg,${lv.color},${nlv.color})`}}/></div><div className="rank-next" style={isLegendary?{color:'#A0A0A0'}:{}}>{nlv.xp-state.xp} XP to {nlv.name}</div></>}</div></div>

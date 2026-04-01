@@ -7,6 +7,7 @@ import { ACHIEVEMENTS } from '../data/achievements';
 import { DAILY_QUESTS } from '../data/constants';
 import { getLevel } from '../data/ranks';
 import { playCorrectSound, playWrongSound, playPerfectRoundSound } from '../sounds';
+import { scheduleSyncToCloud, fetchCloudState, mergeStates, setupOnlineSync } from '../lib/sync';
 
 const GameContext = createContext(null);
 
@@ -216,6 +217,20 @@ function gameReducer(state, action) {
       return { ...state, libraryViewed: true };
     }
 
+    case 'LOAD_STATE': {
+      // Merge cloud state into current state (preserving session and UI flags)
+      return {
+        ...state,
+        ...action.payload,
+        session: state.session,
+        activeBoost: state.activeBoost,
+        _lastAnswer: null,
+        _newAchievements: null,
+        _perfectRound: null,
+        _chestXP: null,
+      };
+    }
+
     case 'CLEAR_UI_FLAGS': {
       return {
         ...state,
@@ -231,7 +246,7 @@ function gameReducer(state, action) {
   }
 }
 
-export function GameProvider({ children }) {
+export function GameProvider({ children, userId }) {
   const initialState = loadState();
   const checkedState = checkDailyReset(initialState);
 
@@ -245,16 +260,48 @@ export function GameProvider({ children }) {
     _chestXP: null,
   });
 
-  const prevActionRef = useRef(null);
+  const stateRef = useRef(state);
+  stateRef.current = state;
+  const userIdRef = useRef(userId);
+  userIdRef.current = userId;
 
-  // Persist state on changes
+  // On login / mount: merge cloud state with local
   useEffect(() => {
-    // Extract persistent state (no session or UI flags)
+    if (!userId) return;
+    let cancelled = false;
+    fetchCloudState(userId).then((cloudData) => {
+      if (cancelled || !cloudData) return;
+      const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, activeBoost, ...localPersistent } = stateRef.current;
+      const merged = mergeStates(localPersistent, cloudData);
+      if (merged !== localPersistent) {
+        dispatch({ type: 'LOAD_STATE', payload: merged });
+      }
+    });
+    return () => { cancelled = true; };
+  }, [userId]);
+
+  // Setup online reconnect sync
+  useEffect(() => {
+    setupOnlineSync(
+      () => userIdRef.current,
+      () => {
+        const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, activeBoost, ...persistent } = stateRef.current;
+        return persistent;
+      }
+    );
+  }, []);
+
+  // Persist state on changes (localStorage + cloud)
+  useEffect(() => {
     const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, activeBoost, ...persistent } = state;
     persistState(persistent);
-  }, [state]);
+    // Cloud sync (debounced)
+    if (userId) {
+      scheduleSyncToCloud(userId, persistent);
+    }
+  }, [state, userId]);
 
-  // Sync write after answer (critical for card state)
+  // Sync write after answer (critical for FSRS card state)
   useEffect(() => {
     if (state._lastAnswer) {
       const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, activeBoost, ...persistent } = state;

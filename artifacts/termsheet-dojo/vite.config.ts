@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+import { VitePWA } from "vite-plugin-pwa";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
@@ -13,6 +14,36 @@ export default defineConfig({
     react(),
     tailwindcss(),
     runtimeErrorOverlay(),
+    VitePWA({
+      registerType: "autoUpdate",
+      manifest: {
+        name: "VC Dojo",
+        short_name: "VC Dojo",
+        description: "Master German VC termsheet terms",
+        theme_color: "#FF7B54",
+        background_color: "#FFF8F0",
+        display: "standalone",
+        orientation: "portrait",
+        icons: [
+          { src: "/icon-192.svg", sizes: "any", type: "image/svg+xml" },
+          { src: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
+        ],
+      },
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],
+        navigateFallbackDenylist: [/^\/auth\//],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/.*supabase\.co\/rest\/v1\/.*/i,
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "supabase-api",
+              expiration: { maxEntries: 50, maxAgeSeconds: 300 },
+            },
+          },
+        ],
+      },
+    }),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [
