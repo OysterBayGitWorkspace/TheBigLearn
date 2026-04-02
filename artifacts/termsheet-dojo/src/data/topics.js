@@ -10,6 +10,7 @@ export const TIERS = [
     color: { bg: 'var(--lavender-soft)', border: 'var(--lavender)', label: 'var(--lavender)' },
     unlockRequirement: null,
     skippable: true,
+    masteryThreshold: 2,
   },
   {
     id: "essentials",
@@ -19,6 +20,7 @@ export const TIERS = [
     icon: "book",
     color: { bg: 'var(--teal-soft)', border: 'var(--teal)', label: 'var(--teal)' },
     unlockRequirement: null, // Open by default, Tier 1 is skippable
+    masteryThreshold: 2,
   },
   {
     id: "compare",
@@ -27,7 +29,7 @@ export const TIERS = [
     description: "Compare concepts, recognize patterns, understand relationships",
     icon: "brain",
     color: { bg: 'var(--sand-soft)', border: '#D8B050', label: '#C5A43E' },
-    unlockRequirement: { tierId: "essentials", percent: 70 },
+    unlockRequirement: { tierId: "essentials", percent: 100 },
   },
   {
     id: "applied",
