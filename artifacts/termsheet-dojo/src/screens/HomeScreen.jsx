@@ -52,10 +52,12 @@ export default function HomeScreen({ go }) {
         </button>
       </div>
       <div className="hero"><div className="hero-blob b1"/><div className="hero-blob b2"/><img src="/vc-dojo-logo.svg" alt="VC Dojo" style={{position:'relative',zIndex:1,width:'100%',maxWidth:504,height:'auto'}}/></div>
-      <div className="vitals-bar" style={{flexDirection:'column',alignItems:'center',padding:'16px 20px',gap:4}}>
+      <div className="vitals-bar" style={{flexDirection:'column',alignItems:'center',padding:'16px 20px',gap:6}}>
         <span style={{fontSize:11,fontWeight:800,color:'var(--text-faint)',textTransform:'uppercase',letterSpacing:1}}>Current Streak</span>
-        <StreakFire count={state.currentStreak}/>
-        <span style={{fontSize:11,fontWeight:600,color:'var(--text-faint)',marginTop:2}}>Best: {state.bestStreak}</span>
+        <div style={{display:'flex',alignItems:'center',gap:8}}>
+          <StreakFire count={state.currentStreak}/>
+        </div>
+        <span style={{fontSize:11,fontWeight:600,color:'var(--text-faint)'}}>Best: {state.bestStreak}</span>
       </div>
       <div className="rank-card" style={isLegendary?{background:lv.bg,border:`2px solid ${lv.border||'#806020'}`}:{}}><div className="rank-ava"><RIcon size={52}/></div><div className="rank-info"><div className="rank-tier" style={{fontSize:10,letterSpacing:2,fontWeight:700,textTransform:'uppercase',color:isLegendary?lv.color:'var(--text-light)',marginBottom:1}}>{lv.tier}</div><div className="rank-name" style={{color:lv.color}}>{lv.name}</div><div className="rank-xp" style={isLegendary?{color:'#B8B0A8'}:{}}>{state.xp.toLocaleString()} XP</div>{nlv&&<><div className="rank-bar"><div className="rank-fill" style={{width:`${pct}%`,background:`linear-gradient(90deg,${lv.color},${nlv.color})`}}/></div><div className="rank-next" style={isLegendary?{color:'#A0A0A0'}:{}}>{nlv.xp-state.xp} XP to {nlv.name}</div></>}</div></div>
 

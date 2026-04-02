@@ -225,7 +225,7 @@ export default function StreakFire({ count }) {
   const countSz = 22 + Math.min(count, 20) * 0.35;
 
   return (
-    <div className={`sf3-wrap${ti === 3 ? ' sf3-void-pulse' : ''}`}>
+    <div className={`sf3-wrap${ti === 3 ? ' sf3-void-pulse' : ''}`} style={{flexDirection:'row',alignItems:'center'}}>
       <div className={glowClass} style={{
         width: gs, height: gs,
         background: `radial-gradient(circle, ${tier.glow}, transparent 70%)`,
