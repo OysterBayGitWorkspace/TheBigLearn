@@ -54,7 +54,7 @@ export default function HomeScreen({ go }) {
           {user ? (user.email?.split('@')[0] || 'Profile') : 'Log in to save progress'}
         </button>
       </div>
-      <div className="hero"><div className="hero-blob b1"/><div className="hero-blob b2"/><div className="hero-icon">{Icons.lightning("#FF7B54",44)}</div><h1 className="hero-title">VC DOJO</h1><p className="hero-sub">Master German VC Deal Terms</p></div>
+      <div className="hero"><div className="hero-blob b1"/><div className="hero-blob b2"/><img src="/vc-dojo-logo.svg" alt="VC Dojo" style={{position:'relative',zIndex:1,width:'100%',maxWidth:360,height:'auto'}}/></div>
       <div className="vitals-bar"><StreakFire count={state.bestStreak}/></div>
       <div className="rank-card" style={isLegendary?{background:lv.bg,border:`2px solid ${lv.border||'#806020'}`}:{}}><div className="rank-ava"><RIcon size={52}/></div><div className="rank-info"><div className="rank-tier" style={{fontSize:10,letterSpacing:2,fontWeight:700,textTransform:'uppercase',color:isLegendary?lv.color:'var(--text-light)',marginBottom:1}}>{lv.tier}</div><div className="rank-name" style={{color:lv.color}}>{lv.name}</div><div className="rank-xp" style={isLegendary?{color:'#B8B0A8'}:{}}>{state.xp.toLocaleString()} XP</div>{nlv&&<><div className="rank-bar"><div className="rank-fill" style={{width:`${pct}%`,background:`linear-gradient(90deg,${lv.color},${nlv.color})`}}/></div><div className="rank-next" style={isLegendary?{color:'#A0A0A0'}:{}}>{nlv.xp-state.xp} XP to {nlv.name}</div></>}</div></div>
 

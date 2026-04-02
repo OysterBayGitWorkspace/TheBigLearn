@@ -25,8 +25,7 @@ export default defineConfig({
         display: "standalone",
         orientation: "portrait",
         icons: [
-          { src: "/icon-192.svg", sizes: "any", type: "image/svg+xml" },
-          { src: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
+          { src: "/vc-dojo-icon.svg", sizes: "any", type: "image/svg+xml" },
         ],
       },
       workbox: {
