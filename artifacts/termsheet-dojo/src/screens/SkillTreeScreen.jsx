@@ -168,7 +168,11 @@ export default function SkillTreeScreen({ go }) {
                       marginTop: 4,
                       lineHeight: 1.3,
                     }}>
-                      {Icons.flag('var(--text-faint)', 12)} Complete 70% of {TIERS.find(t => t.id === req.tierId)?.name || req.tierId} to unlock
+                      {Icons.flag('var(--text-faint)', 12)} {
+                        req.percent === 100
+                          ? `Master ALL ${TIERS.find(t => t.id === req.tierId)?.name || req.tierId} questions to unlock`
+                          : `Complete ${req.percent}% of ${TIERS.find(t => t.id === req.tierId)?.name || req.tierId} to unlock`
+                      }
                     </div>
                   )}
                 </div>

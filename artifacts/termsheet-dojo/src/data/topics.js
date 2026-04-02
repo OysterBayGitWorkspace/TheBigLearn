@@ -2,18 +2,28 @@ import { ALL_QUESTIONS } from './questions.js';
 
 export const TIERS = [
   {
+    id: "basics",
+    name: "Basics",
+    tier: 1,
+    description: "Pure definitions — What is X?",
+    icon: "book",
+    color: { bg: 'var(--lavender-soft)', border: 'var(--lavender)', label: 'var(--lavender)' },
+    unlockRequirement: null,
+    masteryThreshold: 3, // Must get each question correct 3 times
+  },
+  {
     id: "foundations",
     name: "Foundations",
-    tier: 1,
-    description: "Definitions, recognition, basic concepts",
+    tier: 2,
+    description: "Compare, differentiate, recognize patterns",
     icon: "book",
     color: { bg: 'var(--teal-soft)', border: 'var(--teal)', label: 'var(--teal)' },
-    unlockRequirement: null,
+    unlockRequirement: { tierId: "basics", percent: 100 }, // Must master ALL basics
   },
   {
     id: "intermediate",
     name: "Intermediate",
-    tier: 2,
+    tier: 3,
     description: "Apply knowledge, calculations, short scenarios",
     icon: "brain",
     color: { bg: 'var(--sand-soft)', border: '#D8B050', label: '#C5A43E' },
@@ -22,7 +32,7 @@ export const TIERS = [
   {
     id: "advanced",
     name: "Advanced",
-    tier: 3,
+    tier: 4,
     description: "Complex scenarios, time pressure, edge cases",
     icon: "fire",
     color: { bg: 'var(--rose-soft)', border: 'var(--rose)', label: 'var(--rose)' },
@@ -33,12 +43,32 @@ export const TIERS = [
 const tierIndex = new Map(TIERS.map(t => [t.id, t]));
 
 // Map difficulty level to tier ID
-const difficultyToTierId = { 1: "foundations", 2: "intermediate", 3: "advanced" };
+// difficulty 0 = Basics (pure definitions)
+// difficulty 1 = Foundations (applied basics)
+// difficulty 2 = Intermediate
+// difficulty 3 = Advanced
+const difficultyToTierId = {
+  0: "basics",
+  1: "foundations",
+  2: "intermediate",
+  3: "advanced",
+};
 
 export function getQuestionsForTier(tierId) {
   const tier = tierIndex.get(tierId);
   if (!tier) return [];
   return ALL_QUESTIONS.filter(q => difficultyToTierId[q.difficulty] === tierId);
+}
+
+export function getMasteryThreshold(tierId) {
+  const tier = tierIndex.get(tierId);
+  return tier?.masteryThreshold || 2; // Default 2, Basics requires 3
+}
+
+export function isQuestionMastered(questionId, questionProgress, tierId) {
+  const threshold = getMasteryThreshold(tierId);
+  const qp = questionProgress[questionId];
+  return qp && qp.correctCount >= threshold;
 }
 
 export function isTierUnlocked(tierId, cardStates, questionProgress = {}) {
@@ -67,8 +97,10 @@ export function isTierMastered(tierId, cardStates, questionProgress = {}) {
 export function getTierProgress(tierId, cardStates, questionProgress = {}) {
   const tierQuestions = getQuestionsForTier(tierId);
   const total = tierQuestions.length;
+  const threshold = getMasteryThreshold(tierId);
   const mastered = tierQuestions.filter(q => {
-    return questionProgress[q.id]?.isMastered === true;
+    const qp = questionProgress[q.id];
+    return qp && qp.correctCount >= threshold;
   }).length;
   const percent = total > 0 ? Math.round((mastered / total) * 100) : 0;
   return { total, mastered, percent };

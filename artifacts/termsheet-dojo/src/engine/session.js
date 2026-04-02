@@ -1,4 +1,4 @@
-import { getQuestionsForTier, isTierUnlocked, TIERS } from '../data/topics';
+import { getQuestionsForTier, isTierUnlocked, TIERS, getMasteryThreshold } from '../data/topics';
 import { ALL_QUESTIONS } from '../data/questions';
 
 function shuffleArray(arr) {
@@ -10,37 +10,71 @@ function shuffleArray(arr) {
   return s;
 }
 
-export function buildLearnSession(tierId, cardStates, questionProgress = {}, maxSize = 10) {
+// Key for storing recently seen question IDs in sessionStorage
+const RECENT_KEY = 'termy_recent_questions';
+
+function getRecentlySeenIds() {
+  try {
+    const raw = sessionStorage.getItem(RECENT_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
+}
+
+function saveRecentlySeenIds(ids) {
+  try {
+    // Keep only last 40 question IDs to avoid showing same Qs across 2-3 sessions
+    sessionStorage.setItem(RECENT_KEY, JSON.stringify(ids.slice(-40)));
+  } catch { /* noop */ }
+}
+
+export function buildLearnSession(tierId, cardStates, questionProgress = {}, maxSize = 15) {
   const tierQuestions = getQuestionsForTier(tierId);
-  const inProgress = [];   // correctCount > 0 but < 2 (got some right, not yet mastered)
+  const threshold = getMasteryThreshold(tierId);
+  const recentIds = new Set(getRecentlySeenIds());
+
+  const inProgress = [];   // correctCount > 0 but < threshold
   const unseen = [];       // never answered
-  const mastered = [];     // already mastered (correctCount >= 2)
+  const mastered = [];     // already mastered
 
   for (const q of tierQuestions) {
     const qp = questionProgress[q.id];
     if (!qp || qp.correctCount === 0) {
-      // Check if they have a card state but no questionProgress entry (legacy)
       const card = cardStates[q.id];
       if (card && card.lapses > 0) {
-        inProgress.push(q); // previously wrong in FSRS = treat as in-progress
+        inProgress.push(q);
       } else {
         unseen.push(q);
       }
-    } else if (qp.isMastered) {
+    } else if (qp.correctCount >= threshold) {
       mastered.push(q);
     } else {
-      // correctCount > 0 but not yet mastered
       inProgress.push(q);
     }
   }
 
-  // Priority: 1) in-progress, 2) unseen, 3) mastered (fill remaining)
-  const selected = [];
-  selected.push(...shuffleArray(inProgress));
-  selected.push(...shuffleArray(unseen));
-  selected.push(...shuffleArray(mastered));
+  // Within each bucket, push recently-seen questions to the back
+  const sortByRecency = (arr) => {
+    const fresh = arr.filter(q => !recentIds.has(q.id));
+    const seen = arr.filter(q => recentIds.has(q.id));
+    return [...shuffleArray(fresh), ...shuffleArray(seen)];
+  };
 
-  return shuffleArray(selected.slice(0, maxSize));
+  // Priority: 1) in-progress (not recently seen), 2) unseen, 3) mastered
+  const selected = [];
+  selected.push(...sortByRecency(inProgress));
+  selected.push(...sortByRecency(unseen));
+  selected.push(...sortByRecency(mastered));
+
+  const session = selected.slice(0, maxSize);
+
+  // Final deep shuffle so the priority order isn't obvious during play
+  const finalSession = shuffleArray(session);
+
+  // Track what we're about to show
+  const newRecentIds = [...getRecentlySeenIds(), ...finalSession.map(q => q.id)];
+  saveRecentlySeenIds(newRecentIds);
+
+  return finalSession;
 }
 
 export function addRetryToSession(currentQuestions, currentIndex, wrongQuestionId) {

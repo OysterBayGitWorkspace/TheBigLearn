@@ -7,7 +7,7 @@ import { ACHIEVEMENTS } from '../data/achievements';
 import { DAILY_QUESTS } from '../data/constants';
 import { useLeaderboard, generateTaunts } from '../lib/leaderboard';
 import { ALL_QUESTIONS } from '../data/questions';
-import { TOPICS } from '../data/topics';
+import { TOPICS, getMasteryThreshold } from '../data/topics';
 import { getTopicProgress } from '../data/topics';
 import { Icons } from '../icons/icons';
 import { ACHIEVEMENT_STICKERS } from '../icons/stickers';
@@ -36,7 +36,14 @@ export default function HomeScreen({ go }) {
   const reviewCount = getReviewCount(state.cardStates || {});
 
   const totalQuestions = ALL_QUESTIONS.length;
-  const totalMastered = Object.values(state.questionProgress || {}).filter(qp => qp && qp.isMastered === true).length;
+  const totalMastered = ALL_QUESTIONS.filter(q => {
+    const qp = (state.questionProgress || {})[q.id];
+    if (!qp) return false;
+    const diffToTier = { 0: 'basics', 1: 'foundations', 2: 'intermediate', 3: 'advanced' };
+    const tierId = diffToTier[q.difficulty] || 'foundations';
+    const threshold = getMasteryThreshold(tierId);
+    return qp.correctCount >= threshold;
+  }).length;
 
   return (
     <div className="container">

@@ -8,6 +8,7 @@ import { DAILY_QUESTS } from '../data/constants';
 import { getLevel } from '../data/ranks';
 import { playCorrectSound, playWrongSound, playPerfectRoundSound } from '../sounds';
 import { scheduleSyncToCloud, fetchCloudState, mergeStates, setupOnlineSync } from '../lib/sync';
+import { getMasteryThreshold } from '../data/topics';
 
 const GameContext = createContext(null);
 
@@ -93,7 +94,9 @@ function gameReducer(state, action) {
         [q.id]: {
           correctCount: newCorrectCount,
           lastAnsweredAt: new Date().toISOString(),
-          isMastered: newCorrectCount >= 2,
+          isMastered: newCorrectCount >= getMasteryThreshold(
+            state.session?.topicId || 'foundations'
+          ),
         },
       };
 
