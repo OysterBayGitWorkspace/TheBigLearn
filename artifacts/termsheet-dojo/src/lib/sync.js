@@ -1,4 +1,5 @@
 import { supabase } from './supabase';
+import { deriveDisplayName } from './displayName';
 
 let syncTimer = null;
 let isDirty = false;
@@ -23,17 +24,18 @@ export async function fetchCloudState(userId) {
 }
 
 // Write game state to Supabase (upsert)
-export async function pushToCloud(userId, gameState) {
+export async function pushToCloud(userId, gameState, userEmail) {
+  const displayName = userEmail ? deriveDisplayName(userEmail) : null;
+  const row = {
+    user_id: userId,
+    game_state: gameState,
+    updated_at: new Date().toISOString(),
+  };
+  if (displayName) row.display_name = displayName;
+
   const { error } = await supabase
     .from('user_progress')
-    .upsert(
-      {
-        user_id: userId,
-        game_state: gameState,
-        updated_at: new Date().toISOString(),
-      },
-      { onConflict: 'user_id' }
-    );
+    .upsert(row, { onConflict: 'user_id' });
 
   if (error) {
     console.warn('Failed to push to cloud:', error.message);
@@ -44,11 +46,11 @@ export async function pushToCloud(userId, gameState) {
 }
 
 // Debounced cloud sync (trailing edge, 2s)
-export function scheduleSyncToCloud(userId, gameState) {
+export function scheduleSyncToCloud(userId, gameState, userEmail) {
   isDirty = true;
   if (syncTimer) clearTimeout(syncTimer);
   syncTimer = setTimeout(() => {
-    pushToCloud(userId, gameState);
+    pushToCloud(userId, gameState, userEmail);
   }, 2000);
 }
 

@@ -153,7 +153,7 @@ function AppWithAuth() {
   }
 
   return (
-    <GameProvider userId={user?.id || null}>
+    <GameProvider userId={user?.id || null} userEmail={user?.email || null}>
       <AppInner/>
     </GameProvider>
   );

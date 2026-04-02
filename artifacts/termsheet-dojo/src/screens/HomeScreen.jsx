@@ -4,7 +4,8 @@ import { useAuth } from '../context/AuthContext';
 import { getReviewCount, buildReviewSession } from '../engine/session';
 import { getLevel, getNextLevel, RANKS } from '../data/ranks';
 import { ACHIEVEMENTS } from '../data/achievements';
-import { DAILY_QUESTS, TAUNTS } from '../data/constants';
+import { DAILY_QUESTS } from '../data/constants';
+import { useLeaderboard, generateTaunts } from '../lib/leaderboard';
 import { ALL_QUESTIONS } from '../data/questions';
 import { TOPICS } from '../data/topics';
 import { getTopicProgress } from '../data/topics';
@@ -18,12 +19,16 @@ function StreakFire({ count }) {
 
 export default function HomeScreen({ go }) {
   const { state, dispatch } = useGame();
+  const { user } = useAuth();
+  const { leaderboard, userRank } = useLeaderboard(user, state);
+  const taunts = generateTaunts(leaderboard, userRank);
   const [tauntIdx, setTauntIdx] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(() => setTauntIdx(i => (i + 1) % TAUNTS.length), 4500);
+    if (taunts.length === 0) return;
+    const t = setInterval(() => setTauntIdx(i => (i + 1) % taunts.length), 4500);
     return () => clearInterval(t);
-  }, []);
+  }, [taunts.length]);
 
   const lv = getLevel(state.xp);
   const nlv = getNextLevel(state.xp);
@@ -33,11 +38,8 @@ export default function HomeScreen({ go }) {
 
   const reviewCount = getReviewCount(state.cardStates || {});
 
-  // Fuehrerschein progress: total mastered across all topics
   const totalQuestions = ALL_QUESTIONS.length;
   const totalMastered = Object.values(state.questionProgress || {}).filter(qp => qp && qp.isMastered === true).length;
-
-  const { user } = useAuth();
 
   return (
     <div className="container">
@@ -65,7 +67,7 @@ export default function HomeScreen({ go }) {
         <div className="rank-bar"><div className="rank-fill" style={{width:`${totalQuestions > 0 ? (totalMastered/totalQuestions)*100 : 0}%`,background:'linear-gradient(90deg,var(--teal),var(--sand))'}}/></div>
       </div>
 
-      <div className="taunt"><div className="taunt-dot"/><span>{TAUNTS[tauntIdx]}</span></div>
+      <div className="taunt"><div className="taunt-dot"/><span>{taunts[tauntIdx % taunts.length] || 'Start training to see your stats!'}</span></div>
       <button className="cta" onClick={()=>go("skillTree")}><div className="cta-shine"/>{Icons.sword("#fff",28)}<span>Start Training</span></button>
 
       {reviewCount > 0 && (

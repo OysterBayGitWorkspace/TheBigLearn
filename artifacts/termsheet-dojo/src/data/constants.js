@@ -4,17 +4,6 @@ export const DAILY_QUESTS = [
   { id: "dq3", title: "Try 2 categories", target: 2, xpReward: 35, icon: "book" },
 ];
 
-export const LEADERBOARD = [
-  { name: "Maximilian K.", xp: 4280, streak: 34, avatar: "Senior VP" },
-  { name: "Sarah M.", xp: 3610, streak: 21, avatar: "Senior VP" },
-  { name: "Jonas P.", xp: 2950, streak: 28, avatar: "Vice President" },
-  { name: "Lena W.", xp: 1920, streak: 15, avatar: "Senior Associate" },
-  { name: "Felix R.", xp: 1800, streak: 12, avatar: "Senior Associate" },
-  { name: "Clara S.", xp: 1150, streak: 8, avatar: "Associate" },
-  { name: "David H.", xp: 980, streak: 4, avatar: "Senior Analyst" },
-];
-
-export const TAUNTS = ["Maximilian just earned 45 XP...","Sarah is on a 21-day streak!","3 players passed you this week","Jonas is 2 questions from ranking up","Your streak freezes if you skip today","Lena just unlocked Dilution Shield"];
 
 export const RESOURCE_LIBRARY = [
   { category: "Foundational VC Knowledge", items: [

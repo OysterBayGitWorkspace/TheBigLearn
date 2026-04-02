@@ -266,7 +266,7 @@ function gameReducer(state, action) {
   }
 }
 
-export function GameProvider({ children, userId }) {
+export function GameProvider({ children, userId, userEmail }) {
   const initialState = loadState();
   const checkedState = checkDailyReset(initialState);
 
@@ -317,9 +317,9 @@ export function GameProvider({ children, userId }) {
     persistState(persistent);
     // Cloud sync (debounced)
     if (userId) {
-      scheduleSyncToCloud(userId, persistent);
+      scheduleSyncToCloud(userId, persistent, userEmail);
     }
-  }, [state, userId]);
+  }, [state, userId, userEmail]);
 
   // Sync write after answer (critical for FSRS card state)
   useEffect(() => {

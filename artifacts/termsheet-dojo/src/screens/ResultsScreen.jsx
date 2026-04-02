@@ -1,18 +1,14 @@
 import { useGame } from '../context/GameContext';
+import { useAuth } from '../context/AuthContext';
 import { getLevel } from '../data/ranks';
-import { LEADERBOARD } from '../data/constants';
+import { useLeaderboard } from '../lib/leaderboard';
 import { Icons } from '../icons/icons';
 
 export default function ResultsScreen({ go }) {
   const { state } = useGame();
+  const { user } = useAuth();
+  const { above, gap } = useLeaderboard(user, state);
   const session = state.session;
-
-  const lv = getLevel(state.xp);
-  const lb = [...LEADERBOARD, { name: "You", xp: state.xp, streak: state.bestStreak, avatar: lv.name, isUser: true }].sort((a, b) => b.xp - a.xp);
-  lb.forEach((e, i) => e.rank = i + 1);
-  const uRank = lb.find(e => e.isUser)?.rank || 8;
-  const above = lb[Math.max(0, uRank - 2)];
-  const gap = above && !above.isUser ? above.xp - state.xp : 0;
 
   if (!session || !session.answers) {
     return <div className="container"><p>No results.</p><button className="cta" onClick={() => go("home")}>Go Home</button></div>;
@@ -24,7 +20,6 @@ export default function ResultsScreen({ go }) {
   const correctPercent = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
   const wrongCount = totalCount - correctCount;
 
-  // Longest streak in session
   let longestStreak = 0;
   let currentStreak = 0;
   for (const a of session.answers) {
@@ -42,7 +37,6 @@ export default function ResultsScreen({ go }) {
   return (
     <div className="container">
       <div className="results-card">
-        {/* Hero icon */}
         <div className="ri">
           {isPerfect ? Icons.trophy("#F4D06F", 52) :
            isGood ? Icons.sparkle("#B8A0D2", 52) :
@@ -54,7 +48,6 @@ export default function ResultsScreen({ go }) {
            "Keep going!"}
         </h2>
 
-        {/* Score summary */}
         <div style={{
           display: 'flex',
           justifyContent: 'center',
@@ -63,7 +56,6 @@ export default function ResultsScreen({ go }) {
           marginBottom: 16,
           flexWrap: 'wrap',
         }}>
-          {/* Correct percentage */}
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: 28, fontWeight: 800, color: '#5BB5A2' }}>
               {correctCount}/{totalCount}
@@ -75,7 +67,6 @@ export default function ResultsScreen({ go }) {
 
           <div style={{ width: 1, background: 'var(--border)', alignSelf: 'stretch' }}/>
 
-          {/* XP earned */}
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: 28, fontWeight: 800, color: '#FF7B54' }}>
               {totalXP}
@@ -87,7 +78,6 @@ export default function ResultsScreen({ go }) {
 
           <div style={{ width: 1, background: 'var(--border)', alignSelf: 'stretch' }}/>
 
-          {/* Session streak */}
           <div style={{ textAlign: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
               {Icons.fire("#FF7B54", 22)}
@@ -99,7 +89,6 @@ export default function ResultsScreen({ go }) {
           </div>
         </div>
 
-        {/* Wrong answers notice */}
         {wrongCount > 0 && (
           <div style={{
             display: 'flex',
@@ -118,7 +107,6 @@ export default function ResultsScreen({ go }) {
           </div>
         )}
 
-        {/* Question breakdown */}
         <div className="rlist">
           {session.answers.map((a, i) => (
             <div key={i} className="rrow">
