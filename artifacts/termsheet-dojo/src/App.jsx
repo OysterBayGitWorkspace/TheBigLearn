@@ -198,7 +198,7 @@ const CSS = `
 .hero-icon{position:relative;z-index:1;margin-bottom:4px}
 .hero-title{font-family:'Baloo 2',cursive;font-size:56px;font-weight:800;line-height:1;position:relative;z-index:1;background:linear-gradient(135deg,var(--text) 40%,var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{font-size:14px;color:var(--text-light);position:relative;z-index:1;font-weight:600}
-.vitals-bar{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:480px;padding:10px 16px;background:var(--white);border:2px solid var(--border-light);border-radius:var(--r);margin:12px 0;box-shadow:0 2px 12px rgba(0,0,0,.04);overflow:hidden}
+.vitals-bar{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:480px;padding:10px 16px;background:var(--white);border:2px solid var(--border-light);border-radius:var(--r);margin:12px 0;box-shadow:0 2px 12px rgba(0,0,0,.04)}
 ./* ============================================================
    STREAK FIRE v3 â€” Ember / On Fire / Inferno / Void / King
    
@@ -208,35 +208,21 @@ const CSS = `
    ============================================================ */
 
 /* --- Container --- */
-.sf3-wrap{display:flex;flex-direction:row;align-items:center;gap:6px;overflow:hidden}
-.sf3-flame-area{position:relative;overflow:hidden;width:50px;height:50px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-
-/* --- Glow layers (contained within flame-area) --- */
-.sf3-glow-base,.sf3-glow-inferno,.sf3-glow-void,.sf3-glow-king{position:absolute;border-radius:50%;pointer-events:none;top:50%;left:50%;z-index:0;width:48px;height:48px;overflow:hidden}
-.sf3-glow-base{animation:sf3GP 1.5s ease-in-out infinite}
-.sf3-glow-inferno{animation:sf3GI 1s ease-in-out infinite}
-.sf3-glow-void{animation:sf3GV 2.2s ease-in-out infinite}
-.sf3-glow-king{animation:sf3GK .8s ease-in-out infinite}
-
-@keyframes sf3GP{0%,100%{opacity:.4;transform:translate(-50%,-50%)}50%{opacity:.65;transform:translate(-50%,-50%)}}
-@keyframes sf3GI{0%,100%{opacity:.5;transform:translate(-50%,-50%)}50%{opacity:.8;transform:translate(-50%,-50%)}}
-@keyframes sf3GV{0%,100%{opacity:.55;transform:translate(-50%,-50%)}30%{opacity:.85;transform:translate(-50%,-50%)}70%{opacity:.65;transform:translate(-50%,-50%)}}
-@keyframes sf3GK{0%,100%{opacity:.5;transform:translate(-50%,-50%)}20%{opacity:1;transform:translate(-50%,-50%)}50%{opacity:.6;transform:translate(-50%,-50%)}80%{opacity:.95;transform:translate(-50%,-50%)}}
+.sf3-wrap{position:relative;display:flex;flex-direction:row;align-items:center;gap:6px;width:48px;height:56px;overflow:visible}
+.sf3-flame-svg{display:flex;align-items:center;justify-content:center;transform-origin:center center}
 
 /* --- Flame SVG --- */
-.sf3-flame{position:relative;z-index:2;display:block}
+.sf3-flame{display:block}
 
-/* --- Void slow pulse (whole container) --- */
-.sf3-void-pulse{animation:sf3VoidPulse 2.2s ease-in-out infinite}
-@keyframes sf3VoidPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-
-/* --- Lightning bolts overlay --- */
-.sf3-bolts{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:4}
-
-/* --- Sparks --- */
-.sf3-sparks{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
-.sf3-spark{position:absolute;border-radius:50%;opacity:.7;animation:sf3SparkUp ease-out infinite}
-@keyframes sf3SparkUp{0%{transform:translateY(0);opacity:.7}100%{transform:translateY(var(--sy,-18px)) translateX(var(--sx,3px));opacity:0}}
+/* --- Pulse animations on the SVG element only --- */
+.sf3-pulse-onfire{animation:sf3PulseSmall 1.2s ease-in-out infinite;transform-origin:center center}
+.sf3-pulse-inferno{animation:sf3PulseMed 0.8s ease-in-out infinite;transform-origin:center center}
+.sf3-pulse-void{animation:sf3PulseSlow 2.2s ease-in-out infinite;transform-origin:center center}
+.sf3-pulse-king{animation:sf3PulseKing 1s ease-in-out infinite;transform-origin:center center}
+@keyframes sf3PulseSmall{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes sf3PulseMed{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes sf3PulseSlow{0%,100%{transform:scale(1)}30%{transform:scale(1.05)}70%{transform:scale(1.03)}}
+@keyframes sf3PulseKing{0%,100%{transform:scale(1)}20%{transform:scale(1.08)}50%{transform:scale(1.02)}80%{transform:scale(1.07)}}
 
 /* --- Count number --- */
 .sf3-count{font-family:'Baloo 2',cursive;font-weight:800;position:relative;z-index:3}

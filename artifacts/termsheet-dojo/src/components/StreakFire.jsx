@@ -220,30 +220,18 @@ export default function StreakFire({ count }) {
 
   const ti = getTierIndex(count);
   const tier = FIRE_TIERS[ti];
-  const gs = 55 + Math.min(count, 30) * 2.5;
-  const glowClass = ti >= 4 ? 'sf3-glow-king' : ti >= 3 ? 'sf3-glow-void' : ti >= 2 ? 'sf3-glow-inferno' : 'sf3-glow-base';
   const countSz = 22 + Math.min(count, 20) * 0.35;
+  const pulseClass = ti >= 4 ? 'sf3-pulse-king' : ti >= 3 ? 'sf3-pulse-void' : ti >= 2 ? 'sf3-pulse-inferno' : ti >= 1 ? 'sf3-pulse-onfire' : '';
+  const glowFilter = `drop-shadow(0 0 6px ${tier.glow.replace(/[\d.]+\)$/, '0.7)')})`;
 
   return (
     <div className="sf3-wrap">
-      <div className="sf3-flame-area">
-        <div className={glowClass} style={{
-          background: `radial-gradient(circle, ${tier.glow}, transparent 70%)`,
-        }}/>
-        <Sparks count={count} color={tier.color}/>
-        <div className={ti === 3 ? 'sf3-void-pulse' : undefined}>
-          {ti === 0 && <EmberFlame count={count}/>}
-          {ti === 1 && <OnFireFlame count={count}/>}
-          {ti === 2 && <InfernoFlame count={count}/>}
-          {ti === 3 && <VoidFlame count={count}/>}
-          {ti === 4 && <><KingFlame count={count}/><LightningBolts count={count}/></>}
-        </div>
-        {burst && (
-          <div className="sf3-burst">
-            <div className="sf3-burst-ring" style={{ borderColor: burst.color }}/>
-            <div className="sf3-burst-text" style={{ color: burst.color }}>{burst.text}</div>
-          </div>
-        )}
+      <div className={`sf3-flame-svg ${pulseClass}`} style={{ filter: glowFilter }}>
+        {ti === 0 && <EmberFlame count={count}/>}
+        {ti === 1 && <OnFireFlame count={count}/>}
+        {ti === 2 && <InfernoFlame count={count}/>}
+        {ti === 3 && <VoidFlame count={count}/>}
+        {ti === 4 && <KingFlame count={count}/>}
       </div>
       <div className="sf3-count" style={{
         fontSize: countSz, color: tier.color,
