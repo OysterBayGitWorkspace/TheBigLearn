@@ -14,6 +14,10 @@ import LeaderboardScreen from "./screens/LeaderboardScreen";
 import LibraryScreen from "./screens/LibraryScreen";
 import LoginScreen from "./screens/LoginScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import MatchPairsScreen from "./screens/MatchPairsScreen";
+import TrueFalseScreen from "./screens/TrueFalseScreen";
+import FillBlankScreen from "./screens/FillBlankScreen";
+import TermSorterScreen from "./screens/TermSorterScreen";
 
 function ConfettiBurst({ active }) {
   const canvasRef = useRef(null); const particles = useRef([]); const animRef = useRef(null);
@@ -120,6 +124,10 @@ function AppInner() {
         {screen === "results" && <ResultsScreen go={go}/>}
         {screen === "leaderboard" && <LeaderboardScreen go={go}/>}
         {screen === "library" && <LibraryScreen go={go}/>}
+        {screen === "matchPairs" && <MatchPairsScreen go={go}/>}
+        {screen === "trueFalse" && <TrueFalseScreen go={go}/>}
+        {screen === "fillBlank" && <FillBlankScreen go={go}/>}
+        {screen === "termSorter" && <TermSorterScreen go={go}/>}
       </div>
     </div>
   );

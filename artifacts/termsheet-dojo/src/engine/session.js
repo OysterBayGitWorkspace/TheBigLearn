@@ -10,47 +10,35 @@ function shuffleArray(arr) {
   return s;
 }
 
-export function buildLearnSession(tierId, cardStates, maxSize = 10) {
+export function buildLearnSession(tierId, cardStates, questionProgress = {}, maxSize = 10) {
   const tierQuestions = getQuestionsForTier(tierId);
-  const now = new Date();
-  const lapsedCards = [];
-  const dueCards = [];
-  const newCards = [];
+  const inProgress = [];   // correctCount > 0 but < 2 (got some right, not yet mastered)
+  const unseen = [];       // never answered
+  const mastered = [];     // already mastered (correctCount >= 2)
 
   for (const q of tierQuestions) {
-    const card = cardStates[q.id];
-    if (!card || card.state === 0) {
-      newCards.push(q);
-    } else if (card.lapses > 0) {
-      // Previously wrong questions get priority
-      lapsedCards.push(q);
+    const qp = questionProgress[q.id];
+    if (!qp || qp.correctCount === 0) {
+      // Check if they have a card state but no questionProgress entry (legacy)
+      const card = cardStates[q.id];
+      if (card && card.lapses > 0) {
+        inProgress.push(q); // previously wrong in FSRS = treat as in-progress
+      } else {
+        unseen.push(q);
+      }
+    } else if (qp.isMastered) {
+      mastered.push(q);
     } else {
-      const due = card.due instanceof Date ? card.due : new Date(card.due);
-      if (due <= now) dueCards.push(q);
+      // correctCount > 0 but not yet mastered
+      inProgress.push(q);
     }
   }
 
-  // Sort due cards by urgency
-  dueCards.sort((a, b) => new Date(cardStates[a.id].due) - new Date(cardStates[b.id].due));
-
-  // Priority: lapsed first, then due reviews, then new
+  // Priority: 1) in-progress, 2) unseen, 3) mastered (fill remaining)
   const selected = [];
-  const lapsedSlots = Math.min(3, lapsedCards.length);
-  selected.push(...shuffleArray(lapsedCards).slice(0, lapsedSlots));
-
-  const reviewSlots = Math.min(3, dueCards.length);
-  selected.push(...dueCards.slice(0, reviewSlots));
-
-  const newSlots = maxSize - selected.length;
-  selected.push(...shuffleArray(newCards).slice(0, newSlots));
-
-  if (selected.length < maxSize) {
-    const remaining = [
-      ...lapsedCards.slice(lapsedSlots),
-      ...dueCards.slice(reviewSlots),
-    ];
-    selected.push(...remaining.slice(0, maxSize - selected.length));
-  }
+  selected.push(...shuffleArray(inProgress));
+  selected.push(...shuffleArray(unseen));
+  selected.push(...shuffleArray(mastered));
 
   return shuffleArray(selected.slice(0, maxSize));
 }

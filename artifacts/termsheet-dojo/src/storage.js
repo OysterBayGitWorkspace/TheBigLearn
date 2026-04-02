@@ -12,6 +12,7 @@ const V3_DEFAULTS = {
   catsToday: [], todayAnswered: 0,
   lastActiveDate: null,
   cardStates: {},
+  questionProgress: {},
   sessionsCompleted: 0,
 };
 
@@ -36,6 +37,7 @@ export function migrateV2toV3(v2) {
     todayAnswered: v2.todayAnswered || 0,
     lastActiveDate: new Date().toISOString().slice(0, 10),
     cardStates: {},
+    questionProgress: {},
     sessionsCompleted: 0,
   };
 
@@ -57,13 +59,32 @@ export function migrateV2toV3(v2) {
     }
   }
 
+  // Migrate FSRS mastered cards to questionProgress
+  for (const [qId, card] of Object.entries(v3.cardStates)) {
+    if (card && card.state >= 2) {
+      v3.questionProgress[qId] = { correctCount: 2, lastAnsweredAt: new Date().toISOString(), isMastered: true };
+    }
+  }
+
   return v3;
 }
 
 export function loadState() {
   try {
     const v3 = localStorage.getItem('termy_v3');
-    if (v3) return JSON.parse(v3);
+    if (v3) {
+      const parsed = JSON.parse(v3);
+      // Backfill questionProgress for existing v3 states that don't have it
+      if (!parsed.questionProgress) {
+        parsed.questionProgress = {};
+        for (const [qId, card] of Object.entries(parsed.cardStates || {})) {
+          if (card && card.state >= 2) {
+            parsed.questionProgress[qId] = { correctCount: 2, lastAnsweredAt: new Date().toISOString(), isMastered: true };
+          }
+        }
+      }
+      return parsed;
+    }
 
     const v2 = localStorage.getItem('termy_v2');
     if (v2) {

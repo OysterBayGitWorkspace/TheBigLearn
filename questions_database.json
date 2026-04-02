@@ -5,10 +5,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a cap table?",
     "options": [
-      "A table listing all company liabilities",
+      "A comprehensive record of all outstanding company debts and liabilities",
       "A spreadsheet tracking all shareholders and their ownership stakes",
-      "A document summarizing annual revenue",
-      "A schedule of board meetings"
+      "A financial summary documenting quarterly and annual revenue streams",
+      "A formal calendar of scheduled board and committee meetings"
     ],
     "correct_answer": 1,
     "explanation": "A cap table tracks all equity ownership including founders, investors, and option holders.",
@@ -20,10 +20,10 @@
     "category": "Equity & Cap Table",
     "question": "What does 'fully diluted' mean?",
     "options": [
-      "Shares sold on a secondary market",
+      "Shares that have been sold by early investors on a secondary marketplace",
       "All outstanding shares including options, warrants, and convertibles as if exercised",
-      "Shares that have lost value",
-      "Only shares held by founders"
+      "Shares whose market price has declined significantly below purchase price",
+      "Shares that are exclusively allocated to and held by founding team members"
     ],
     "correct_answer": 1,
     "explanation": "Fully diluted includes all shares that would exist if every option, warrant, and convertible were exercised.",
@@ -65,10 +65,10 @@
     "category": "Equity & Cap Table",
     "question": "What are preferred shares?",
     "options": [
-      "Shares available at a discount",
+      "Shares that provide the holder with a discounted purchase price on future rounds",
       "Shares with special rights ranking above common shares in certain situations",
-      "Shares reserved for the board",
-      "Shares that cannot be transferred"
+      "Shares allocated exclusively to board members for governance participation purposes",
+      "Shares that carry legal restrictions preventing transfer to any external parties"
     ],
     "correct_answer": 1,
     "explanation": "Preferred shares carry special rights such as liquidation preferences and anti-dilution protection.",
@@ -95,10 +95,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a waterfall analysis?",
     "options": [
-      "A study of water usage costs",
+      "A detailed study of operational expenses related to company utility costs",
       "An analysis showing how proceeds are distributed among shareholders in an exit",
-      "A method for tracking multi-product revenue",
-      "A technique for scheduling launches sequentially"
+      "A method for tracking multi-product revenue across different business segments",
+      "A technique for scheduling product launches in a sequential rollout process"
     ],
     "correct_answer": 1,
     "explanation": "A waterfall analysis models how exit proceeds flow to different shareholders based on rights and preferences.",
@@ -110,10 +110,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a pro forma cap table?",
     "options": [
-      "A cap table showing historical changes",
+      "A cap table documenting all historical changes in ownership over time",
       "A projected cap table showing ownership after a proposed transaction",
-      "A simplified cap table for marketing",
-      "A cap table approved by auditors"
+      "A simplified cap table version prepared for investor marketing materials",
+      "A cap table that has been formally verified and approved by auditors"
     ],
     "correct_answer": 1,
     "explanation": "A pro forma cap table projects what ownership will look like after a future event like a new funding round.",
@@ -125,10 +125,10 @@
     "category": "Equity & Cap Table",
     "question": "What is equity dilution?",
     "options": [
-      "A decrease in total valuation",
+      "A decrease in total company valuation caused by market conditions changing",
       "A reduction in ownership percentage due to new shares being issued",
-      "Converting debt into equity",
-      "A strategy to increase board seats"
+      "The process of converting outstanding debt instruments into equity shares",
+      "A corporate strategy designed to increase the total number of board seats"
     ],
     "correct_answer": 1,
     "explanation": "Dilution occurs when new shares are issued, reducing existing shareholders' percentage ownership.",
@@ -140,10 +140,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a vesting schedule?",
     "options": [
-      "A timeline for debt repayment",
+      "A timeline outlining scheduled repayment installments for outstanding debt",
       "A plan defining when equity gradually becomes owned by the recipient",
-      "A schedule of investor meetings",
-      "A calendar for product releases"
+      "A schedule organizing and tracking all upcoming investor meeting dates",
+      "A detailed calendar coordinating the timing of all product releases"
     ],
     "correct_answer": 1,
     "explanation": "A vesting schedule determines when granted equity actually becomes owned by the recipient.",
@@ -185,10 +185,10 @@
     "category": "Equity & Cap Table",
     "question": "What is single-trigger acceleration?",
     "options": [
-      "Vesting speeds up when revenue targets are missed",
+      "Vesting speeds up automatically when the company misses its revenue targets",
       "All unvested shares vest immediately upon a single event like a change of control",
-      "Founders can self-accelerate vesting",
-      "Vesting pauses during funding"
+      "Founders can choose to self-accelerate their own vesting at any time they wish",
+      "The vesting schedule is temporarily paused during active fundraising periods"
     ],
     "correct_answer": 1,
     "explanation": "Single-trigger means all unvested equity vests upon one event, typically an acquisition.",
@@ -200,10 +200,10 @@
     "category": "Equity & Cap Table",
     "question": "What is double-trigger acceleration?",
     "options": [
-      "Vesting accelerates when two board members resign",
+      "Vesting accelerates automatically when two or more board members formally resign",
       "Unvested shares vest only when two conditions are met such as acquisition plus termination",
-      "Two-investor approval needed for acceleration",
-      "Shares vest at twice the normal rate"
+      "Acceleration requires written approval from at least two separate investors",
+      "The shares begin vesting at exactly twice the normal rate until fully vested"
     ],
     "correct_answer": 1,
     "explanation": "Double-trigger requires both a change of control AND qualifying termination for acceleration.",
@@ -215,10 +215,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a convertible note?",
     "options": [
-      "A bank loan with variable interest",
+      "A standard bank loan with a variable interest rate tied to market benchmarks",
       "Short-term debt that converts into equity at a future priced round",
-      "A legal agreement to change company name",
-      "A note requiring structural conversion"
+      "A legal agreement enabling the company to formally change its registered name",
+      "A financial note requiring mandatory structural conversion at a fixed date"
     ],
     "correct_answer": 1,
     "explanation": "A convertible note is debt that converts to equity, usually at a discount, when the company raises a priced round.",
@@ -245,10 +245,10 @@
     "category": "Equity & Cap Table",
     "question": "How does a SAFE differ from a convertible note?",
     "options": [
-      "They are the same instrument",
+      "They are functionally identical instruments with no material differences between them",
       "A SAFE has no interest rate or maturity date while a convertible note does",
-      "A convertible note gives more equity",
-      "A SAFE can only be used in Europe"
+      "A convertible note always results in significantly more equity upon conversion",
+      "A SAFE instrument can only be legally used by companies operating in Europe"
     ],
     "correct_answer": 1,
     "explanation": "Unlike convertible notes, SAFEs are not debt and have no interest rate, maturity date, or repayment obligation.",
@@ -260,10 +260,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a valuation cap on a convertible note?",
     "options": [
-      "The minimum conversion valuation",
+      "The minimum valuation at which the convertible note can convert into equity",
       "The maximum valuation used to calculate the conversion price for the note holder",
-      "A cap on accrued interest",
-      "The highest valuation ever achieved"
+      "A contractual limit placed on the total amount of interest that can accrue",
+      "The highest valuation the company has ever achieved in any prior round"
     ],
     "correct_answer": 1,
     "explanation": "A valuation cap sets the maximum company valuation used for conversion price calculation, protecting early investors.",
@@ -275,10 +275,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a discount rate on a convertible note?",
     "options": [
-      "The rate at which valuation decreases",
+      "The annual rate at which the company's overall valuation decreases over time",
       "A percentage reduction on the share price at conversion compared to the next round",
-      "The interest rate on the debt",
-      "A fee for processing conversion"
+      "The stated interest rate charged on the outstanding convertible debt balance",
+      "An administrative fee charged by the company for processing the conversion"
     ],
     "correct_answer": 1,
     "explanation": "The discount rate lets note holders convert at a lower price per share than new investors in the next round.",
@@ -290,10 +290,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a secondary sale of shares?",
     "options": [
-      "The company issuing new shares",
+      "The process by which a company issues and sells entirely new shares to investors",
       "An existing shareholder selling their shares to another party",
-      "Converting preferred to common",
-      "A sale of assets during bankruptcy"
+      "Converting preferred shares back into common shares through a formal process",
+      "A supervised sale of company assets conducted during formal bankruptcy proceedings"
     ],
     "correct_answer": 1,
     "explanation": "A secondary sale is when an existing shareholder sells their shares, not the company issuing new ones.",
@@ -305,10 +305,10 @@
     "category": "Equity & Cap Table",
     "question": "What is par value of a share?",
     "options": [
-      "Current market price",
+      "The current market price at which shares are actively being traded today",
       "The nominal face value assigned to a share, often very low",
-      "Price paid by the most recent investor",
-      "The average price across all rounds"
+      "The price per share paid by the most recent investor in the latest round",
+      "The weighted average price calculated across all funding rounds to date"
     ],
     "correct_answer": 1,
     "explanation": "Par value is the minimum legal price for share issuance, typically very low like €0.01.",
@@ -335,10 +335,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a stock option?",
     "options": [
-      "An obligation to purchase shares",
+      "A legally binding obligation requiring the holder to purchase company shares",
       "The right but not obligation to buy shares at a predetermined price",
-      "A guarantee of price increase",
-      "Insurance protecting from losses"
+      "A financial guarantee ensuring the share price will increase over a period",
+      "An insurance product that protects the holder from any investment losses"
     ],
     "correct_answer": 1,
     "explanation": "A stock option gives the holder the right to purchase shares at a fixed exercise price.",
@@ -395,10 +395,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a phantom share plan?",
     "options": [
-      "Creates real shares without board approval",
+      "A mechanism that creates additional real shares without requiring board approval",
       "An arrangement giving cash bonuses tied to share value without actual equity",
-      "A scheme to hide shares from regulators",
-      "Automatically cancels shares after a period"
+      "A regulatory scheme designed to conceal shares from government regulators",
+      "A provision that automatically cancels outstanding shares after a set period"
     ],
     "correct_answer": 1,
     "explanation": "Phantom shares give employees economic benefits tied to company value without granting actual equity.",
@@ -425,10 +425,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a bad leaver clause?",
     "options": [
-      "Restricts joining competitors",
+      "A clause restricting the departing employee from joining competing businesses",
       "A provision where departing under unfavorable circumstances means forfeiture of equity",
-      "Penalizes investors exiting early",
-      "Requires departing board members to pay fees"
+      "A penalty provision applied to investors who choose to exit their position early",
+      "A requirement that departing board members pay administrative fees to the company"
     ],
     "correct_answer": 1,
     "explanation": "Bad leaver clauses may result in forfeiture of unvested and sometimes vested equity.",
@@ -455,10 +455,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a share split?",
     "options": [
-      "Dividing ownership between disputing founders",
+      "The formal process of dividing ownership stakes between disputing co-founders",
       "Increasing share count while proportionally reducing price per share",
-      "Selling half the shares to a new investor",
-      "Separating voting from non-voting shares"
+      "A transaction involving selling exactly half of all outstanding shares to investors",
+      "The legal process of separating voting shares from non-voting share classes"
     ],
     "correct_answer": 1,
     "explanation": "A share split increases shares while reducing price proportionally. A 2:1 split makes two €5 shares from one €10 share.",
@@ -485,10 +485,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a right of first refusal on shares?",
     "options": [
-      "Right for investors to sell first",
+      "A right allowing existing investors to sell their shares before external parties",
       "Right for existing shareholders to buy shares before external parties",
-      "Right to refuse a board seat",
-      "Right to reject a merger"
+      "A provision giving shareholders the ability to formally refuse a board seat",
+      "A right enabling shareholders to reject a proposed merger or acquisition deal"
     ],
     "correct_answer": 1,
     "explanation": "ROFR on shares allows existing shareholders to match any offer before shares can be sold externally.",
@@ -500,10 +500,10 @@
     "category": "Equity & Cap Table",
     "question": "What is treasury stock?",
     "options": [
-      "Shares held by the national treasury",
+      "Shares that are held and managed directly by the national treasury department",
       "Shares that were issued but later bought back by the company",
-      "Shares for the audit committee",
-      "Shares reserved for future investors"
+      "Shares specifically designated for members of the company audit committee",
+      "Shares that have been set aside and reserved for allocation to future investors"
     ],
     "correct_answer": 1,
     "explanation": "Treasury stock refers to previously outstanding shares repurchased by the company.",
@@ -515,10 +515,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a share purchase agreement (SPA)?",
     "options": [
-      "An agreement to merge operations",
+      "A legally binding agreement between two companies to merge their operations",
       "A legal contract documenting the sale and purchase of shares",
-      "A document on marketing strategy",
-      "An agreement to share office space"
+      "A comprehensive document detailing the company's marketing strategy and plans",
+      "An agreement between two companies to share office space and related resources"
     ],
     "correct_answer": 1,
     "explanation": "An SPA is the legal contract governing terms and conditions of a share transaction.",
@@ -530,10 +530,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a post-money SAFE?",
     "options": [
-      "A SAFE that converts after additional funding",
+      "A SAFE instrument that only converts after the company raises additional funding",
       "A SAFE where the valuation cap represents post-money including the SAFE itself",
-      "A SAFE issued after profitability",
-      "A SAFE converting only to common shares"
+      "A SAFE instrument that can only be issued after the company reaches profitability",
+      "A SAFE instrument that converts exclusively into common shares upon triggering"
     ],
     "correct_answer": 1,
     "explanation": "A post-money SAFE includes itself in the cap calculation, making ownership math clearer.",
@@ -545,10 +545,10 @@
     "category": "Equity & Cap Table",
     "question": "What is a reverse share split?",
     "options": [
-      "Buying back shares at a premium",
+      "A transaction where the company buys back outstanding shares at a premium price",
       "Combining multiple shares into fewer shares at a higher price",
-      "Converting preferred back to common",
-      "Reversing a previous funding round"
+      "The formal process of converting preferred shares back into common share class",
+      "A legal mechanism designed to unwind and reverse a previously completed funding round"
     ],
     "correct_answer": 1,
     "explanation": "A reverse split reduces share count while increasing price. A 1:10 reverse turns ten €1 shares into one €10 share.",
@@ -560,10 +560,10 @@
     "category": "Equity & Cap Table",
     "question": "What is an RSU vs a stock option?",
     "options": [
-      "They are identical instruments with different names",
+      "They are functionally identical instruments with no meaningful differences at all",
       "RSUs deliver actual shares upon vesting while options give the right to purchase shares at a set price",
-      "RSUs are for executives only while options are for all employees",
-      "RSUs have no tax implications while options are heavily taxed"
+      "RSUs are reserved exclusively for executives while options are available to all staff",
+      "RSUs carry no tax implications whatsoever while options are subject to heavy taxation"
     ],
     "correct_answer": 1,
     "explanation": "RSUs deliver shares automatically at vesting; options give the right (not obligation) to buy shares at the strike price.",
@@ -575,10 +575,10 @@
     "category": "Equity & Cap Table",
     "question": "Who typically manages the cap table at a startup?",
     "options": [
-      "The company's marketing department",
+      "The company's dedicated marketing department handles all cap table management",
       "The CFO, legal counsel, or a dedicated cap table management platform",
-      "The lead investor's back office",
-      "The local government's company registry"
+      "The lead investor's back office team is responsible for maintaining the records",
+      "The local government's company registry maintains and updates the cap table"
     ],
     "correct_answer": 1,
     "explanation": "Cap table management falls to finance/legal teams, often using platforms like Carta, Ledgy, or Capdesk.",
@@ -590,10 +590,10 @@
     "category": "Investor Rights",
     "question": "What is a pro-rata right?",
     "options": [
-      "Right to receive proportional dividends",
+      "The contractual right to receive proportional dividends from company profits",
       "Right to invest in future rounds to maintain ownership percentage",
-      "Right to attend all board meetings",
-      "Right to veto company decisions"
+      "The right to attend and participate in all company board meetings directly",
+      "The right to exercise veto power over any major company decisions made"
     ],
     "correct_answer": 1,
     "explanation": "Pro-rata rights allow existing investors to participate in future rounds to maintain their ownership.",
@@ -605,10 +605,10 @@
     "category": "Investor Rights",
     "question": "What is a ROFR (Right of First Refusal)?",
     "options": [
-      "Founder's right to refuse acquisition",
+      "The founder's contractual right to formally refuse any proposed acquisition offer",
       "Right for existing shareholders to purchase shares before they are sold to a third party",
-      "A regulatory requirement",
-      "Right to refuse a board seat"
+      "A mandatory regulatory requirement imposed by financial oversight authorities",
+      "The right for shareholders to formally refuse nomination to a board seat position"
     ],
     "correct_answer": 1,
     "explanation": "ROFR gives existing shareholders the right to match a purchase offer before shares can be sold externally.",
@@ -620,10 +620,10 @@
     "category": "Investor Rights",
     "question": "What are information rights?",
     "options": [
-      "Right to access competitor intelligence",
+      "The right to access detailed competitive intelligence about rival companies",
       "Contractual rights for investors to receive regular financial and operational reports",
-      "Right to publish investment information",
-      "Right for employees to access salary data"
+      "The right to publish and share investment information with the general public",
+      "The right for employees to access and review company-wide salary information"
     ],
     "correct_answer": 1,
     "explanation": "Information rights entitle investors to financial statements, budgets, and operational updates.",
@@ -650,10 +650,10 @@
     "category": "Investor Rights",
     "question": "What is a protective provision?",
     "options": [
-      "Insurance against bankruptcy",
+      "An insurance policy designed to protect the company against bankruptcy risk",
       "A contractual right giving investors veto power over major company decisions",
-      "A clause preventing logo changes",
-      "A government regulation"
+      "A contractual clause that prevents the company from changing its official logo",
+      "A regulation imposed by the government on all venture-backed startups today"
     ],
     "correct_answer": 1,
     "explanation": "Protective provisions give investors the right to block actions like issuing new shares or selling the company.",
@@ -665,10 +665,10 @@
     "category": "Investor Rights",
     "question": "What is a most favored nation (MFN) clause?",
     "options": [
-      "Requires operation in a specific country",
+      "A provision requiring the company to operate exclusively in a specific country",
       "Ensures an investor receives terms at least as favorable as any future investor",
-      "Requires equal profit distribution",
-      "Guarantees no investment in competing nations"
+      "A requirement mandating equal profit distribution among all investors equally",
+      "A guarantee preventing the investor from funding companies in competing markets"
     ],
     "correct_answer": 1,
     "explanation": "An MFN clause ensures that if better terms are offered later, the earlier investor's terms are upgraded to match.",
@@ -681,9 +681,9 @@
     "question": "What is a co-sale right (tag-along)?",
     "options": [
       "Right to sell shares on the same terms as a selling shareholder",
-      "Right to jointly invest with another fund",
-      "Right to co-host events",
-      "Right to share office space"
+      "The right for an investor to jointly invest alongside another institutional fund",
+      "The right for shareholders to co-host company events and investor conferences",
+      "The right for investors to share office space and resources with the company"
     ],
     "correct_answer": 0,
     "explanation": "Tag-along rights allow minority investors to join when a major shareholder sells, on the same terms.",
@@ -695,10 +695,10 @@
     "category": "Investor Rights",
     "question": "What is a drag-along right?",
     "options": [
-      "Right to slow down a sale",
+      "The right to deliberately slow down or delay a proposed company sale process",
       "Right for majority shareholders to force minority shareholders to join a company sale",
-      "Right to delay dividends",
-      "Right to reduce minority voting power"
+      "The right to delay or defer scheduled dividend payments to all shareholders",
+      "The right to reduce minority shareholders' voting power in corporate decisions"
     ],
     "correct_answer": 1,
     "explanation": "Drag-along rights allow majority shareholders to force all others to participate in a sale.",
@@ -710,10 +710,10 @@
     "category": "Investor Rights",
     "question": "What is a pre-emption right?",
     "options": [
-      "Right to prevent going public",
+      "The right to prevent the company from pursuing an initial public offering",
       "Right to purchase new shares before they are offered externally",
-      "Right to inspect IP",
-      "Right to dismiss management"
+      "The right to inspect and review all intellectual property owned by the company",
+      "The right to unilaterally dismiss members of the company management team"
     ],
     "correct_answer": 1,
     "explanation": "Pre-emption rights give existing shareholders first opportunity to buy newly issued shares.",
@@ -725,10 +725,10 @@
     "category": "Investor Rights",
     "question": "What is an anti-dilution provision?",
     "options": [
-      "Prevents hiring more employees",
+      "A provision that prevents the company from hiring additional employees",
       "Protection that adjusts conversion price if new shares are issued at a lower valuation",
-      "Prevents selling shares",
-      "Requires equal investment amounts"
+      "A restriction that prevents existing shareholders from selling their shares",
+      "A clause requiring all investors to contribute exactly equal investment amounts"
     ],
     "correct_answer": 1,
     "explanation": "Anti-dilution provisions protect investors by adjusting their price downward in a down round.",
@@ -740,10 +740,10 @@
     "category": "Investor Rights",
     "question": "What is full ratchet anti-dilution?",
     "options": [
-      "Gradual adjustment over multiple rounds",
+      "A gradual adjustment mechanism applied incrementally over multiple funding rounds",
       "Complete repricing of earlier shares to match the lowest new share price",
-      "Only applies to first investors",
-      "Limited to fifty percent adjustment"
+      "A protection mechanism that applies exclusively to the company's first investors",
+      "A limited adjustment capped at a maximum of fifty percent of the price change"
     ],
     "correct_answer": 1,
     "explanation": "Full ratchet adjusts the conversion price to exactly match the new lower price, giving maximum protection.",
@@ -755,10 +755,10 @@
     "category": "Investor Rights",
     "question": "What is weighted average anti-dilution?",
     "options": [
-      "Averages all round prices equally",
+      "A simple method that averages all round prices equally regardless of amount",
       "An adjustment considering both the new price and number of new shares issued",
-      "Only protects holders above ten percent",
-      "Weights protection by holding duration"
+      "A provision that only protects shareholders holding above ten percent ownership",
+      "A mechanism that weights protection based on the duration of the holding period"
     ],
     "correct_answer": 1,
     "explanation": "Weighted average considers both price and quantity of new shares, resulting in a less severe adjustment than full ratchet.",
@@ -771,9 +771,9 @@
     "question": "What is broad-based weighted average anti-dilution?",
     "options": [
       "Includes all outstanding shares and options in the calculation",
-      "Limited to preferred shares only",
-      "Uses revenue instead of share count",
-      "Based on total assets"
+      "A calculation limited exclusively to preferred shares without including common",
+      "A valuation method that uses company revenue instead of actual share counts",
+      "A calculation methodology that is based on the company's total asset value"
     ],
     "correct_answer": 0,
     "explanation": "Broad-based includes ALL shares in the denominator, resulting in a smaller, more founder-friendly adjustment.",
@@ -800,10 +800,10 @@
     "category": "Investor Rights",
     "question": "What is a pay-to-play provision?",
     "options": [
-      "Companies must pay dividends before raising",
+      "A requirement that companies must pay all outstanding dividends before raising",
       "Investors must participate in future rounds or lose preferential rights",
-      "Investors pay to attend events",
-      "Investors pay for due diligence costs"
+      "A requirement that investors pay fees to attend company events and meetings",
+      "A clause requiring investors to cover all due diligence costs for the company"
     ],
     "correct_answer": 1,
     "explanation": "Pay-to-play forces investors to invest in future rounds or lose protections like anti-dilution or preferred status.",
@@ -815,10 +815,10 @@
     "category": "Investor Rights",
     "question": "What is a no-shop clause?",
     "options": [
-      "Prevents operating retail stores",
+      "A provision that prevents the company from operating any retail store locations",
       "Prevents the company from seeking alternative offers during a specified period",
-      "Prohibits certain marketing channels",
-      "Restricts product line changes"
+      "A restriction that prohibits the company from using certain marketing channels",
+      "A clause that restricts the company from making any changes to its product line"
     ],
     "correct_answer": 1,
     "explanation": "A no-shop clause prevents soliciting other investors or acquirers for a period after signing a term sheet.",
@@ -830,10 +830,10 @@
     "category": "Investor Rights",
     "question": "What is a redemption right?",
     "options": [
-      "Right to buy back products from retailers",
+      "A contractual right to buy back products that have been sold to retail partners",
       "Right for investors to require the company to repurchase their shares after a specified period",
-      "Right to exchange share classes",
-      "Right to cancel subscriptions"
+      "A provision allowing investors to exchange between different share classes freely",
+      "A right allowing investors to cancel their subscription to future capital calls"
     ],
     "correct_answer": 1,
     "explanation": "Redemption rights let investors force the company to buy back shares, typically after 5-7 years.",
@@ -845,10 +845,10 @@
     "category": "Investor Rights",
     "question": "What is a dividend preference?",
     "options": [
-      "Preference for stock dividends over cash",
+      "A preference allowing shareholders to receive stock dividends instead of cash",
       "Right for preferred shareholders to receive dividends before common shareholders",
-      "Guarantee of minimum annual dividends",
-      "Automatic annual dividend increases"
+      "A contractual guarantee of minimum annual dividend payments to all investors",
+      "A provision that automatically increases dividend payments on an annual basis"
     ],
     "correct_answer": 1,
     "explanation": "Dividend preference means preferred shareholders receive dividends before common shareholders.",
@@ -860,10 +860,10 @@
     "category": "Investor Rights",
     "question": "What is a cumulative dividend?",
     "options": [
-      "Increases each quarter by a fixed percentage",
+      "A dividend that increases automatically each quarter by a fixed percentage rate",
       "Unpaid dividends that accrue and must be paid before common shareholders receive anything",
-      "Automatically reinvested into shares",
-      "Calculated on cumulative revenue"
+      "A dividend payment that is automatically reinvested into additional company shares",
+      "A dividend calculated based on the company's cumulative revenue to date figure"
     ],
     "correct_answer": 1,
     "explanation": "Cumulative dividends accumulate if unpaid and must be settled before common shareholders receive proceeds.",
@@ -875,10 +875,10 @@
     "category": "Investor Rights",
     "question": "What is a lock-up period?",
     "options": [
-      "Period where business model cannot change",
+      "A period during which the company's core business model cannot be changed",
       "A timeframe during which shareholders cannot sell shares, typically after an IPO",
-      "Cooling-off period between rounds",
-      "Period where new employees cannot access systems"
+      "A mandatory cooling-off period required between consecutive fundraising rounds",
+      "A period during which new employees cannot access internal company systems"
     ],
     "correct_answer": 1,
     "explanation": "A lock-up period (90-180 days after IPO) prevents insiders from selling shares to stabilize the stock price.",
@@ -891,9 +891,9 @@
     "question": "What is a side letter?",
     "options": [
       "A supplementary agreement granting specific terms to an individual investor",
-      "A letter of recommendation between investors",
-      "Private notes from board meetings",
-      "A resignation letter from a departing investor"
+      "A formal letter of professional recommendation exchanged between lead investors",
+      "Private confidential notes taken during board meetings and restricted from sharing",
+      "A formal resignation letter submitted by a departing investor to the company"
     ],
     "correct_answer": 0,
     "explanation": "A side letter provides additional or modified terms for a specific investor beyond the main deal documents.",
@@ -920,10 +920,10 @@
     "category": "Investor Rights",
     "question": "How does ROFO differ from ROFR?",
     "options": [
-      "They are identical with different names",
+      "The right for existing investors to bid first at any auction of company shares",
       "ROFO requires the seller to offer first; ROFR lets the holder match a third-party offer",
-      "ROFO applies to common shares; ROFR to preferred",
-      "ROFO is US; ROFR is European"
+      "The right to always offer the lowest possible price in any share transaction",
+      "The right to be contacted first about any new investment opportunities available"
     ],
     "correct_answer": 1,
     "explanation": "With ROFO, the seller must offer first. With ROFR, the seller can seek external offers and the holder can match.",
@@ -950,10 +950,10 @@
     "category": "Investor Rights",
     "question": "What is a board seat right?",
     "options": [
-      "Right to front-row seats at events",
+      "The right for shareholders to have priority seating at company events and meetings",
       "Right for an investor to appoint a representative to the board of directors",
-      "Right to veto all board decisions",
-      "Right to chair every meeting"
+      "The right for an investor to exercise veto power over all board decisions made",
+      "The right for an investor to chair every single board meeting that takes place"
     ],
     "correct_answer": 1,
     "explanation": "A board seat right allows an investor to appoint or nominate a director to the board.",
@@ -966,9 +966,9 @@
     "question": "What is a consent right?",
     "options": [
       "Right to give or withhold approval for specific company actions",
-      "Right to access customer databases",
-      "Right to hire and fire auditors",
-      "Right to change registered address"
+      "The right for investors to access and review all customer database information",
+      "The right for shareholders to hire and fire the company's external audit team",
+      "The right for investors to change the company's registered office address location"
     ],
     "correct_answer": 0,
     "explanation": "Consent rights require investor approval before specific company actions like issuing new equity.",
@@ -980,10 +980,10 @@
     "category": "Investor Rights",
     "question": "What is a registration right?",
     "options": [
-      "Right to register in a different jurisdiction",
+      "The right for investors to register the company in a completely different jurisdiction",
       "Right for investors to require the company to register their shares for public sale",
-      "Right to register complaints",
-      "Right to register additional board members"
+      "The right for investors to formally register complaints against company management",
+      "The right for investors to register and appoint additional board members directly"
     ],
     "correct_answer": 1,
     "explanation": "Registration rights allow investors to compel the company to register shares for sale on public markets.",
@@ -995,10 +995,10 @@
     "category": "Investor Rights",
     "question": "What is a demand registration right?",
     "options": [
-      "Right to demand an emergency meeting",
+      "The right for investors to demand an emergency shareholder meeting at any time",
       "Right to require the company to file for share registration to enable public sale",
-      "Right to demand note repayment",
-      "Right to demand CEO appointment"
+      "The right for investors to demand immediate repayment of all outstanding notes",
+      "The right for shareholders to demand the appointment of a new chief executive"
     ],
     "correct_answer": 1,
     "explanation": "Demand registration rights allow investors to force the company to file a registration statement.",
@@ -1025,10 +1025,10 @@
     "category": "Investor Rights",
     "question": "What is an investor veto right?",
     "options": [
-      "Right to reject potential hires",
+      "The right for investors to reject or approve any potential employee the company hires",
       "Power to block specific corporate actions requiring investor approval",
-      "Right to prevent any share sale",
-      "Ability to cancel existing contracts"
+      "The right for shareholders to prevent any secondary sale of shares from occurring",
+      "The ability for investors to unilaterally cancel any existing company contracts"
     ],
     "correct_answer": 1,
     "explanation": "Veto rights give investors power to block certain actions without their consent.",
@@ -1055,10 +1055,10 @@
     "category": "Investor Rights",
     "question": "What is an exclusivity period in a term sheet?",
     "options": [
-      "Period where only one product can be sold",
+      "A period during which only a single product line can be sold by the company",
       "Timeframe during which the company negotiates exclusively with the offering investor",
-      "Restriction on backing competitors",
-      "Period where only existing investors can buy"
+      "A contractual restriction on existing investors from backing competing companies",
+      "A period during which only existing investors can purchase additional shares"
     ],
     "correct_answer": 1,
     "explanation": "An exclusivity period restricts negotiating with other investors, giving the lead time for due diligence.",
@@ -1070,10 +1070,10 @@
     "category": "Investor Rights",
     "question": "What is a subscription agreement?",
     "options": [
-      "Contract for recurring SaaS services",
+      "A contract for recurring software-as-a-service subscriptions and related services",
       "Legal agreement where an investor commits to purchasing shares at a specified price",
-      "Form to subscribe to newsletters",
-      "Agreement to subscribe to board minutes"
+      "A form used by investors to subscribe to the company's email newsletter list",
+      "An agreement allowing investors to subscribe to board meeting minutes regularly"
     ],
     "correct_answer": 1,
     "explanation": "A subscription agreement formalizes an investor's commitment to buy shares at specified terms.",
@@ -1085,10 +1085,10 @@
     "category": "Investor Rights",
     "question": "What is an investor rights agreement (IRA)?",
     "options": [
-      "A retirement account for investors",
+      "A retirement savings account specifically designed for individual investors only",
       "A contract detailing rights granted to investors including information and pro-rata rights",
-      "An agreement to coordinate voting",
-      "An insurance policy covering losses"
+      "A formal agreement between shareholders to coordinate their voting strategies",
+      "An insurance policy specifically designed to cover investor portfolio losses"
     ],
     "correct_answer": 1,
     "explanation": "An IRA outlines investor rights including information access, pro-rata, registration rights, and board representation.",
@@ -1100,10 +1100,10 @@
     "category": "Investor Rights",
     "question": "What is a voting agreement?",
     "options": [
-      "Requires all shareholders to vote the same way",
+      "A binding requirement that all shareholders must always vote the exact same way",
       "A contract where shareholders agree to vote in a particular way on specified matters",
-      "Prevents shareholders from voting",
-      "Delegates all voting to the CEO"
+      "A provision that prevents any shareholders from voting on corporate decisions",
+      "An arrangement that delegates all voting authority exclusively to the company CEO"
     ],
     "correct_answer": 1,
     "explanation": "A voting agreement binds shareholders to vote in specific ways on certain matters, often related to board composition.",
@@ -1175,10 +1175,10 @@
     "category": "Valuation",
     "question": "What is a down round?",
     "options": [
-      "A round focused on cost reduction",
+      "A funding round specifically focused on implementing company cost reduction plans",
       "A round where valuation is lower than the previous round",
-      "A round with fewer investors",
-      "A round that takes longer to close"
+      "A funding round that attracts a smaller number of investors than the prior round",
+      "A funding round that takes significantly longer than normal to fully close out"
     ],
     "correct_answer": 1,
     "explanation": "A down round occurs when a company raises at a lower valuation than its previous round.",
@@ -1220,10 +1220,10 @@
     "category": "Valuation",
     "question": "What is enterprise value (EV)?",
     "options": [
-      "Total salary paid to employees",
+      "The total amount of salary and compensation paid to all company employees",
       "A measure of total value including equity and debt minus cash",
-      "Total raised from all rounds",
-      "Value of IP portfolio"
+      "The total amount of capital raised from all funding rounds to date combined",
+      "The assessed value of the company's entire intellectual property portfolio"
     ],
     "correct_answer": 1,
     "explanation": "EV = equity value + debt - cash.",
@@ -1235,10 +1235,10 @@
     "category": "Valuation",
     "question": "What is a revenue multiple?",
     "options": [
-      "Times a company exceeded revenue target",
+      "The number of times a company has exceeded its annual revenue target goals",
       "A valuation method multiplying revenue by a comparable market factor",
-      "Ratio of revenue growth between years",
-      "Minimum revenue for VC funding"
+      "The calculated ratio of revenue growth between consecutive fiscal years",
+      "The minimum revenue threshold required to qualify for venture capital funding"
     ],
     "correct_answer": 1,
     "explanation": "Revenue multiples value a company by multiplying revenue by a factor from comparable companies.",
@@ -1295,10 +1295,10 @@
     "category": "Valuation",
     "question": "What is a comparable company analysis (comps)?",
     "options": [
-      "Comparing products to competitors",
+      "The process of comparing product features against direct competitor offerings",
       "A valuation method using metrics from similar companies",
-      "Comparing founding teams",
-      "Counting competitors in market"
+      "The process of comparing founding team credentials to peer company leaders",
+      "The method of counting the total number of competitors in a target market"
     ],
     "correct_answer": 1,
     "explanation": "Comps derives value by applying multiples from comparable companies to the target's financials.",
@@ -1310,10 +1310,10 @@
     "category": "Valuation",
     "question": "What is a precedent transaction analysis?",
     "options": [
-      "Analysis of previous funding rounds",
+      "A detailed analysis reviewing the company's previous internal funding rounds",
       "A valuation based on prices paid in recent acquisitions of similar companies",
-      "Review of historical performance",
-      "Analysis of legal precedents"
+      "A comprehensive review of the company's historical financial performance data",
+      "A legal analysis examining relevant court precedents for corporate governance"
     ],
     "correct_answer": 1,
     "explanation": "Precedent analysis uses actual acquisition prices of similar companies to estimate value.",
@@ -1370,10 +1370,10 @@
     "category": "Valuation",
     "question": "What is a markup in VC?",
     "options": [
-      "A fee on retail products",
+      "A percentage fee applied to the retail price of a company's product offerings",
       "An increase in the value of an existing investment based on a new round",
-      "Additional charges on legal fees",
-      "A percentage added for tax reporting"
+      "Additional charges added to legal fees for processing investment transactions",
+      "A percentage amount added to valuations specifically for tax reporting purposes"
     ],
     "correct_answer": 1,
     "explanation": "A markup occurs when a portfolio company raises at a higher valuation, increasing the paper value of an existing stake.",
@@ -1415,10 +1415,10 @@
     "category": "Valuation",
     "question": "What does 'overvalued' mean?",
     "options": [
-      "More cash than needed",
+      "The company has accumulated more cash reserves than it currently needs to operate",
       "Current valuation exceeds what fundamentals support",
-      "Too many investors on cap table",
-      "Products priced above market"
+      "Too many different investors appear on the company's capitalization table today",
+      "The company's products are priced significantly above the current market rate"
     ],
     "correct_answer": 1,
     "explanation": "A company is overvalued when its valuation exceeds what revenue, growth, or comparables justify.",
@@ -1430,10 +1430,10 @@
     "category": "Valuation",
     "question": "What is a valuation floor?",
     "options": [
-      "Lowest valuation for tax purposes",
+      "The lowest company valuation that can be reported for official tax purposes",
       "A minimum valuation below which conversion does not occur",
-      "Ground floor of a valuation firm",
-      "A regulatory minimum for startups"
+      "The physical ground floor office space of a professional valuation consulting firm",
+      "A regulatory minimum valuation threshold established by the government for startups"
     ],
     "correct_answer": 1,
     "explanation": "A valuation floor sets a minimum conversion valuation for convertible instruments.",
@@ -1445,10 +1445,10 @@
     "category": "Valuation",
     "question": "What is milestone-based valuation?",
     "options": [
-      "Valuation based on location",
+      "A company valuation determined primarily by the geographic location of its offices",
       "A valuation that changes based on achieving predetermined targets",
-      "Based on founding date",
-      "Summing all milestone payments"
+      "A valuation based solely on the date when the company was originally founded",
+      "A valuation calculated by adding together all milestone-related payments received"
     ],
     "correct_answer": 1,
     "explanation": "Milestone-based valuation adjusts based on achieving specific goals like revenue targets.",
@@ -1460,10 +1460,10 @@
     "category": "Valuation",
     "question": "What is book value vs market value?",
     "options": [
-      "No difference; interchangeable terms",
+      "There is no difference between the two terms as they are completely interchangeable",
       "Book value is accounting value; market value is what investors will pay",
-      "Book value for public; market value for private",
-      "Book value is always higher for startups"
+      "Book value applies only to public companies while market value is for private ones",
+      "Book value is always significantly higher than market value for startup companies"
     ],
     "correct_answer": 1,
     "explanation": "Book value reflects net assets on the balance sheet; market value is what investors believe it's worth.",
@@ -1475,10 +1475,10 @@
     "category": "Liquidation & Exit",
     "question": "What is a liquidation preference?",
     "options": [
-      "Order for physically liquidating assets",
+      "The order in which physical company assets are liquidated and disposed of",
       "Right of preferred shareholders to receive a specific amount before common in an exit",
-      "Preference for companies being dissolved",
-      "Priority of creditors over equity in bankruptcy"
+      "A preference clause that only applies to companies being formally dissolved",
+      "The priority ranking of creditors over equity holders in formal bankruptcy cases"
     ],
     "correct_answer": 1,
     "explanation": "Liquidation preference determines the order and amount paid to preferred shareholders before common.",
@@ -1505,10 +1505,10 @@
     "category": "Liquidation & Exit",
     "question": "What is participating preferred?",
     "options": [
-      "Investors manage the liquidation",
+      "Investors actively manage and oversee the entire liquidation and exit process",
       "Investors receive their preference AND share in remaining proceeds with common",
-      "Investors vote on whether to accept liquidation",
-      "Investors participate only above a threshold"
+      "Investors hold voting rights to decide whether to accept or reject a liquidation",
+      "Investors participate in remaining proceeds only above a specified dollar threshold"
     ],
     "correct_answer": 1,
     "explanation": "Participating preferred means investors get their preference back PLUS share pro-rata in whatever remains.",
@@ -1521,9 +1521,9 @@
     "question": "What is a 2x liquidation preference?",
     "options": [
       "Investor receives twice investment before common receives anything",
-      "Investment returned over two payments",
-      "Shares worth double common price",
-      "Company must achieve 2x valuation first"
+      "The original investment amount is returned to the investor over two separate payments",
+      "The shares are valued at exactly double the common share price at time of exit",
+      "The company must achieve at least a 2x increase in valuation before any payout"
     ],
     "correct_answer": 0,
     "explanation": "A 2x preference means the investor gets two times their investment before common shareholders see anything.",
@@ -1535,10 +1535,10 @@
     "category": "Liquidation & Exit",
     "question": "What is an exit event?",
     "options": [
-      "An employee leaving",
+      "An employee voluntarily leaving the company to pursue other career opportunities",
       "A transaction like an acquisition or IPO that allows shareholders to realize investment value",
-      "Company relocating offices",
-      "Closing of a funding round"
+      "The company physically relocating its offices to a new address or jurisdiction",
+      "The formal closing and completion of a new fundraising round with investors"
     ],
     "correct_answer": 1,
     "explanation": "Exit events include acquisitions, mergers, IPOs, and liquidation.",
@@ -1566,9 +1566,9 @@
     "question": "What is an acqui-hire?",
     "options": [
       "An acquisition primarily to hire the target's talent rather than acquire its product",
-      "A joint hiring process",
-      "A government program",
-      "An acquisition funded through employee stock"
+      "A collaborative joint hiring process conducted between two partnering companies",
+      "A government-sponsored program that facilitates corporate acquisition processes",
+      "An acquisition that is structured and funded entirely through employee stock grants"
     ],
     "correct_answer": 0,
     "explanation": "An acqui-hire acquires the team. The product is often secondary or shut down.",
@@ -1580,10 +1580,10 @@
     "category": "Liquidation & Exit",
     "question": "What is a trade sale?",
     "options": [
-      "Sale of products at wholesale",
+      "The sale of products at wholesale prices to distributors and retail partners",
       "Sale of a company to another operating company rather than a financial buyer",
-      "Exchange of shares without cash",
-      "Sale of merchandise to employees"
+      "An exchange of shares between companies conducted without any cash payment",
+      "A sale of company merchandise and branded products directly to current employees"
     ],
     "correct_answer": 1,
     "explanation": "A trade sale is selling the company to an operating business rather than a financial investor.",
@@ -1610,10 +1610,10 @@
     "category": "Liquidation & Exit",
     "question": "What is a liquidation waterfall?",
     "options": [
-      "Physical document shredding",
+      "A formal process of physically shredding confidential company documentation",
       "The sequential order in which shareholders receive proceeds in an exit",
-      "A chart of declining value",
-      "A tax payment schedule"
+      "A chart illustrating the declining value trajectory of company shares over time",
+      "A detailed schedule outlining the timing of all required tax payment obligations"
     ],
     "correct_answer": 1,
     "explanation": "The waterfall shows payout order: creditors first, then preferred (by seniority), then common.",
@@ -1625,10 +1625,10 @@
     "category": "Liquidation & Exit",
     "question": "What does seniority mean in liquidation?",
     "options": [
-      "Age of investors",
+      "The chronological age of the investors participating in the funding round",
       "The priority order in which preferred classes are paid out",
-      "Length of board tenure",
-      "Management experience level"
+      "The total length of tenure each board member has served on the company board",
+      "The overall level of management experience among the company leadership team"
     ],
     "correct_answer": 1,
     "explanation": "Seniority determines payout order. Later-round investors typically have seniority over earlier rounds.",
@@ -1640,10 +1640,10 @@
     "category": "Liquidation & Exit",
     "question": "What is pari passu in liquidation?",
     "options": [
-      "One shareholder gets paid before all others",
+      "A structure where one designated shareholder receives payment before all others",
       "All preferred shareholders of the same rank receive proceeds proportionally",
-      "Both series convert to common first",
-      "Equal ownership required among all shareholders"
+      "A requirement that both series convert their shares to common stock first",
+      "A mandate requiring exactly equal ownership stakes among all company shareholders"
     ],
     "correct_answer": 1,
     "explanation": "Pari passu means preferred shareholders share proceeds proportionally rather than in order of seniority.",
@@ -1655,10 +1655,10 @@
     "category": "Liquidation & Exit",
     "question": "What is a secondary sale in exit context?",
     "options": [
-      "Second IPO attempt",
+      "A second attempt by the company to complete an initial public offering on markets",
       "An existing shareholder selling shares to a new buyer on the secondary market",
-      "A discount sale after acquisition",
-      "Second phase of an acquisition"
+      "A discounted sale of company assets conducted immediately following an acquisition",
+      "The second phase of a multi-stage acquisition process between two companies"
     ],
     "correct_answer": 1,
     "explanation": "Secondary sales allow existing shareholders to sell without the company issuing new shares.",
@@ -1686,9 +1686,9 @@
     "question": "What is an escrow in an acquisition?",
     "options": [
       "A third-party holding account for a portion of proceeds to cover potential claims",
-      "A discount for early payment",
-      "Insurance covering legal fees",
-      "A government protection fund"
+      "A discount offered to the acquiring party for completing payment ahead of schedule",
+      "An insurance policy that specifically covers all legal fees in an acquisition deal",
+      "A government protection fund that safeguards shareholders during corporate sales"
     ],
     "correct_answer": 0,
     "explanation": "Escrow holds a portion of acquisition price in a third-party account for potential indemnification claims.",
@@ -1715,10 +1715,10 @@
     "category": "ESOP & Employee Equity",
     "question": "What is exercising a stock option?",
     "options": [
-      "Selling an option to another employee",
+      "The process of selling a vested stock option to another employee at the company",
       "Purchasing shares by paying the predetermined strike price",
-      "Forfeiting options when leaving",
-      "Requesting additional options"
+      "The act of forfeiting all option grants when voluntarily leaving the company",
+      "The formal process of requesting additional stock options from the company board"
     ],
     "correct_answer": 1,
     "explanation": "Exercising means paying the strike price to purchase the shares.",
@@ -1745,10 +1745,10 @@
     "category": "ESOP & Employee Equity",
     "question": "How do VSOPs differ from real stock options?",
     "options": [
-      "VSOPs give actual shares; options do not",
+      "VSOPs grant actual company shares to employees while options provide only cash value",
       "VSOPs provide cash settlements instead of real equity ownership",
-      "VSOPs vest faster than options",
-      "VSOPs are only for C-level executives"
+      "VSOPs vest at a significantly faster rate than traditional stock option plans do",
+      "VSOPs are exclusively available to C-level executives and senior leadership only"
     ],
     "correct_answer": 1,
     "explanation": "VSOPs provide cash payouts based on company value but don't grant actual shares or voting rights.",
@@ -1790,10 +1790,10 @@
     "category": "ESOP & Employee Equity",
     "question": "What is a post-termination exercise period?",
     "options": [
-      "Period after IPO when employees can sell",
+      "The period after an IPO during which employees are first allowed to sell shares",
       "Timeframe after leaving during which vested options must be exercised or forfeited",
-      "Period during which ESOP can be terminated",
-      "Time between grant and vesting start"
+      "The defined period during which the entire ESOP program can be formally terminated",
+      "The time interval between the option grant date and the start of the vesting period"
     ],
     "correct_answer": 1,
     "explanation": "The post-termination exercise period is the window after departure for exercising vested options, typically 90 days.",
@@ -1805,10 +1805,10 @@
     "category": "ESOP & Employee Equity",
     "question": "What is a refresher grant?",
     "options": [
-      "The first option grant for a new employee",
+      "The very first option grant that is awarded to a new employee upon joining the company",
       "An additional option grant given to existing employees after their initial grant",
-      "A grant replacing expired options",
-      "A one-time anniversary bonus grant"
+      "A grant that is issued specifically to replace previously expired or forfeited options",
+      "A one-time special bonus grant awarded to employees on their work anniversary date"
     ],
     "correct_answer": 1,
     "explanation": "Refresher grants are additional equity awards to maintain motivation as initial grants vest.",
@@ -1820,10 +1820,10 @@
     "category": "Governance & Board",
     "question": "What is a board of directors?",
     "options": [
-      "Employees managing daily operations",
+      "The group of employees who are responsible for managing day-to-day operations",
       "A governing body overseeing company strategy and management",
-      "A regulatory committee",
-      "Customers advising on products"
+      "A regulatory committee established by the government to oversee corporate affairs",
+      "A group of customers who advise the company on product development directions"
     ],
     "correct_answer": 1,
     "explanation": "The board oversees company activities including hiring/firing CEO and approving major decisions.",
@@ -1835,10 +1835,10 @@
     "category": "Governance & Board",
     "question": "What is a shareholders' agreement?",
     "options": [
-      "Contract between company and customers",
+      "A binding contract established between the company and its customers directly",
       "A contract between shareholders governing their rights and obligations",
-      "A public mission statement",
-      "Agreement between shareholders and banks"
+      "A public mission statement that outlines the company's long-term strategic vision",
+      "A formal agreement established between shareholders and their banking institutions"
     ],
     "correct_answer": 1,
     "explanation": "A shareholders' agreement covers voting rights, share transfers, exit mechanisms, and decision-making.",
@@ -1850,10 +1850,10 @@
     "category": "Governance & Board",
     "question": "What is a quorum?",
     "options": [
-      "Total number of shareholders",
+      "The total number of shareholders currently registered on the company cap table",
       "The minimum members required for a meeting to be valid",
-      "A quarterly report",
-      "A multi-vote method"
+      "A quarterly report summarizing the company's financial performance for investors",
+      "A multi-vote method allowing shareholders to cast multiple votes on each proposal"
     ],
     "correct_answer": 1,
     "explanation": "A quorum is the minimum number needed for decisions to be legally valid.",
@@ -1865,10 +1865,10 @@
     "category": "Governance & Board",
     "question": "What is a reserved matter?",
     "options": [
-      "A confidential topic",
+      "A confidential topic discussed only in executive sessions of the company board",
       "A corporate action requiring specific shareholder or board approval beyond simple majority",
-      "A postponed legal matter",
-      "A topic reserved for the CEO"
+      "A legal matter that has been formally postponed until a future board meeting date",
+      "A topic that is exclusively reserved for discussion by the chief executive officer"
     ],
     "correct_answer": 1,
     "explanation": "Reserved matters are significant decisions requiring specific approval beyond normal management authority.",
@@ -1880,10 +1880,10 @@
     "category": "Governance & Board",
     "question": "What is fiduciary duty?",
     "options": [
-      "Obligation to generate minimum returns",
+      "A legal obligation to generate a guaranteed minimum return on invested capital",
       "A legal obligation to act in the best interest of the parties one represents",
-      "Requirement to file reports on time",
-      "Duty to maintain physical assets"
+      "A regulatory requirement to file all corporate reports by their specified deadline",
+      "A contractual duty to properly maintain all physical company assets and premises"
     ],
     "correct_answer": 1,
     "explanation": "Fiduciary duty requires board members to act in good faith and in the best interests of the company.",
@@ -1895,10 +1895,10 @@
     "category": "Governance & Board",
     "question": "What is D&O insurance?",
     "options": [
-      "Digital and Operational insurance",
+      "Digital and Operational insurance covering technology infrastructure and systems",
       "Directors and Officers liability insurance against personal lawsuits",
-      "Debt and Obligation insurance",
-      "Diversity and Outreach insurance"
+      "Debt and Obligation insurance protecting against default on financial commitments",
+      "Diversity and Outreach insurance covering workplace equality program compliance"
     ],
     "correct_answer": 1,
     "explanation": "D&O insurance protects directors and officers from personal liability for decisions made in their capacity.",
@@ -1911,9 +1911,9 @@
     "question": "What is a supermajority vote?",
     "options": [
       "A vote requiring more than simple majority, typically two-thirds or three-quarters",
-      "A vote where only major shareholders participate",
-      "A unanimous vote by all members",
-      "The largest vote margin in history"
+      "A vote where only shareholders holding above a specified major threshold participate",
+      "A vote requiring complete unanimous agreement from every single member present",
+      "The largest vote margin that has ever been recorded in company governance history"
     ],
     "correct_answer": 0,
     "explanation": "A supermajority requires a higher threshold than 50%+1 for critical decisions.",
@@ -1925,10 +1925,10 @@
     "category": "Legal Basics",
     "question": "What is a term sheet?",
     "options": [
-      "The company's annual statement",
+      "The company's comprehensive annual financial statement filed with regulators",
       "A non-binding document outlining key terms of a proposed investment",
-      "A binding contract finalizing a round",
-      "A list of employees and salaries"
+      "A legally binding contract that finalizes all terms of a completed funding round",
+      "A detailed list documenting all employees and their current salary information"
     ],
     "correct_answer": 1,
     "explanation": "A term sheet is a non-binding summary of main terms serving as the basis for legal documents.",
@@ -1940,10 +1940,10 @@
     "category": "Legal Basics",
     "question": "Is a term sheet legally binding?",
     "options": [
-      "Yes, all terms are enforceable",
+      "Yes, every single term in the document is fully legally enforceable upon signing",
       "Most terms are non-binding, but confidentiality and exclusivity typically are binding",
-      "Only after both parties sign",
-      "Binding in Europe but not the US"
+      "The terms become binding only after both parties have formally signed the document",
+      "Term sheets are binding in European jurisdictions but non-binding in the United States"
     ],
     "correct_answer": 1,
     "explanation": "Most provisions are non-binding, but confidentiality, exclusivity, and governing law clauses typically are binding.",
@@ -1955,10 +1955,10 @@
     "category": "Legal Basics",
     "question": "What is due diligence?",
     "options": [
-      "Legal requirement to register",
+      "A mandatory legal requirement to register the company with regulatory authorities",
       "A comprehensive investigation of business, finances, and legal standing before investment",
-      "A courtesy check-in call",
-      "Closing all litigation before funding"
+      "A brief courtesy check-in call between the investor and the company management",
+      "A process of closing all pending litigation before any funding can be received"
     ],
     "correct_answer": 1,
     "explanation": "Due diligence verifies financial health, legal compliance, IP ownership, contracts, and team before investing.",
@@ -1970,10 +1970,10 @@
     "category": "Legal Basics",
     "question": "What is a representation and warranty?",
     "options": [
-      "A public marketing statement",
+      "A public marketing statement describing the company's products and market position",
       "Statements of fact made by the company to the investor as part of the agreement",
-      "A guarantee of returns",
-      "A promise from the insurance provider"
+      "A contractual guarantee of specific minimum returns provided to the investor",
+      "A formal promise from the insurance provider covering potential investment losses"
     ],
     "correct_answer": 1,
     "explanation": "Reps and warranties are formal statements about the company's condition that investors rely on.",
@@ -1985,10 +1985,10 @@
     "category": "Legal Basics",
     "question": "What is an indemnification clause?",
     "options": [
-      "Prevents being sued by competitors",
+      "A clause that prevents the company from being sued by its direct competitors",
       "A provision where one party compensates the other for losses from breaches",
-      "A guarantee of minimum returns",
-      "Ensures equal treatment for all parties"
+      "A contractual guarantee of minimum returns on the investment for all investors",
+      "A provision ensuring exactly equal treatment for all parties involved in the deal"
     ],
     "correct_answer": 1,
     "explanation": "Indemnification protects against losses caused by breaches of representations, warranties, or covenants.",
@@ -2000,10 +2000,10 @@
     "category": "Legal Basics",
     "question": "What is a non-compete clause?",
     "options": [
-      "Prohibits competing with investors",
+      "A provision that prohibits founders from competing with their own investors directly",
       "Restricts founders or key employees from working for competing businesses for a specified period",
-      "Prevents two investors from investing in the same company",
-      "Prevents competing in company sports"
+      "A clause preventing two different investors from investing in the same company",
+      "A humorous clause that prevents employees from competing in company sports events"
     ],
     "correct_answer": 1,
     "explanation": "Non-compete clauses restrict competitive activities for a defined period and geographic area.",
@@ -2015,10 +2015,10 @@
     "category": "Legal Basics",
     "question": "What is an NDA?",
     "options": [
-      "Agreement to share information publicly",
+      "A formal agreement requiring both parties to share all information with the public",
       "A contract requiring parties to keep confidential information private",
-      "A legal dissolution notice",
-      "Prevents disclosing ownership stakes"
+      "A legal notice of dissolution served when a company is being formally wound down",
+      "A provision that prevents shareholders from disclosing their ownership stake sizes"
     ],
     "correct_answer": 1,
     "explanation": "An NDA legally binds parties to keep shared confidential information secret.",
@@ -2030,13 +2030,13 @@
     "category": "Legal Basics",
     "question": "What is intellectual property (IP)?",
     "options": [
-      "Physical property owned by investors",
+      "Physical property and real estate assets that are directly owned by the investors",
       "Creations of the mind like patents, trademarks, and trade secrets",
-      "Financial assets and cash reserves",
-      "Any property valued by an appraiser"
+      "Financial assets including cash reserves and investment holdings of the company",
+      "Any tangible property whose value has been officially assessed by an appraiser"
     ],
     "correct_answer": 1,
-    "explanation": "IP includes patents, trademarks, copyrights, and trade secrets — often a startup's most valuable asset.",
+    "explanation": "IP includes patents, trademarks, copyrights, and trade secrets , often a startup's most valuable asset.",
     "difficulty": 1
   },
   {
@@ -2060,10 +2060,10 @@
     "category": "Legal Basics",
     "question": "What is a material adverse change (MAC) clause?",
     "options": [
-      "About changing office materials",
+      "A provision about physically changing the office materials and supply vendors",
       "Allows withdrawal if significant negative changes occur before closing",
-      "Reports positive changes to regulators",
-      "Mandates changes to suppliers"
+      "A clause requiring the company to report positive developments to regulators",
+      "A mandate requiring the company to make specified changes to its supplier base"
     ],
     "correct_answer": 1,
     "explanation": "A MAC clause allows an investor to withdraw if significant negative events occur between signing and closing.",
@@ -2075,10 +2075,10 @@
     "category": "Legal Basics",
     "question": "What is closing in a funding round?",
     "options": [
-      "Stopping accepting applications",
+      "The process of stopping the acceptance of new applications from interested parties",
       "The formal completion when documents are signed and funds transferred",
-      "Closing of fiscal year",
-      "A board meeting without finalization"
+      "The closing of the company's fiscal year and preparation of annual statements",
+      "A board meeting that discusses potential transactions without reaching finalization"
     ],
     "correct_answer": 1,
     "explanation": "Closing is when legal documents are signed, funds are wired, and shares are issued.",
@@ -2090,10 +2090,10 @@
     "category": "Legal Basics",
     "question": "What is a condition precedent?",
     "options": [
-      "A legal precedent from court",
+      "A legal precedent established by a prior court ruling in a similar corporate case",
       "A requirement that must be fulfilled before a deal can close",
-      "A condition of prior-year profitability",
-      "A prerequisite for board meetings"
+      "A condition requiring the company to demonstrate prior-year profitability records",
+      "A prerequisite that must be met before any board meeting can be officially held"
     ],
     "correct_answer": 1,
     "explanation": "Conditions precedent must be satisfied before closing, like regulatory approvals or completed due diligence.",
@@ -2120,10 +2120,10 @@
     "category": "Fund Structure",
     "question": "What is a limited partner (LP)?",
     "options": [
-      "A partner with limited duties",
+      "A partner in a business who has limited operational duties and responsibilities",
       "An investor who provides capital with limited liability and no management role",
-      "A founder with limited equity",
-      "A partner who can only invest a limited amount"
+      "A company founder who holds a limited amount of equity in the overall business",
+      "A partner who is contractually restricted to investing only a limited capital amount"
     ],
     "correct_answer": 1,
     "explanation": "LPs provide capital but don't manage the fund's investments.",
@@ -2135,10 +2135,10 @@
     "category": "Fund Structure",
     "question": "What is a general partner (GP)?",
     "options": [
-      "Any partner in a partnership",
+      "Any individual who holds a partnership interest in a general business partnership",
       "The fund manager who makes investment decisions and manages the fund",
-      "A shareholder at general meetings",
-      "A consultant providing general advice"
+      "A shareholder who regularly attends and participates in general company meetings",
+      "A consultant who provides general strategic advice to the fund management team"
     ],
     "correct_answer": 1,
     "explanation": "The GP manages the fund and makes investment decisions.",
@@ -2150,10 +2150,10 @@
     "category": "Fund Structure",
     "question": "What is a management fee?",
     "options": [
-      "Fee charged to customers",
+      "A fee charged by the company to its customers for products or services rendered",
       "An annual fee paid by LPs to the GP for managing the fund, typically 2%",
-      "Fee paid to portfolio companies",
-      "Government fee to register a fund"
+      "A fee paid directly by the fund to its portfolio companies for support services",
+      "A government filing fee required to officially register a new investment fund"
     ],
     "correct_answer": 1,
     "explanation": "Management fees cover the GP's operational costs, typically 2% of committed capital.",
@@ -2165,10 +2165,10 @@
     "category": "Fund Structure",
     "question": "What is carried interest (carry)?",
     "options": [
-      "Interest on cash reserves",
+      "The interest earned on the fund's cash reserves held in banking accounts",
       "The GP's share of profits, typically 20% above a hurdle rate",
-      "Interest on loans",
-      "Percentage carried to next fund"
+      "The interest charged on any loans taken by the fund for operational expenses",
+      "The percentage of unrealized gains carried forward into the next fund cycle"
     ],
     "correct_answer": 1,
     "explanation": "Carry is the GP's performance compensation, typically 20% of profits after the hurdle rate.",
@@ -2180,10 +2180,10 @@
     "category": "Fund Structure",
     "question": "What is a hurdle rate?",
     "options": [
-      "Minimum qualification for investment",
+      "The minimum qualification criteria a company must meet to receive an investment",
       "A minimum return threshold before the GP earns carried interest",
-      "Rate of capital deployment",
-      "Benchmark rate set by central banks"
+      "The rate at which committed capital is deployed into new portfolio investments",
+      "A benchmark interest rate established by central banks for lending institutions"
     ],
     "correct_answer": 1,
     "explanation": "The hurdle rate (6-8%) is the minimum return before the GP earns carry.",
@@ -2195,10 +2195,10 @@
     "category": "Fund Structure",
     "question": "What is the J-curve in VC?",
     "options": [
-      "A chart of revenue growth",
+      "A chart showing the company's revenue growth trajectory over a specific period",
       "Typical pattern of negative early returns followed by positive later returns",
-      "A curve of employee growth",
-      "A chart of interest rate changes"
+      "A chart illustrating the pattern of employee growth within portfolio companies",
+      "A chart tracking the changes in prevailing interest rates over time in markets"
     ],
     "correct_answer": 1,
     "explanation": "The J-curve shows negative early returns turning positive as exits occur.",
@@ -2210,10 +2210,10 @@
     "category": "Fund Structure",
     "question": "What is a capital call?",
     "options": [
-      "Request for an emergency meeting",
+      "A formal request for an emergency meeting of all fund partners and stakeholders",
       "A request from the GP to LPs to transfer committed capital for investments",
-      "Request for portfolio companies to return capital",
-      "Signal that the fund needs more money"
+      "A request for portfolio companies to return previously invested capital to the fund",
+      "A signal indicating that the fund urgently needs to raise additional money now"
     ],
     "correct_answer": 1,
     "explanation": "Capital calls are when the GP asks LPs to wire a portion of their committed capital.",
@@ -2225,10 +2225,10 @@
     "category": "Fund Structure",
     "question": "What is committed capital?",
     "options": [
-      "Cash already invested",
+      "The actual cash that has already been invested into portfolio companies to date",
       "The total amount LPs have pledged to invest, drawn down over time",
-      "Money committed to a specific company",
-      "The fund's operating budget"
+      "Money that has been committed and allocated to a specific portfolio company",
+      "The annual operating budget established for running the fund's daily operations"
     ],
     "correct_answer": 1,
     "explanation": "Committed capital is the total amount LPs have legally agreed to invest in the fund.",
@@ -2240,10 +2240,10 @@
     "category": "Fund Structure",
     "question": "What is a fund-of-funds?",
     "options": [
-      "A single fund investing in many startups",
+      "A single investment fund that directly invests in a large number of startups",
       "An investment vehicle that invests in multiple VC funds rather than directly",
-      "A fund investing only in financial companies",
-      "A backup fund"
+      "A fund that exclusively invests in companies operating in the financial sector",
+      "A backup fund established as a reserve for follow-on investment opportunities"
     ],
     "correct_answer": 1,
     "explanation": "A fund-of-funds invests in multiple VC funds for diversification across managers and strategies.",
@@ -2255,10 +2255,10 @@
     "category": "Fund Structure",
     "question": "What is an anchor LP?",
     "options": [
-      "The last investor to commit",
+      "The very last investor to formally commit capital to a fund during its fundraising",
       "A major early investor whose commitment helps attract other LPs",
-      "A government institution",
-      "An LP who approves every decision"
+      "A government institution that provides matching funds to qualifying venture funds",
+      "An LP who has been granted the authority to approve every investment decision made"
     ],
     "correct_answer": 1,
     "explanation": "An anchor LP makes an early significant commitment, lending credibility to attract additional investors.",
@@ -2270,10 +2270,10 @@
     "category": "Key Concepts",
     "question": "What is runway?",
     "options": [
-      "A fashion show stage",
+      "A fashion show stage where models present new clothing collections to audiences",
       "The amount of time a company can operate before running out of cash",
-      "Physical runway near the office",
-      "Time between founding and first product"
+      "A physical runway located near the company's office used for aircraft operations",
+      "The time between when a company is founded and its first product reaches market"
     ],
     "correct_answer": 1,
     "explanation": "Runway = cash / monthly burn rate. Measures months until capital runs out.",
@@ -2285,10 +2285,10 @@
     "category": "Key Concepts",
     "question": "What is burn rate?",
     "options": [
-      "Speed of product consumption",
+      "The speed at which a company's products are consumed by its customer base",
       "The rate at which a company spends cash reserves, measured monthly",
-      "Rate of employee turnover",
-      "Speed of competitor entry"
+      "The rate of employee turnover and departures within the company each year",
+      "The speed at which new competitors enter and establish presence in the market"
     ],
     "correct_answer": 1,
     "explanation": "Burn rate is monthly cash outflow. Net burn = spending minus revenue.",
@@ -2300,10 +2300,10 @@
     "category": "Key Concepts",
     "question": "What is a pivot?",
     "options": [
-      "A basketball move",
+      "A basketball move involving rotating on one foot while holding possession of the ball",
       "A fundamental change in business model, product, or strategy",
-      "A financial portfolio rotation",
-      "A legal maneuver"
+      "A financial portfolio rotation strategy employed by institutional investors regularly",
+      "A legal maneuver used to restructure corporate governance or ownership structure"
     ],
     "correct_answer": 1,
     "explanation": "A pivot is a strategic shift in product, target market, or business model.",
@@ -2315,10 +2315,10 @@
     "category": "Key Concepts",
     "question": "What is product-market fit?",
     "options": [
-      "Physical assessment for store shelves",
+      "A physical assessment determining whether products fit properly on retail shelves",
       "The degree to which a product satisfies strong market demand",
-      "A regulatory certification",
-      "Manufacturing to specifications"
+      "A formal regulatory certification required before products can be sold in market",
+      "A manufacturing process ensuring products are built exactly to specifications"
     ],
     "correct_answer": 1,
     "explanation": "Product-market fit exists when a product strongly satisfies real customer demand.",
@@ -2330,10 +2330,10 @@
     "category": "Key Concepts",
     "question": "What is a data room?",
     "options": [
-      "Physical server storage room",
+      "A physical server storage room housing all of the company's computing infrastructure",
       "A secure digital repository for sharing confidential documents during due diligence",
-      "A room for data analysis work",
-      "Government facility for corporate documents"
+      "A dedicated room within the office where data analysis work is regularly performed",
+      "A government facility responsible for storing official corporate documents securely"
     ],
     "correct_answer": 1,
     "explanation": "A data room contains all documents needed for due diligence: financials, contracts, IP records, etc.",
@@ -2345,10 +2345,10 @@
     "category": "Key Concepts",
     "question": "What is a pitch deck?",
     "options": [
-      "A physical deck of cards",
+      "A physical deck of cards used for entertainment during company team-building events",
       "A presentation document used by founders to present to potential investors",
-      "Product mockups for design review",
-      "Financial projections by accountants"
+      "Detailed product mockups and prototypes prepared for internal design review sessions",
+      "Comprehensive financial projections prepared exclusively by the company accountants"
     ],
     "correct_answer": 1,
     "explanation": "A pitch deck covers the company's problem, solution, market, team, traction, and funding ask.",
@@ -2360,10 +2360,10 @@
     "category": "Key Concepts",
     "question": "What is traction?",
     "options": [
-      "Physical grip of vehicles",
+      "The physical grip that a vehicle's tires maintain on the road surface for safety",
       "Evidence of customer demand and business momentum through metrics like revenue or growth",
-      "Ability to attract media attention",
-      "Pulling a company from distress"
+      "The ability of a company to attract significant media attention and press coverage",
+      "The process of pulling a financially distressed company back from the brink of failure"
     ],
     "correct_answer": 1,
     "explanation": "Traction demonstrates real market validation through growing revenue, users, engagement, or partnerships.",
@@ -2375,10 +2375,10 @@
     "category": "Key Concepts",
     "question": "What does deploying capital mean?",
     "options": [
-      "Moving headquarters",
+      "The process of physically moving company headquarters to a different geographic location",
       "The process of a fund investing committed capital into portfolio companies",
-      "Distributing merchandise",
-      "Converting cash to cryptocurrency"
+      "The process of distributing branded merchandise and marketing materials to customers",
+      "The process of converting all company cash holdings into cryptocurrency investments"
     ],
     "correct_answer": 1,
     "explanation": "Deploying capital means actively investing LP commitments into companies, typically in the first 3-5 years.",
@@ -2390,10 +2390,10 @@
     "category": "Key Concepts",
     "question": "What is an investment thesis?",
     "options": [
-      "A doctoral dissertation",
+      "A doctoral dissertation submitted to a university as part of an academic program",
       "A defined strategy for the types of companies, sectors, and stages a fund focuses on",
-      "A legal registration document",
-      "A shareholders' meeting presentation"
+      "A legal registration document required to formally establish an investment fund",
+      "A formal presentation delivered to shareholders at the company's annual meeting"
     ],
     "correct_answer": 1,
     "explanation": "An investment thesis defines the fund's strategic focus and why the strategy should generate returns.",
@@ -2420,10 +2420,10 @@
     "category": "Key Concepts",
     "question": "What does 'skin in the game' mean?",
     "options": [
-      "A dermatological benefit",
+      "A dermatological benefit provided to employees as part of the company health plan",
       "Founders or managers having meaningful personal financial investment in the company",
-      "A team-building exercise",
-      "A marketing strategy"
+      "A team-building exercise designed to improve collaboration among company employees",
+      "A marketing strategy focused on creating emotional connections with target customers"
     ],
     "correct_answer": 1,
     "explanation": "Skin in the game means having significant personal capital at risk, aligning interests with investors.",
@@ -2435,10 +2435,10 @@
     "category": "Key Concepts",
     "question": "What is a co-investment?",
     "options": [
-      "Investing in a competitor",
+      "The practice of an investment fund investing capital in a direct competitor company",
       "An investment made alongside a lead investor, typically by LPs directly into a deal",
-      "A joint venture between portfolio companies",
-      "Same investor investing in consecutive rounds"
+      "A joint venture established between two portfolio companies within the same fund",
+      "The same investor making investments in two or more consecutive funding rounds"
     ],
     "correct_answer": 1,
     "explanation": "Co-investment allows LPs to invest directly alongside the fund without additional fees or carry.",
@@ -2450,10 +2450,10 @@
     "category": "Key Concepts",
     "question": "What is a letter of intent (LOI)?",
     "options": [
-      "A formal complaint letter",
+      "A formal complaint letter filed against the company by a dissatisfied stakeholder",
       "A non-binding document expressing serious interest and outlining preliminary terms",
-      "An employee resignation letter",
-      "A regulatory notification"
+      "An employee resignation letter submitted through formal company human resources channels",
+      "A regulatory notification filed with government authorities about company changes"
     ],
     "correct_answer": 1,
     "explanation": "An LOI signals serious interest and outlines key terms, mostly non-binding.",
@@ -2465,10 +2465,10 @@
     "category": "Key Concepts",
     "question": "What is founder-friendly in VC terms?",
     "options": [
-      "Personally friendly investors",
+      "Investors who are personally friendly and maintain social relationships with founders",
       "Deal terms preserving founder control, minimizing dilution, and supporting the team",
-      "Hiring only ex-founders",
-      "Focusing on first-time founders"
+      "Investment firms that only hire individuals who were previously startup founders",
+      "Investment strategies that focus exclusively on backing first-time founder teams"
     ],
     "correct_answer": 1,
     "explanation": "Founder-friendly terms include reasonable valuation, broad-based anti-dilution, and limited investor vetoes.",
@@ -2480,10 +2480,10 @@
     "category": "Key Concepts",
     "question": "What is investor-friendly in VC terms?",
     "options": [
-      "Companies treating investors to dinners",
+      "Companies that treat their investors to regular dinners and social entertainment events",
       "Deal terms providing stronger protections and economic advantages for investors",
-      "Simple documentation for investing",
-      "Public sharing of all internal data"
+      "Simple and streamlined documentation that makes the investment process easy to complete",
+      "Public sharing of all internal data and metrics with every investor in the portfolio"
     ],
     "correct_answer": 1,
     "explanation": "Investor-friendly terms include full ratchet, participating preferred, multiple liquidation preferences, and strong control.",
@@ -2495,10 +2495,10 @@
     "category": "Key Concepts",
     "question": "What is a syndicate in VC?",
     "options": [
-      "A criminal organization",
+      "A criminal organization that engages in coordinated illegal financial activities",
       "A group of investors pooling capital together to invest in a deal",
-      "A type of corporate structure",
-      "A startup accelerator"
+      "A type of corporate structure used for organizing international business entities",
+      "A startup accelerator program that provides mentorship and early-stage funding"
     ],
     "correct_answer": 1,
     "explanation": "A syndicate is a group of investors who co-invest together, sharing due diligence and deal access.",
@@ -2510,10 +2510,10 @@
     "category": "Key Concepts",
     "question": "What is a bridge loan?",
     "options": [
-      "A loan to build a bridge",
+      "A construction loan specifically designated for building physical bridge infrastructure",
       "Short-term financing to sustain the company until the next round or milestone",
-      "A loan bridging two currencies",
-      "A long-term five-year loan"
+      "A specialized loan designed to bridge financial transactions between two currencies",
+      "A long-term five-year loan provided by institutional lenders to growing companies"
     ],
     "correct_answer": 1,
     "explanation": "A bridge loan provides short-term capital between funding rounds, often structured as a convertible note.",
@@ -2525,10 +2525,10 @@
     "category": "Key Concepts",
     "question": "What is venture debt?",
     "options": [
-      "Equity disguised as a loan",
+      "Equity that has been disguised and structured to appear as a traditional bank loan",
       "A loan to VC-backed companies complementing equity funding",
-      "A personal founder loan",
-      "Government-subsidized startup debt"
+      "A personal loan taken out by the founder to fund early company operating expenses",
+      "Government-subsidized debt specifically designed to support early-stage startup growth"
     ],
     "correct_answer": 1,
     "explanation": "Venture debt complements equity funding, providing additional runway without significant dilution.",
@@ -2540,10 +2540,10 @@
     "category": "Key Concepts",
     "question": "What is a warrant in venture debt?",
     "options": [
-      "A legal search authorization",
+      "A legal search authorization issued by a court to investigate company operations",
       "A right to purchase equity at a fixed price, given to the lender",
-      "A warranty on equipment",
-      "A guarantee of full repayment"
+      "A warranty covering the physical equipment and machinery purchased by the company",
+      "A guarantee ensuring full repayment of the principal amount to the debt provider"
     ],
     "correct_answer": 1,
     "explanation": "Warrants give the debt provider equity upside exposure as compensation for loan risk.",
@@ -2555,10 +2555,10 @@
     "category": "Key Concepts",
     "question": "What is a maturity date?",
     "options": [
-      "Date of reaching profitability",
+      "The date on which the company is projected to reach consistent profitability targets",
       "The date by which a debt instrument must be repaid or converted",
-      "Date of product-market fit",
-      "Date the CEO turns 40"
+      "The date by which a company is expected to achieve strong product-market fit",
+      "The date on which the chief executive officer reaches the age of forty years old"
     ],
     "correct_answer": 1,
     "explanation": "The maturity date is the deadline for repaying or converting a debt instrument.",
@@ -2570,10 +2570,10 @@
     "category": "Dilution & Anti-Dilution",
     "question": "What causes equity dilution?",
     "options": [
-      "Decreased annual revenue",
+      "A significant decrease in the company's annual revenue due to market conditions",
       "Issuance of new shares reducing existing shareholders' percentage",
-      "A change in management",
-      "Increased operating expenses"
+      "A change in the company's management team or organizational leadership structure",
+      "A substantial increase in the company's operating expenses over a fiscal quarter"
     ],
     "correct_answer": 1,
     "explanation": "Dilution occurs when new shares are issued, reducing existing percentage ownership.",
@@ -2615,10 +2615,10 @@
     "category": "Dilution & Anti-Dilution",
     "question": "What is the option pool shuffle?",
     "options": [
-      "Randomly assigning options",
+      "A process of randomly assigning option grants to employees without clear criteria",
       "Negotiation tactic where the pool is allocated to pre-money, benefiting the investor",
-      "Rotating option grants among members",
-      "Recalculating strike prices after each round"
+      "A practice of rotating option grants among different team members each quarter",
+      "A process of recalculating strike prices for all outstanding options after each round"
     ],
     "correct_answer": 1,
     "explanation": "The option pool shuffle includes the pool in pre-money, effectively lowering the true pre-money for founders.",
@@ -2675,10 +2675,10 @@
     "category": "Dilution & Anti-Dilution",
     "question": "Why do investors require option pools before closing?",
     "options": [
-      "To ensure salary affordability",
+      "To ensure the company can afford competitive salary packages for new employees",
       "To dilute existing shareholders from pre-money so the pool doesn't affect the investor",
-      "To guarantee long-term retention",
-      "To reduce shares the investor needs to purchase"
+      "To guarantee the long-term retention of key employees within the organization",
+      "To reduce the total number of shares the incoming investor needs to purchase"
     ],
     "correct_answer": 1,
     "explanation": "Investors require the pool from pre-money so existing shareholders bear the dilution, not the new investor.",
@@ -2735,10 +2735,10 @@
     "category": "Applied Scenarios",
     "question": "A startup has 10M shares. Investor puts in €2M at €8M pre-money. How many new shares?",
     "options": [
-      "1M",
-      "2M",
+      "1M new shares are issued",
+      "2M new shares are issued",
       "2.5M",
-      "4M"
+      "4M new shares are issued"
     ],
     "correct_answer": 2,
     "explanation": "Price per share = €8M / 10M = €0.80. New shares = €2M / €0.80 = 2.5M.",
@@ -2870,10 +2870,10 @@
     "category": "Applied Scenarios",
     "question": "Investor proposes full ratchet anti-dilution. What is the founder's strongest counter-argument?",
     "options": [
-      "Full ratchet is illegal in most places",
+      "Full ratchet anti-dilution provisions are illegal in most global jurisdictions",
       "It could massively dilute founders in a down round, destroying their incentive",
-      "It is too complicated to implement",
-      "It benefits founders more than investors"
+      "The mechanism is far too complicated for most companies to implement properly",
+      "Full ratchet actually benefits founders more than it benefits investor interests"
     ],
     "correct_answer": 1,
     "explanation": "Full ratchet reprices ALL investor shares to the new low price, which can devastate founder ownership.",
@@ -2900,10 +2900,10 @@
     "category": "Due Diligence",
     "question": "CTO never signed an IP assignment. Why is this a problem?",
     "options": [
-      "CTO cannot be fired without cause",
+      "The CTO cannot be terminated or dismissed without establishing formal legal cause",
       "The company may not legally own key technology built by the CTO",
-      "It indicates the CTO is leaving",
-      "The company's patents are expiring"
+      "The lack of IP assignment indicates the CTO is planning to leave the company soon",
+      "The company's existing patents are approaching their scheduled expiration dates"
     ],
     "correct_answer": 1,
     "explanation": "Without IP assignment, the CTO may personally own technology they created, putting critical assets at risk.",
@@ -2915,10 +2915,10 @@
     "category": "Due Diligence",
     "question": "Company claims €2M ARR but €1.2M is from one customer. Key risk?",
     "options": [
-      "ARR is fraudulently inflated",
+      "The annual recurring revenue figure has been fraudulently inflated by management",
       "High customer concentration means losing one client would destroy most revenue",
-      "Spending too much on acquisition",
-      "Low quality product"
+      "The company is spending too much on customer acquisition relative to its revenue",
+      "The product quality is too low to sustain long-term recurring revenue from clients"
     ],
     "correct_answer": 1,
     "explanation": "60% concentration in one customer is a major risk if that customer churns.",
@@ -2930,10 +2930,10 @@
     "category": "Applied Scenarios",
     "question": "Company raises at €4M pre-money. SAFE has €5M cap and 25% discount. How does the SAFE convert?",
     "options": [
-      "At the €5M cap",
-      "At the €4M round price",
+      "At the full €5M valuation cap regardless of the actual Series A round pricing",
+      "At the €4M round price because it matches the current pre-money valuation exactly",
       "At €3M (the discounted round price)",
-      "The SAFE is voided"
+      "The SAFE is voided because the round price came in below the valuation cap amount"
     ],
     "correct_answer": 2,
     "explanation": "Cap (€5M) is above round price (€4M), so cap doesn't help. Discount: €4M × 0.75 = €3M. Investor gets €3M effective price.",
@@ -2945,10 +2945,10 @@
     "category": "Applied Scenarios",
     "question": "Series A investor has ROFR. Founder wants to sell secondary shares. What must happen?",
     "options": [
-      "Wait until IPO",
+      "The founder must wait until the company completes an IPO before selling any shares",
       "Offer shares to Series A investors first at the same terms",
-      "Get approval from all employees",
-      "Donate half to the option pool"
+      "The founder must get formal approval from all company employees before proceeding",
+      "The founder must donate half of the shares to the employee stock option pool first"
     ],
     "correct_answer": 1,
     "explanation": "ROFR requires offering shares to rights holders first at the same terms.",
@@ -2960,10 +2960,10 @@
     "category": "Applied Scenarios",
     "question": "A down round occurs. Beyond dilution, what are the broader effects?",
     "options": [
-      "Only affects the logo design",
+      "Down rounds only affect the company's official logo and visual branding design",
       "Signals distress, triggers anti-dilution, damages morale, complicates future fundraising",
-      "Automatically triggers bankruptcy",
-      "Has no impact beyond mathematical dilution"
+      "A down round automatically triggers formal bankruptcy proceedings for the company",
+      "Down rounds have no meaningful impact beyond simple mathematical dilution effects"
     ],
     "correct_answer": 1,
     "explanation": "Down rounds send negative market signals, trigger anti-dilution, hurt morale, and make future fundraising harder.",
@@ -2975,10 +2975,10 @@
     "category": "Applied Scenarios",
     "question": "A term sheet proposes 90-day no-shop period. Is this typical?",
     "options": [
-      "Yes, 90 days is standard",
+      "Yes, 90-day no-shop periods are considered standard practice in the VC industry",
       "No, 30-60 days is typical; 90 gives too much exclusivity",
-      "No, no-shop periods are illegal",
-      "Yes, most are 6-12 months"
+      "No, no-shop periods are illegal and cannot be included in any term sheet agreement",
+      "Yes, most no-shop periods actually extend for 6 to 12 months in standard practice"
     ],
     "correct_answer": 1,
     "explanation": "Typical no-shop periods are 30-60 days. 90 days is unusually long.",
@@ -2990,10 +2990,10 @@
     "category": "Applied Scenarios",
     "question": "Investor proposes participating preferred with no cap. Best founder counter?",
     "options": [
-      "Accept because it's standard",
+      "Accept the participating preferred because it is a standard market term in VC deals",
       "Propose a participation cap that converts to common after a return multiple",
-      "Reject the entire term sheet",
-      "Agree but request longer exclusivity"
+      "Reject the entire term sheet outright and start negotiations with different investors",
+      "Agree to the terms but negotiate for a longer exclusivity period as compensation"
     ],
     "correct_answer": 1,
     "explanation": "A participation cap limits double-dip. After the investor hits the cap, shares convert to common.",
@@ -3020,10 +3020,10 @@
     "category": "Applied Scenarios",
     "question": "Fund has 2.5x TVPI and 1.8x DPI in year 8 of 10. How would you characterize it?",
     "options": [
-      "Poorly performing",
+      "The fund is performing poorly and significantly below typical industry benchmarks",
       "Strong performer with significant realized returns and remaining upside",
-      "Average performance",
-      "Underperforming because TVPI should equal DPI"
+      "The fund is delivering average performance compared to its peer group of funds",
+      "The fund is underperforming because TVPI should always equal DPI at this stage"
     ],
     "correct_answer": 1,
     "explanation": "1.8x DPI means 80% profit returned in cash. 2.5x TVPI shows additional unrealized value. This is well above median.",
@@ -3035,10 +3035,10 @@
     "category": "Applied Scenarios",
     "question": "Employee offered 0.1% equity. What should they ask first?",
     "options": [
-      "How many ping-pong tables exist",
+      "They should ask how many ping-pong tables the office has for workplace culture",
       "Is that fully diluted, and what is the current share count and valuation?",
-      "When is the next company party",
-      "What color is the office"
+      "They should ask when the next company party or team-building event is scheduled",
+      "They should ask what color scheme the office uses for its interior design layout"
     ],
     "correct_answer": 1,
     "explanation": "0.1% means nothing without knowing fully diluted count and valuation.",
@@ -3050,10 +3050,10 @@
     "category": "Applied Scenarios",
     "question": "Five SAFEs totaling €2M with caps from €5M to €12M. Series A at €8M. The risk?",
     "options": [
-      "SAFEs always convert smoothly",
+      "SAFEs always convert smoothly without any complications or unexpected outcomes",
       "Cumulative conversion can cause surprise dilution exceeding founder expectations",
-      "SAFEs above cap are cancelled",
-      "Only the most recent SAFE converts"
+      "SAFEs with caps above the round price are automatically cancelled and voided",
+      "Only the most recently issued SAFE converts while all prior ones remain outstanding"
     ],
     "correct_answer": 1,
     "explanation": "SAFEs with caps below €8M convert at their caps, those above at round price. All five converting simultaneously creates a SAFE stack dilution surprise.",
@@ -3065,10 +3065,10 @@
     "category": "Applied Scenarios",
     "question": "What is a cap table cleanup before Series A?",
     "options": [
-      "Redesigning the logo",
+      "The process of redesigning the company's logo and brand identity before fundraising",
       "Converting SAFEs and notes, consolidating share classes, resolving equity issues",
-      "Cleaning the office before investor visits",
-      "Reducing investors by buying them out"
+      "The process of cleaning and organizing the physical office before investor site visits",
+      "The process of reducing the number of investors by buying them out of the company"
     ],
     "correct_answer": 1,
     "explanation": "Cap table cleanup involves converting instruments, documenting all equity, and resolving outstanding claims.",
@@ -3080,10 +3080,10 @@
     "category": "Applied Scenarios",
     "question": "Why might a founder prefer lower valuation with better terms over higher valuation with worse terms?",
     "options": [
-      "Lower valuation always looks better",
-      "It's never rational to prefer lower valuation",
+      "A lower valuation always looks better to future investors and potential acquirers",
+      "It is never rational for a founder to prefer a lower valuation under any circumstances",
       "Lower protections from better terms outweigh the valuation difference if the company performs well",
-      "Lower valuation allows immediate share sales"
+      "A lower valuation allows founders to immediately sell their shares on secondary markets"
     ],
     "correct_answer": 2,
     "explanation": "Aggressive protections like participating preferred + full ratchet can cost far more than a valuation difference in downside scenarios.",
@@ -3095,10 +3095,10 @@
     "category": "Applied Scenarios",
     "question": "What is the key difference between a 'lead' and a 'follow' investor?",
     "options": [
-      "Lead invests less but gets more rights",
+      "The lead always invests less capital but receives significantly more rights and control",
       "Lead sets terms, invests the largest amount, often takes a board seat; followers invest on those terms",
-      "Lead always invests first chronologically",
-      "There is no meaningful difference"
+      "The lead investor always invests first chronologically before any other participants",
+      "There is no meaningful or material difference between lead and follow investors"
     ],
     "correct_answer": 1,
     "explanation": "The lead negotiates terms and invests the largest check. Followers accept the lead's terms.",
@@ -3140,10 +3140,10 @@
     "category": "Applied Scenarios",
     "question": "Series B offers 2x participating with seniority over Series A. Why should Series A investors be concerned?",
     "options": [
-      "They shouldn't be; seniority is standard",
+      "They should not be concerned because stacked seniority is completely standard and has no material impact on Series A returns in any exit scenario",
       "Series B gets paid first in an exit, and their participating preference takes more of the proceeds before Series A sees anything",
-      "Series A automatically converts to common",
-      "Series B seniority is illegal"
+      "Series A preferred shares automatically convert to common stock whenever a new series with seniority is issued, eliminating all their preferred rights",
+      "Series B having seniority over Series A is illegal in most jurisdictions worldwide, so the provision would be unenforceable if challenged in court"
     ],
     "correct_answer": 1,
     "explanation": "Series B seniority + participating means they take 2x off the top PLUS their share, significantly reducing what's left for Series A and common.",
@@ -3185,10 +3185,10 @@
     "category": "Applied Scenarios",
     "question": "What happens if a company reaches a convertible note's maturity date without a qualifying financing event?",
     "options": [
-      "The note automatically becomes equity",
+      "The note automatically converts into equity shares without any further negotiation",
       "The company must repay the note, extend it, or negotiate conversion terms",
-      "The note expires worthless",
-      "The interest rate doubles"
+      "The convertible note simply expires worthless with no obligations for either party",
+      "The interest rate on the note automatically doubles until the note is resolved"
     ],
     "correct_answer": 1,
     "explanation": "At maturity without a trigger, the company typically must repay, extend, or negotiate conversion at agreed terms.",
@@ -3245,10 +3245,10 @@
     "category": "Applied Scenarios",
     "question": "Why might a VC fund invest in a company despite a high valuation?",
     "options": [
-      "VCs always prefer higher valuations",
+      "VCs always prefer to invest at higher valuations because it signals confidence",
       "If the market opportunity is large enough and the team is exceptional, the expected return can justify the entry price",
-      "High valuations are mandated by fund LPs",
-      "There is never a valid reason to invest at a high valuation"
+      "High valuations are mandated by fund LP agreements and cannot be negotiated lower",
+      "There is never a valid strategic reason to invest at a premium valuation in venture"
     ],
     "correct_answer": 1,
     "explanation": "In venture, a high entry price can be justified if the potential outcome is large enough to generate strong returns even at the premium entry.",
@@ -3260,10 +3260,10 @@
     "category": "Applied Scenarios",
     "question": "A company grants an advisor 0.25% equity with 2-year vesting. What is unusual about this compared to standard vesting?",
     "options": [
-      "Nothing; all vesting is 2 years",
+      "Nothing unusual here because all vesting schedules are standardized at 2 years",
       "Advisor vesting is shorter than typical employee vesting (4 years) because advisory roles are often shorter-term",
-      "2-year vesting is illegal for advisors",
-      "Advisors never receive equity"
+      "A 2-year vesting schedule is illegal for advisors under most corporate governance laws",
+      "Advisors never receive equity compensation as they are always paid in cash only"
     ],
     "correct_answer": 1,
     "explanation": "Advisor vesting is typically 1-2 years compared to the standard 4-year employee vesting, reflecting the nature of advisory relationships.",
@@ -3275,10 +3275,10 @@
     "category": "Negotiation Strategy",
     "question": "The lead investor asks for 2 board seats out of 5. The founder currently controls 3. Should the founder accept?",
     "options": [
-      "Yes, 2 out of 5 is below majority so it's fine",
+      "Yes, 2 out of 5 seats is below majority so the founder should accept without concern",
       "This deserves careful consideration since giving up even one seat changes the power dynamic significantly",
-      "No, investors should never have board seats",
-      "Only accept if the investor commits to a 10-year holding period"
+      "No, investors should never be given any board seats regardless of investment size",
+      "Only accept if the investor commits to a 10-year holding period as a condition"
     ],
     "correct_answer": 1,
     "explanation": "Board control is one of the most important governance issues. Going from 3-0-2 (founder-independent-investor) to potentially less founder control requires careful thought about who fills the remaining seats.",
@@ -3290,10 +3290,10 @@
     "category": "Applied Scenarios",
     "question": "A company has both Series A and Series B investors with different liquidation preferences. How does this affect M&A negotiations?",
     "options": [
-      "It doesn't affect negotiations at all",
+      "It has no effect on M&A negotiations because liquidation preferences are purely theoretical and rarely enforced in practice during actual deal closings",
       "The liquidation stack creates different incentive levels: an exit price that's great for Series B might return nothing to common, creating conflicts",
-      "Series A and B always have aligned interests",
-      "Liquidation preferences are only relevant in bankruptcy"
+      "Series A and Series B investors always have perfectly aligned interests in any exit scenario regardless of the specific liquidation preference structure",
+      "Liquidation preferences are only relevant in formal bankruptcy proceedings and do not apply to voluntary M&A transactions or strategic acquisition deals"
     ],
     "correct_answer": 1,
     "explanation": "Different preference stacks mean different shareholders have different break-even exit prices, which can create conflicting incentives during M&A discussions.",
@@ -3305,10 +3305,10 @@
     "category": "Applied Scenarios",
     "question": "What does it mean when a VC says they want to see 'the path to 10x'?",
     "options": [
-      "The company should have 10 customers",
+      "The company should have at least ten paying customers before approaching investors",
       "The investor needs to believe the company can return at least 10 times the investment to make the fund math work",
-      "The company should have 10 employees",
-      "The product should be 10 times better than competitors"
+      "The company should have at least ten full-time employees on its current payroll",
+      "The product should be at least ten times better than the closest competitor offering"
     ],
     "correct_answer": 1,
     "explanation": "VCs need individual investments to potentially return 10x+ because most investments fail, and the winners must compensate for the losses to generate overall fund returns.",
@@ -3320,10 +3320,10 @@
     "category": "Applied Scenarios",
     "question": "A company's last 409A valuation was €2/share. They're now raising at €10/share. An employee exercising options pays?",
     "options": [
-      "€10 per share",
+      "The employee pays €10 per share because the exercise price updates to the latest round",
       "€2 per share (the exercise price is set at grant based on the 409A)",
-      "€8 per share (the difference)",
-      "€12 per share"
+      "The employee pays €8 per share representing the difference between the two valuations",
+      "The employee pays €12 per share which includes the current valuation plus a premium"
     ],
     "correct_answer": 1,
     "explanation": "The exercise price was set at grant time based on the 409A valuation. The employee pays €2/share regardless of the current round price.",
@@ -3335,10 +3335,10 @@
     "category": "Applied Scenarios",
     "question": "Series A has information rights requiring quarterly financials. The company misses two quarters. What can the investor do?",
     "options": [
-      "Nothing; information rights are just guidelines",
+      "Nothing can be done because information rights are only voluntary guidelines for companies",
       "The investor can declare a breach of the investment agreement and potentially exercise remedies",
-      "The investor must wait until the annual meeting",
-      "Information rights expire after the first year"
+      "The investor must wait until the annual shareholder meeting to raise the compliance issue",
+      "Information rights automatically expire after the first year of the investment agreement"
     ],
     "correct_answer": 1,
     "explanation": "Missing required reporting is a breach of the investment agreement, giving the investor grounds for remedies specified in the contract.",
@@ -3365,10 +3365,10 @@
     "category": "Applied Scenarios",
     "question": "What is the primary purpose of a shareholders' agreement in the context of a VC deal?",
     "options": [
-      "To make the company's products more attractive",
+      "To make the company's products more attractive and competitive in the marketplace",
       "To govern the relationship between founders and investors, covering rights, transfers, and decision-making",
-      "To establish the company's marketing strategy",
-      "To define employee compensation structures"
+      "To establish the company's marketing strategy and brand positioning in the market",
+      "To define employee compensation structures including salaries and equity packages"
     ],
     "correct_answer": 1,
     "explanation": "The SHA governs how shareholders interact, covering voting, share transfers, exit rights, and governance.",
@@ -3380,10 +3380,10 @@
     "category": "Applied Scenarios",
     "question": "A VC fund is in year 7 of its lifecycle. What phase is it likely in?",
     "options": [
-      "Active investment deployment phase",
+      "The fund is still in its active investment deployment phase seeking new opportunities",
       "Harvesting phase, focused on portfolio management and exits",
-      "Fundraising for the next fund only",
-      "Winding down operations entirely"
+      "The fund is exclusively focused on fundraising for its next successor fund vehicle",
+      "The fund is in the process of winding down all operations and closing permanently"
     ],
     "correct_answer": 1,
     "explanation": "Year 7 of a typical 10-year fund is the harvesting phase, focused on managing existing portfolio and pursuing exits.",
@@ -3395,10 +3395,10 @@
     "category": "Applied Scenarios",
     "question": "Why is 'founder vesting' important from an investor's perspective?",
     "options": [
-      "It gives founders more equity faster",
+      "It gives founders more equity at a faster rate to reward their early-stage commitment",
       "It ensures founders earn their equity over time, protecting against a co-founder departure with a large equity stake",
-      "It reduces the company's tax burden",
-      "It increases the company's valuation"
+      "It reduces the company's tax burden by distributing equity compensation over time",
+      "It increases the company's valuation by demonstrating strong founder commitment"
     ],
     "correct_answer": 1,
     "explanation": "Founder vesting protects against a co-founder leaving early with a large stake, ensuring equity is earned through continued contribution.",
@@ -3410,10 +3410,10 @@
     "category": "Applied Scenarios",
     "question": "What is reverse vesting for founders?",
     "options": [
-      "Founders lose equity over time",
+      "Founders gradually lose equity over time as a penalty for underperformance metrics",
       "Founders' existing shares are subject to a repurchase right that decreases over time as they vest",
-      "Founders vest shares back to the company",
-      "Founders receive equity from departing employees"
+      "Founders vest their shares back to the company for redistribution to new investors",
+      "Founders receive equity from departing employees that returns to the option pool"
     ],
     "correct_answer": 1,
     "explanation": "Reverse vesting means founders already hold their shares but the company has a decreasing repurchase right that lapses as shares vest.",
@@ -3440,10 +3440,10 @@
     "category": "Applied Scenarios",
     "question": "What is a 'clean' term sheet?",
     "options": [
-      "A term sheet with no errors",
+      "A term sheet that has been professionally reviewed and contains no typographical errors",
       "A term sheet with standard, founder-friendly terms and minimal unusual provisions",
-      "A term sheet printed on white paper",
-      "A term sheet that has been reviewed by lawyers"
+      "A term sheet that has been physically printed on white paper for formal presentation",
+      "A term sheet that has been formally reviewed and approved by both parties' lawyers"
     ],
     "correct_answer": 1,
     "explanation": "A clean term sheet has standard market terms without aggressive protections like participating preferred or full ratchet.",
@@ -3470,10 +3470,10 @@
     "category": "Applied Scenarios",
     "question": "Why might an inside-led round raise concerns?",
     "options": [
-      "Inside rounds are always negative signals",
+      "Inside-led rounds are always negative signals and should be avoided at all costs",
       "It could suggest that no outside investors were willing to lead at the proposed valuation",
-      "Inside rounds are illegal in many jurisdictions",
-      "They always result in lower valuations"
+      "Inside-led rounds are actually illegal in many jurisdictions around the world today",
+      "Inside-led rounds always result in lower valuations than externally led ones do"
     ],
     "correct_answer": 1,
     "explanation": "While not always negative, inside-led rounds can signal that the company couldn't attract new external investors at the proposed terms.",
@@ -3501,9 +3501,9 @@
     "question": "A VC says their fund has a '3x net target return.' What does this mean for LPs?",
     "options": [
       "LPs expect to receive €3 for every €1 invested, after all fees and carry are deducted",
-      "The fund guarantees a 3x return",
-      "The GP expects 3x gross returns before any deductions",
-      "LPs receive 3x only if all portfolio companies succeed"
+      "The fund guarantees a minimum 3x return on capital to all participating investors",
+      "The GP expects to generate 3x gross returns before management fees are deducted",
+      "LPs receive 3x returns only in the scenario where all portfolio companies succeed"
     ],
     "correct_answer": 0,
     "explanation": "3x net means LPs expect €3 back for every €1 committed, after management fees and carried interest are deducted.",
@@ -3515,10 +3515,10 @@
     "category": "Applied Scenarios",
     "question": "What is a 'cram down' round?",
     "options": [
-      "A round that happens too quickly",
+      "A funding round that happens too quickly without adequate time for due diligence",
       "A severely dilutive round where existing investors' ownership is dramatically reduced, often with unfavorable terms",
-      "A round limited to 10 investors maximum",
-      "A mandatory round required by company bylaws"
+      "A funding round limited to a maximum of ten investors participating in the deal",
+      "A mandatory funding round required by the company's bylaws at regular intervals"
     ],
     "correct_answer": 1,
     "explanation": "A cram down is a highly dilutive round (often a down round with aggressive terms) that severely reduces existing shareholders' ownership and rights.",
@@ -3545,10 +3545,10 @@
     "category": "Applied Scenarios",
     "question": "What is the difference between 'major investor' and 'minor investor' in a typical VC deal?",
     "options": [
-      "Major investors are older; minor investors are younger",
+      "Major investors are older and more experienced in the market; minor investors are younger and newer to the venture capital investment ecosystem",
       "Major investors hold above a specified ownership threshold and receive additional rights like board seats and information rights",
-      "Major investors always invest more capital",
-      "There is no formal distinction in VC deals"
+      "Major investors always invest significantly more capital than minor investors do, but both receive exactly the same contractual rights and protections",
+      "There is no formal or meaningful distinction in VC deals between investor categories, as all shareholders are treated identically under standard agreements"
     ],
     "correct_answer": 1,
     "explanation": "Major investor status is typically tied to a minimum ownership threshold, granting additional rights like pro-rata, information, and board representation.",
@@ -3560,10 +3560,10 @@
     "category": "Complex Scenarios",
     "question": "Three SAFEs outstanding: €200K at €4M cap, €300K at €6M cap, €500K at €8M cap. Series A at €10M pre-money. How do they convert?",
     "options": [
-      "All convert at €10M round price",
+      "All three SAFEs convert at the €10M Series A round price regardless of their caps",
       "Each converts at its own cap price, with lowest cap getting most shares per dollar",
-      "All convert at the lowest cap",
-      "Company chooses which convert first"
+      "All three SAFEs convert at the lowest cap of €4M to ensure uniform pricing fairness",
+      "The company gets to choose which SAFEs convert first based on strategic preference"
     ],
     "correct_answer": 1,
     "explanation": "Each SAFE converts at the lower of its cap or round price. Since all caps are below €10M, each uses its own cap.",
@@ -3575,10 +3575,10 @@
     "category": "Complex Scenarios",
     "question": "Pay-to-play round: an investor with full ratchet anti-dilution doesn't participate. What happens?",
     "options": [
-      "Nothing; anti-dilution is permanent",
+      "Nothing changes because anti-dilution protections are permanent and irrevocable rights",
       "Their preferred converts to common, losing anti-dilution and other preferred rights",
-      "Their shares are cancelled",
-      "They receive a cash payout"
+      "Their shares are fully cancelled and removed from the company's capitalization table",
+      "They receive a cash payout equal to their investment instead of retaining any equity"
     ],
     "correct_answer": 1,
     "explanation": "Pay-to-play penalties include conversion to common, stripping all preferred rights including anti-dilution.",
@@ -3605,10 +3605,10 @@
     "category": "Complex Scenarios",
     "question": "Founder with 40% has single-trigger acceleration. Acquirer needs them to stay 2 years. Best structure?",
     "options": [
-      "Keep single-trigger since it only vests equity",
+      "Keep single-trigger since it only affects equity vesting and has no retention impact",
       "Convert to double-trigger: vest on acquisition plus involuntary termination within 24 months",
-      "Remove all acceleration",
-      "Grant additional options in acquiring company"
+      "Remove all acceleration provisions entirely to simplify the transaction structure",
+      "Grant additional stock options in the acquiring company as a replacement incentive"
     ],
     "correct_answer": 1,
     "explanation": "Double-trigger protects the founder while satisfying the acquirer.",
@@ -3635,10 +3635,10 @@
     "category": "Complex Scenarios",
     "question": "In a German GmbH, why are VSOPs preferred over real equity for employees?",
     "options": [
-      "VSOPs give actual voting rights",
+      "VSOPs provide actual voting rights to employees identical to common shareholders",
       "VSOPs avoid notary costs and tax complications of GmbH share transfers while providing economic upside",
-      "VSOPs are required by law",
-      "VSOPs are the same as real shares"
+      "VSOPs are required by German labor law for all companies employing over 50 workers",
+      "VSOPs are functionally the same as real shares with identical rights and obligations"
     ],
     "correct_answer": 1,
     "explanation": "German GmbH share transfers require costly notarization. VSOPs provide economic participation without the legal complexity.",
@@ -3665,10 +3665,10 @@
     "category": "Complex Scenarios",
     "question": "Why might a founder prefer a smaller option pool at Series A?",
     "options": [
-      "Smaller pool means no employee hiring",
+      "A smaller pool means the company cannot hire any new employees or advisors at all",
       "Fewer shares at a lower valuation; next expansion at higher Series B valuation reduces total dilution",
-      "Smaller pools are preferred by investors",
-      "Founders receive unused options personally"
+      "Smaller option pools are always preferred by investors during term negotiations",
+      "Founders personally receive any unused options remaining in the pool at expiration"
     ],
     "correct_answer": 1,
     "explanation": "Just enough pool for 18 months means the next expansion happens at a higher valuation, reducing cumulative dilution.",
@@ -3680,10 +3680,10 @@
     "category": "Complex Scenarios",
     "question": "Series A at €20M post-money, Series B at €60M post-money. Series C offered at €40M post-money. Implications?",
     "options": [
-      "Up round since €40M is large",
+      "This is an up round since €40M post-money represents a large amount of capital raised",
       "Severe down round triggering anti-dilution, requiring significant negotiation",
-      "Flat round since total capital is €16M",
-      "No special implications"
+      "This is a flat round since the total capital raised across all rounds totals €16M",
+      "There are no special implications because post-money valuations fluctuate naturally"
     ],
     "correct_answer": 1,
     "explanation": "€40M vs €60M is a 33% down round. Series B anti-dilution will trigger, potentially severely diluting earlier investors and founders.",
@@ -3695,10 +3695,10 @@
     "category": "Complex Scenarios",
     "question": "Five SAFEs totaling €2M with caps from €5M to €12M. Series A at €8M pre-money. Critical issue?",
     "options": [
-      "No issues",
+      "There are no issues because SAFEs always convert smoothly without complications",
       "SAFEs convert at their caps or round price, and cumulative conversion may exceed founder expectations",
-      "SAFEs above cap are cancelled",
-      "Only the most recent converts"
+      "SAFEs with caps above the round price are automatically cancelled and voided entirely",
+      "Only the most recently issued SAFE converts while earlier ones remain as outstanding debt"
     ],
     "correct_answer": 1,
     "explanation": "Each SAFE converts at the lower of its cap or round price. All five converting simultaneously creates surprise dilution.",
@@ -3726,9 +3726,9 @@
     "question": "A fund is considering a bridge into a struggling portfolio company. The note has 2x cap and 30% discount. Why might other investors object?",
     "options": [
       "Bridge terms could set a low effective valuation triggering anti-dilution for all preferred",
-      "Bridge notes are illegal for existing investors",
-      "They prefer the company to shut down",
-      "They want higher interest"
+      "Bridge notes are illegal for existing investors to provide to portfolio companies",
+      "Other investors prefer the company to shut down rather than take bridge financing",
+      "Other investors want significantly higher interest rates on the bridge note terms"
     ],
     "correct_answer": 0,
     "explanation": "Aggressive cap and discount price the company very low. At conversion, this low price could trigger anti-dilution for everyone.",
@@ -3740,10 +3740,10 @@
     "category": "Complex Scenarios",
     "question": "Two term sheets: A has €15M pre-money with participating preferred and full ratchet. B has €12M pre-money with non-participating and broad-based weighted average. Which favors the founder?",
     "options": [
-      "A, because higher valuation always wins",
+      "Term sheet A is better because a higher headline valuation always benefits founders",
       "B, because founder-friendly protections outweigh the lower valuation",
-      "Both are equivalent",
-      "Neither is acceptable"
+      "Both term sheets are equivalent because they raise the same amount of capital",
+      "Neither term sheet is acceptable and the founder should seek entirely new investors"
     ],
     "correct_answer": 1,
     "explanation": "B's lower valuation is offset by dramatically better terms. Participating + full ratchet can cost far more in downside scenarios.",
@@ -3755,10 +3755,10 @@
     "category": "Complex Scenarios",
     "question": "A company has pari passu seniority for Series A and B. How does this change the waterfall vs standard seniority?",
     "options": [
-      "No change; seniority is always by issue date",
+      "No change because seniority is always automatically determined by the original issue date",
       "Both series share proceeds proportionally rather than B being paid before A",
-      "Pari passu means both convert to common",
-      "Series A receives double its preference"
+      "Pari passu means both preferred series must convert to common shares before payout",
+      "Series A receives double its original preference amount under pari passu structure"
     ],
     "correct_answer": 1,
     "explanation": "Pari passu means simultaneous proportional payout rather than later-round priority.",
@@ -3770,10 +3770,10 @@
     "category": "Complex Scenarios",
     "question": "Series A has pro-rata, ROFR, and a board seat. Series B investor wants 25% of the company. How do these interact?",
     "options": [
-      "Series A must waive all rights",
+      "Series A must waive all existing rights before any new investment can be completed",
       "Pro-rata applies to new issuance; ROFR only to secondary transfers; board may be renegotiated",
-      "Series B inherits all Series A rights",
-      "ROFR prevents any new investor"
+      "Series B automatically inherits every right that was originally granted to Series A",
+      "ROFR prevents any new external investor from purchasing shares in the company at all"
     ],
     "correct_answer": 1,
     "explanation": "Pro-rata applies to new primary shares. ROFR applies to secondary. Board composition may be renegotiated for Series B.",
@@ -3785,10 +3785,10 @@
     "category": "Complex Scenarios",
     "question": "An LP commits €1M to a €50M fund and wants co-investment rights. Why might the GP hesitate?",
     "options": [
-      "Co-investment is illegal for small LPs",
+      "Co-investment rights are legally prohibited for LPs with commitments below a threshold",
       "Small LP with co-invest creates disproportionate admin burden relative to capital",
-      "GP prefers to co-invest with founders",
-      "Co-invest only for LPs above 50%"
+      "GP prefers to offer co-investment opportunities exclusively to founding team members",
+      "Co-investment rights are only available to LPs who hold above 50% of the total fund"
     ],
     "correct_answer": 1,
     "explanation": "A 2% LP with co-investment rights creates excessive deal-by-deal administration relative to their commitment.",
@@ -3800,13 +3800,13 @@
     "category": "Complex Scenarios",
     "question": "Fund offers 1.5x preferred return (hurdle) to anchor LPs. How does this affect GP economics vs 8% annual hurdle?",
     "options": [
-      "Identical because 1.5x over 10 years ≈ 8% annually",
+      "The two structures are identical because 1.5x over 10 years equals about 8% annually",
       "1.5x preferred return is harder to achieve, reducing GP carry in moderate scenarios",
-      "GP earns more carry",
-      "No effect since fees are separate"
+      "The GP actually earns more carry under the 1.5x preferred return structure overall",
+      "There is no effect because management fees are calculated completely separately"
     ],
     "correct_answer": 1,
-    "explanation": "1.5x preferred return requires ~4.1% annual compound return — lower annually but applied to total capital, not just gains.",
+    "explanation": "1.5x preferred return requires ~4.1% annual compound return , lower annually but applied to total capital, not just gains.",
     "difficulty": 3
   },
   {
@@ -3815,10 +3815,10 @@
     "category": "Complex Scenarios",
     "question": "Convertible note has 25% discount AND €5M cap. Series A is at €4M pre-money. Which mechanism applies?",
     "options": [
-      "The cap at €5M",
-      "The discount at €3M",
+      "The cap at €5M applies because the cap always takes priority over the discount rate",
+      "The discount applies giving the investor an effective conversion price of €3M valuation",
       "Cap is irrelevant since round is below it; note converts at the lower of round price or discounted price",
-      "Neither; converts at actual €4M"
+      "Neither mechanism applies and the note converts at the actual €4M round valuation"
     ],
     "correct_answer": 2,
     "explanation": "Cap (€5M) doesn't help when round is at €4M. Discount: €4M × 0.75 = €3M. The investor gets the more favorable €3M price.",
@@ -3830,10 +3830,10 @@
     "category": "Complex Scenarios",
     "question": "What is the 'option pool shuffle' and why is it one of the most misunderstood term sheet elements?",
     "options": [
-      "Option pools are free",
+      "Option pools are free and do not create any dilution for existing shareholders at all",
       "Pool is allocated to pre-money, meaning founders bear entire dilution while new investor doesn't",
-      "Pools only benefit lawyers",
-      "Pools are always created post-investment"
+      "Option pools only benefit lawyers and have no material impact on company economics",
+      "Option pools are always created after the investment closes from the post-money amount"
     ],
     "correct_answer": 1,
     "explanation": "Including the pool in pre-money reduces the effective pre-money for founders. A €10M pre with a 15% pool is really €8.5M for the founders.",
@@ -3860,10 +3860,10 @@
     "category": "Complex Scenarios",
     "question": "Why might a founder negotiate FOR a pay-to-play clause?",
     "options": [
-      "Pay-to-play is always bad for founders",
+      "Pay-to-play provisions are always bad for founders under every possible circumstance",
       "It forces passive investors to support the company or lose protections, aligning incentives",
-      "Founders like it because it reduces board seats",
-      "It gives founders additional equity automatically"
+      "Founders like pay-to-play because it automatically reduces the number of board seats",
+      "Pay-to-play gives founders additional equity automatically when investors participate"
     ],
     "correct_answer": 1,
     "explanation": "Pay-to-play prevents free-riding investors from keeping protections while refusing to invest in tough times.",
@@ -3875,10 +3875,10 @@
     "category": "Complex Scenarios",
     "question": "A company has raised Seed, Series A, and Series B. The cap table has convertible notes, SAFEs, common, and three classes of preferred. What is the most critical document to prepare before an M&A exit?",
     "options": [
-      "A new pitch deck",
+      "A new pitch deck highlighting the company's achievements and future growth trajectory",
       "A detailed waterfall analysis showing exactly how proceeds distribute to each share class under different exit prices",
-      "A press release announcing the exit",
-      "An updated LinkedIn profile for the CEO"
+      "A press release announcing the exit details to the media and general public audience",
+      "An updated LinkedIn profile for the CEO highlighting their acquisition track record"
     ],
     "correct_answer": 1,
     "explanation": "The waterfall analysis is critical because different exit prices create dramatically different outcomes for each share class due to stacked preferences.",
@@ -3905,10 +3905,10 @@
     "category": "Complex Scenarios",
     "question": "A German startup creates a VSOP with a 4-year vesting schedule. After 2 years, the company is acquired. How are the virtual shares typically handled?",
     "options": [
-      "They are worthless because the company no longer exists",
+      "They are completely worthless because the original company entity no longer exists",
       "Vested virtual shares typically participate in exit proceeds; unvested portions follow the deal terms or acceleration clauses",
-      "All virtual shares, vested and unvested, are cancelled",
-      "Virtual shares automatically convert to real shares in the acquiring company"
+      "All virtual shares, both vested and unvested, are immediately cancelled without payout",
+      "Virtual shares automatically convert to real shares in the acquiring company entity"
     ],
     "correct_answer": 1,
     "explanation": "Vested VSOPs typically pay out at exit. Unvested portions depend on good/bad leaver clauses and any acceleration provisions in the VSOP agreement.",
@@ -3920,10 +3920,10 @@
     "category": "Complex Scenarios",
     "question": "Two co-founders each own 40%, with 20% in the option pool. One founder departs as a 'bad leaver' after 2 years of 4-year reverse vesting. What happens to their shares?",
     "options": [
-      "They keep all 40%",
+      "They retain the full 40% ownership stake regardless of the circumstances of departure",
       "They keep 20% (half vested) and the company repurchases the other 20% at nominal value",
-      "They lose all 40%",
-      "They keep 40% but lose voting rights"
+      "They lose all 40% of their shares as a penalty for being classified as a bad leaver",
+      "They keep 40% ownership but permanently lose all associated voting rights immediately"
     ],
     "correct_answer": 1,
     "explanation": "With 2 of 4 years vested, 20% is vested and retained. The unvested 20% is repurchased at nominal value (bad leaver) and typically returns to the company or pool.",
@@ -3935,10 +3935,10 @@
     "category": "Complex Scenarios",
     "question": "A fund's portfolio has one company that returned 50x its investment. This single company represents 60% of the fund's total returns. What does this illustrate?",
     "options": [
-      "The fund manager was lucky with one investment",
+      "The fund manager simply got lucky with a single investment and it cannot be replicated",
       "The power law of venture capital, where a small number of investments generate the vast majority of returns",
-      "The fund was poorly managed and should have had more diversification",
-      "This pattern is unusual and indicates poor portfolio construction"
+      "The fund was poorly managed and should have achieved much better diversification results",
+      "This pattern is highly unusual and indicates significant deficiencies in portfolio construction"
     ],
     "correct_answer": 1,
     "explanation": "This illustrates the power law: VC returns are dominated by a few outlier successes. Fund strategy must optimize for finding these outliers.",
@@ -3950,10 +3950,10 @@
     "category": "Complex Scenarios",
     "question": "A company is structured as a German GmbH & Co. KG for a VC investment. Why might this structure be chosen?",
     "options": [
-      "It's the only legal structure allowed in Germany",
+      "It is the only legal structure that is permitted for venture investments in Germany",
       "It combines the liability protection of a GmbH with the tax transparency and flexibility of a KG partnership",
-      "It prevents any dilution from occurring",
-      "It allows the company to avoid all regulatory requirements"
+      "This structure completely prevents any equity dilution from occurring for existing holders",
+      "This structure allows the company to avoid all regulatory requirements and oversight"
     ],
     "correct_answer": 1,
     "explanation": "GmbH & Co. KG provides limited liability through the GmbH general partner while offering the tax transparency and structural flexibility of a limited partnership.",

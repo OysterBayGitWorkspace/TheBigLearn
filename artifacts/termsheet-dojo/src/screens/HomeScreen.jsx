@@ -35,7 +35,7 @@ export default function HomeScreen({ go }) {
 
   // Fuehrerschein progress: total mastered across all topics
   const totalQuestions = ALL_QUESTIONS.length;
-  const totalMastered = Object.values(state.cardStates || {}).filter(c => c && c.state >= 2).length;
+  const totalMastered = Object.values(state.questionProgress || {}).filter(qp => qp && qp.isMastered === true).length;
 
   const { user } = useAuth();
 
@@ -83,6 +83,30 @@ export default function HomeScreen({ go }) {
       <div className="action-row">
         <button className="act-btn" onClick={()=>{dispatch({type:'VIEW_LIBRARY'});go("library");}}>{Icons.book("#5BB5A2",24)}<span>Library</span></button>
         <button className="act-btn" onClick={()=>go("leaderboard")}>{Icons.trophy("#F4D06F",24)}<span>League</span></button>
+      </div>
+
+      <div className="sec-head"><span className="sec-title">Fun Games</span><span className="sec-count">4 modes</span></div>
+      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8,width:'100%',maxWidth:480,marginBottom:16}}>
+        <button className="act-btn" onClick={()=>go("matchPairs")} style={{padding:'16px 10px',gap:6}}>
+          {Icons.dice("#B8A0D2",28)}
+          <span style={{fontSize:13,fontWeight:800,color:'var(--text)'}}>Match Pairs</span>
+          <span style={{fontSize:10,fontWeight:600,color:'var(--text-faint)',lineHeight:1.3}}>Link terms to definitions</span>
+        </button>
+        <button className="act-btn" onClick={()=>go("trueFalse")} style={{padding:'16px 10px',gap:6}}>
+          {Icons.target("#FF7B54",28)}
+          <span style={{fontSize:13,fontWeight:800,color:'var(--text)'}}>True / False</span>
+          <span style={{fontSize:10,fontWeight:600,color:'var(--text-faint)',lineHeight:1.3}}>Speed round challenge</span>
+        </button>
+        <button className="act-btn" onClick={()=>go("fillBlank")} style={{padding:'16px 10px',gap:6}}>
+          {Icons.brain("#B8A0D2",28)}
+          <span style={{fontSize:13,fontWeight:800,color:'var(--text)'}}>Fill the Blank</span>
+          <span style={{fontSize:10,fontWeight:600,color:'var(--text-faint)',lineHeight:1.3}}>Complete the concept</span>
+        </button>
+        <button className="act-btn" onClick={()=>go("termSorter")} style={{padding:'16px 10px',gap:6}}>
+          {Icons.scale("#F4D06F",28)}
+          <span style={{fontSize:13,fontWeight:800,color:'var(--text)'}}>Term Sorter</span>
+          <span style={{fontSize:10,fontWeight:600,color:'var(--text-faint)',lineHeight:1.3}}>Sort into categories</span>
+        </button>
       </div>
 
       <div className="sec-head"><span className="sec-title">Daily Quests</span><span className="sec-timer">Resets in 6h</span></div>

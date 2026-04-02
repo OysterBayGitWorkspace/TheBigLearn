@@ -12,10 +12,11 @@ const TIER_ICONS = {
 export default function SkillTreeScreen({ go }) {
   const { state, dispatch } = useGame();
   const cardStates = state.cardStates || {};
+  const questionProgress = state.questionProgress || {};
 
   const handleTierClick = (tier) => {
-    if (!isTierUnlocked(tier.id, cardStates)) return;
-    const questions = buildLearnSession(tier.id, cardStates);
+    if (!isTierUnlocked(tier.id, cardStates, questionProgress)) return;
+    const questions = buildLearnSession(tier.id, cardStates, questionProgress);
     if (questions.length === 0) return;
     dispatch({ type: 'START_SESSION', payload: { questions, mode: 'learn', topicId: tier.id } });
     go("game");
@@ -37,9 +38,9 @@ export default function SkillTreeScreen({ go }) {
         marginTop: 8,
       }}>
         {TIERS.map((tier, idx) => {
-          const unlocked = isTierUnlocked(tier.id, cardStates);
-          const mastered = isTierMastered(tier.id, cardStates);
-          const { total, mastered: masteredCount, percent } = getTierProgress(tier.id, cardStates);
+          const unlocked = isTierUnlocked(tier.id, cardStates, questionProgress);
+          const mastered = isTierMastered(tier.id, cardStates, questionProgress);
+          const { total, mastered: masteredCount, percent } = getTierProgress(tier.id, cardStates, questionProgress);
           const iconFn = TIER_ICONS[tier.icon] || Icons.flag;
           const color = tier.color;
           const req = tier.unlockRequirement;

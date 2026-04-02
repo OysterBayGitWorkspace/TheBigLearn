@@ -41,32 +41,34 @@ export function getQuestionsForTier(tierId) {
   return ALL_QUESTIONS.filter(q => difficultyToTierId[q.difficulty] === tierId);
 }
 
-export function isTierUnlocked(tierId, cardStates) {
+export function isTierUnlocked(tierId, cardStates, questionProgress = {}) {
   const tier = tierIndex.get(tierId);
   if (!tier) return false;
   if (!tier.unlockRequirement) return true;
 
-  // Migration UX: if user has ANY cards in this tier, keep it unlocked
+  // Migration UX: if user has ANY progress in this tier, keep it unlocked
   const tierQuestions = getQuestionsForTier(tierId);
-  const hasExistingProgress = tierQuestions.some(q => cardStates[q.id] && cardStates[q.id].state > 0);
+  const hasExistingProgress = tierQuestions.some(q =>
+    (questionProgress[q.id] && questionProgress[q.id].correctCount > 0) ||
+    (cardStates[q.id] && cardStates[q.id].state > 0)
+  );
   if (hasExistingProgress) return true;
 
   const { tierId: prereqId, percent: requiredPercent } = tier.unlockRequirement;
-  const progress = getTierProgress(prereqId, cardStates);
+  const progress = getTierProgress(prereqId, cardStates, questionProgress);
   return progress.percent >= requiredPercent;
 }
 
-export function isTierMastered(tierId, cardStates) {
-  const { total, percent } = getTierProgress(tierId, cardStates);
+export function isTierMastered(tierId, cardStates, questionProgress = {}) {
+  const { total, percent } = getTierProgress(tierId, cardStates, questionProgress);
   return total > 0 && percent >= 70;
 }
 
-export function getTierProgress(tierId, cardStates) {
+export function getTierProgress(tierId, cardStates, questionProgress = {}) {
   const tierQuestions = getQuestionsForTier(tierId);
   const total = tierQuestions.length;
   const mastered = tierQuestions.filter(q => {
-    const card = cardStates[q.id];
-    return card && card.state >= 2;
+    return questionProgress[q.id]?.isMastered === true;
   }).length;
   const percent = total > 0 ? Math.round((mastered / total) * 100) : 0;
   return { total, mastered, percent };

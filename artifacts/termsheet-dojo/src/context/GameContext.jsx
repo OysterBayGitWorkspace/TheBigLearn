@@ -84,6 +84,19 @@ function gameReducer(state, action) {
         }
       }
 
+      // Update questionProgress (2-correct mastery tracking)
+      const prevQP = state.questionProgress || {};
+      const prevEntry = prevQP[q.id] || { correctCount: 0, lastAnsweredAt: null, isMastered: false };
+      const newCorrectCount = isCorrect ? prevEntry.correctCount + 1 : prevEntry.correctCount;
+      const updatedQuestionProgress = {
+        ...prevQP,
+        [q.id]: {
+          correctCount: newCorrectCount,
+          lastAnsweredAt: new Date().toISOString(),
+          isMastered: newCorrectCount >= 2,
+        },
+      };
+
       // If wrong, re-queue the question later in the session
       const updatedQuestions = !isCorrect
         ? addRetryToSession(session.questions, session.currentIndex, q.id)
@@ -104,6 +117,7 @@ function gameReducer(state, action) {
           ...state.cardStates,
           [q.id]: updatedCard,
         },
+        questionProgress: updatedQuestionProgress,
         activeBoost: state.activeBoost === 'double' ? null : state.activeBoost,
         session: {
           ...session,
