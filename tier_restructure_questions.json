@@ -1,0 +1,850 @@
+{
+  "meta": {
+    "description": "VC Dojo 5-Tier Restructure — Question Reassignments + New Questions",
+    "date": "2026-04-02",
+    "tiers": {
+      "1": { "id": "basics", "name": "Basics", "difficulty": 1, "skippable": true },
+      "2": { "id": "essentials", "name": "Term Sheet Essentials", "difficulty": 2 },
+      "3": { "id": "compare", "name": "Differentiate & Compare", "difficulty": 3 },
+      "4": { "id": "applied", "name": "Applied Scenarios", "difficulty": 4 },
+      "5": { "id": "expert", "name": "Expert Scenarios", "difficulty": 5 }
+    }
+  },
+
+  "reassignments": {
+    "description": "Map of existing question IDs to their NEW difficulty/tier values",
+    
+    "to_tier_1_basics": {
+      "description": "General VC ecosystem knowledge — skippable for investment team",
+      "question_ids": [
+        "q0001", "q0002", "q0003", "q0004", "q0005", "q0006",
+        "q0055", "q0056", "q0057", "q0058", "q0059", "q0060",
+        "q0083", "q0084",
+        "q0098", "q0099", "q0100", "q0101", "q0105", "q0106",
+        "q0131", "q0132", "q0133", "q0134", "q0135", "q0136", "q0137", "q0141",
+        "q0142", "q0143", "q0144", "q0145", "q0146", "q0147", "q0148", "q0149", "q0150", "q0151",
+        "q0152", "q0153", "q0154", "q0155", "q0156", "q0157", "q0158", "q0159", "q0160", "q0161",
+        "q0162", "q0163", "q0164", "q0165", "q0166", "q0167", "q0168", "q0169", "q0170", "q0171"
+      ],
+      "new_difficulty": 1
+    },
+
+    "to_tier_2_essentials": {
+      "description": "Deep term sheet definitions — core investment team knowledge",
+      "question_ids": [
+        "q0007", "q0008", "q0009", "q0010", "q0011", "q0012", "q0013",
+        "q0035", "q0036", "q0037", "q0038", "q0039",
+        "q0040", "q0041", "q0042", "q0043", "q0044", "q0045", "q0046", "q0047", "q0048", "q0049",
+        "q0050", "q0051", "q0052", "q0053", "q0054",
+        "q0061", "q0062", "q0063",
+        "q0085", "q0086", "q0087", "q0088", "q0089", "q0090", "q0091", "q0092", "q0093", "q0094", "q0095", "q0096", "q0097",
+        "q0102", "q0103", "q0104", "q0107", "q0108", "q0109", "q0110", "q0111", "q0112", "q0113",
+        "q0114", "q0115", "q0116", "q0117", "q0118", "q0119", "q0120", "q0121", "q0122", "q0123", "q0124", "q0125", "q0126",
+        "q0127", "q0128", "q0129", "q0130",
+        "q0138", "q0139", "q0140",
+        "q0172", "q0173", "q0174", "q0175", "q0176", "q0177", "q0178"
+      ],
+      "new_difficulty": 2
+    },
+
+    "to_tier_4_applied": {
+      "description": "Current tier 2 questions → now tier 4",
+      "question_ids": [
+        "q0179", "q0180", "q0181", "q0182", "q0183", "q0184", "q0185", "q0186", "q0187", "q0188",
+        "q0189", "q0190", "q0191", "q0192", "q0193", "q0194", "q0195", "q0196", "q0197", "q0198",
+        "q0199", "q0200", "q0201", "q0202", "q0203", "q0204", "q0205", "q0206", "q0207", "q0208",
+        "q0209", "q0210", "q0211", "q0212", "q0213", "q0214", "q0215", "q0216", "q0217", "q0218",
+        "q0219", "q0220", "q0221", "q0222", "q0223", "q0224", "q0225", "q0226", "q0227", "q0228",
+        "q0229", "q0230", "q0231", "q0232", "q0233", "q0234", "q0235", "q0236", "q0237"
+      ],
+      "new_difficulty": 4
+    },
+
+    "to_tier_5_expert": {
+      "description": "Current tier 3 questions → now tier 5",
+      "question_ids": [
+        "q0238", "q0239", "q0240", "q0241", "q0242", "q0243", "q0244", "q0245", "q0246", "q0247",
+        "q0248", "q0249", "q0250", "q0251", "q0252", "q0253", "q0254", "q0255", "q0256", "q0257",
+        "q0258", "q0259", "q0260", "q0261", "q0262", "q0263", "q0264"
+      ],
+      "new_difficulty": 5
+    }
+  },
+
+  "new_questions_tier1_basics": [
+    {
+      "id": "q0300", "tier": 1, "category": "Basics", "difficulty": 1,
+      "question": "What is a co-investment?",
+      "options": [
+        "When a fund manager invests their personal savings alongside the fund's capital in a deal",
+        "When multiple investors invest together in the same company on the same terms",
+        "When a company reinvests its profits into acquiring shares of another company",
+        "When an employee matches the company's contribution to a corporate pension plan"
+      ],
+      "correct_answer": 1,
+      "explanation": "Co-investment is when multiple investors participate together in the same deal, often with LPs investing alongside a GP."
+    },
+    {
+      "id": "q0301", "tier": 1, "category": "Basics", "difficulty": 1,
+      "question": "What does 'overvalued' mean in a startup context?",
+      "options": [
+        "The company has hired more employees than it needs for current operations",
+        "The company's valuation exceeds what its fundamentals and traction justify",
+        "The company has raised too many funding rounds in too short a time period",
+        "The company's product has more features than its target customers need"
+      ],
+      "correct_answer": 1,
+      "explanation": "A company is overvalued when its valuation is higher than what metrics like revenue, growth, or market comparables would support."
+    },
+    {
+      "id": "q0302", "tier": 1, "category": "Basics", "difficulty": 1,
+      "question": "What is scalability?",
+      "options": [
+        "The ability to physically scale up manufacturing output by adding production lines",
+        "A business's ability to grow revenue significantly without proportional cost increases",
+        "The process of scaling down operations during an economic downturn to reduce costs",
+        "A company's ability to enter new geographic markets through franchising agreements"
+      ],
+      "correct_answer": 1,
+      "explanation": "Scalability means the business model can grow revenue faster than costs, creating increasing margins at scale."
+    },
+    {
+      "id": "q0303", "tier": 1, "category": "Basics", "difficulty": 1,
+      "question": "What is a Series A round?",
+      "options": [
+        "The first time a company sells products to its initial group of paying customers",
+        "The first significant institutional venture capital funding round after seed stage",
+        "The first round of layoffs a company conducts when restructuring its workforce",
+        "The first formal board meeting after incorporating the company as a legal entity"
+      ],
+      "correct_answer": 1,
+      "explanation": "Series A is typically the first major VC round, following pre-seed/seed. It often involves institutional investors and significant capital."
+    },
+    {
+      "id": "q0304", "tier": 1, "category": "Basics", "difficulty": 1,
+      "question": "What is a lead investor?",
+      "options": [
+        "The investor who contributes the smallest amount but provides the most mentorship",
+        "The investor who sets deal terms, leads due diligence, and typically invests the largest amount",
+        "The investor who was the first person ever to invest in the startup's founding team",
+        "The investor who holds the most board seats across all companies in their portfolio"
+      ],
+      "correct_answer": 1,
+      "explanation": "The lead investor negotiates terms, anchors the round, and often takes a board seat. Other investors follow."
+    },
+    {
+      "id": "q0305", "tier": 1, "category": "Basics", "difficulty": 1,
+      "question": "What is a follow-on investment?",
+      "options": [
+        "An investment made by a new investor who follows the lead investor into a deal",
+        "Additional capital invested by an existing investor in a subsequent funding round",
+        "A backup investment reserved for companies that fail to meet their initial targets",
+        "An investment that automatically triggers when the company hits a revenue milestone"
+      ],
+      "correct_answer": 1,
+      "explanation": "Follow-on investments allow existing investors to maintain or increase ownership in later rounds."
+    },
+    {
+      "id": "q0306", "tier": 1, "category": "Basics", "difficulty": 1,
+      "question": "What is DPI in fund performance?",
+      "options": [
+        "A measure of how diversified the fund's portfolio is across different sectors",
+        "Distributions to Paid-In — the ratio of cash returned to investors vs. capital invested",
+        "A rating system that grades the fund manager's decision-making performance annually",
+        "The discount percentage that institutional investors receive on management fees"
+      ],
+      "correct_answer": 1,
+      "explanation": "DPI measures how much actual cash has been returned to LPs relative to what they put in. DPI of 1.0x means all capital returned."
+    },
+    {
+      "id": "q0307", "tier": 1, "category": "Basics", "difficulty": 1,
+      "question": "What is TVPI in fund performance?",
+      "options": [
+        "Total Value to Paid-In — combines realized returns plus unrealized portfolio value",
+        "A measure tracking total venture capital investments in a specific geographic region",
+        "The total number of portfolio companies a fund has invested in over its lifetime",
+        "A tax valuation metric used for calculating the fund's annual tax liability"
+      ],
+      "correct_answer": 0,
+      "explanation": "TVPI = (distributions + remaining portfolio value) / paid-in capital. Includes both cash returned and paper value."
+    },
+    {
+      "id": "q0308", "tier": 1, "category": "Basics", "difficulty": 1,
+      "question": "What is a seed round?",
+      "options": [
+        "The initial equity investment that funds a company's founding-stage operations",
+        "A round of fundraising exclusively reserved for agricultural technology startups",
+        "The final funding round before a company transitions to being publicly traded",
+        "A type of debt financing that converts into equity at a predetermined future date"
+      ],
+      "correct_answer": 0,
+      "explanation": "Seed rounds fund the earliest stages — building MVP, initial hiring, proving the concept."
+    },
+    {
+      "id": "q0309", "tier": 1, "category": "Basics", "difficulty": 1,
+      "question": "What is a cap table clean-up?",
+      "options": [
+        "The process of physically organizing filing cabinets containing shareholder documents",
+        "Simplifying or restructuring the ownership table by consolidating share classes or removing dormant holders",
+        "A quarterly review meeting where the board discusses the company's capitalization",
+        "An annual audit of the company's bank accounts to reconcile cash balances"
+      ],
+      "correct_answer": 1,
+      "explanation": "Cap table clean-ups simplify complex ownership structures, often before a major round or exit."
+    }
+  ],
+
+  "new_questions_tier2_essentials": [
+    {
+      "id": "q0320", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What does '1x liquidation preference' mean?",
+      "options": [
+        "The investor receives exactly one times their original investment back before common shareholders receive anything",
+        "The investor receives one percent of the total exit proceeds regardless of ownership stake",
+        "The investor's shares convert at a one-to-one ratio with common shares at any exit event",
+        "The investor can only participate in one liquidation event per investment agreement"
+      ],
+      "correct_answer": 0,
+      "explanation": "1x means the investor gets their money back first. €5M invested = €5M returned before common. This is the market standard."
+    },
+    {
+      "id": "q0321", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What does '2x liquidation preference' mean?",
+      "options": [
+        "The investor must invest in at least two funding rounds to qualify for any preference",
+        "The investor receives two times their original investment before common shareholders get paid",
+        "The company must achieve double its valuation before the investor can exit the position",
+        "The investor receives preference payouts in two separate installments over two years"
+      ],
+      "correct_answer": 1,
+      "explanation": "2x means the investor gets twice their money back first. €5M investment returns €10M before common. This is aggressive and above market standard."
+    },
+    {
+      "id": "q0322", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What are hurdle shares (hurdle equity)?",
+      "options": [
+        "Shares that can only be sold once the company clears a specific regulatory approval",
+        "Equity that only gains value above a set threshold, used in management incentive plans",
+        "Shares reserved for investors who clear the minimum commitment amount for the fund",
+        "A class of shares that carries double voting rights after a predefined holding period"
+      ],
+      "correct_answer": 1,
+      "explanation": "Hurdle shares only become valuable if company value exceeds a set hurdle. Common in management equity alongside preferred investor equity."
+    },
+    {
+      "id": "q0323", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a post-termination exercise period (PTEP)?",
+      "options": [
+        "The time after an employee leaves during which they can still exercise their vested options",
+        "The period following a company's dissolution during which assets are distributed",
+        "The time after a funding round closes during which investors can terminate their commitment",
+        "The period after a board member's term ends during which they retain observer rights"
+      ],
+      "correct_answer": 0,
+      "explanation": "PTEP gives departing employees a window (typically 90 days, sometimes longer) to exercise vested options. Short PTEPs can force expensive early exercises."
+    },
+    {
+      "id": "q0324", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a catch-up clause in a fund?",
+      "options": [
+        "A provision allowing late investors to invest at the same terms as earlier investors",
+        "A mechanism that lets the GP receive a higher profit share until they reach their carry percentage after the hurdle is met",
+        "A clause requiring portfolio companies to catch up on missed reporting deadlines",
+        "A provision that allows LPs to increase their commitment after the fund's initial close"
+      ],
+      "correct_answer": 1,
+      "explanation": "After LPs receive the hurdle rate, a catch-up lets the GP receive most/all profits until they reach their carry % on total profits."
+    },
+    {
+      "id": "q0325", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a clawback provision in a fund context?",
+      "options": [
+        "A provision that allows the GP to reclaim distributions from portfolio companies",
+        "A mechanism requiring the GP to return excess carry if the fund underperforms overall",
+        "A clause that penalizes LPs who fail to meet capital call obligations on schedule",
+        "A provision allowing investors to reverse a completed transaction within thirty days"
+      ],
+      "correct_answer": 1,
+      "explanation": "Clawback ensures the GP returns any carry overpayment if the fund's overall performance doesn't justify what was distributed from early winners."
+    },
+    {
+      "id": "q0326", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a participation cap?",
+      "options": [
+        "A maximum amount that any single investor can contribute to a funding round",
+        "A limit on how much return a participating preferred holder receives before converting to common",
+        "A cap on the number of investors who can participate in a specific share class",
+        "A restriction on how many board meetings an observer can attend per fiscal year"
+      ],
+      "correct_answer": 1,
+      "explanation": "A participation cap limits the double-dip. Once the investor hits the cap (e.g., 3x), their shares convert to common and they participate only pro-rata."
+    },
+    {
+      "id": "q0327", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a forced conversion (automatic conversion)?",
+      "options": [
+        "When the company forces employees to convert their cash bonuses into stock options",
+        "When preferred shares automatically convert to common upon a qualifying event like an IPO",
+        "When a convertible note holder is forced to accept cash repayment instead of equity",
+        "When the board forces a shareholder to sell their shares back to the company"
+      ],
+      "correct_answer": 1,
+      "explanation": "Automatic/forced conversion typically triggers at IPO above a threshold price, or by vote of preferred majority."
+    },
+    {
+      "id": "q0328", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a qualifying financing event?",
+      "options": [
+        "Any financing round raising at least a specified minimum amount, triggering conversion of convertible instruments",
+        "A financing event that qualifies the company for government tax incentives and grants",
+        "Any funding round where the company achieves a valuation above one billion euros",
+        "A round in which all existing shareholders must participate to maintain their rights"
+      ],
+      "correct_answer": 0,
+      "explanation": "A qualifying financing triggers conversion of SAFEs/convertible notes. The threshold is defined in the instrument (e.g., a round raising at least €1M)."
+    },
+    {
+      "id": "q0329", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a side letter?",
+      "options": [
+        "A supplementary agreement granting specific investors additional rights beyond the main deal terms",
+        "A letter of intent that runs parallel to the main term sheet but has no legal effect",
+        "An informal note passed between co-investors sharing their private opinions on a deal",
+        "A formal complaint letter filed by an investor when they disagree with a board decision"
+      ],
+      "correct_answer": 0,
+      "explanation": "Side letters grant specific investors special terms (e.g., additional information rights, co-invest rights) without changing the main agreement for everyone."
+    },
+    {
+      "id": "q0330", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a liquidation overhang?",
+      "options": [
+        "The total amount of accumulated liquidation preferences stacked on a company's cap table",
+        "A tax liability that arises from distributing proceeds during a company liquidation",
+        "The time delay between announcing a liquidation event and distributing final proceeds",
+        "An accounting term for depreciated assets that remain on the company's balance sheet"
+      ],
+      "correct_answer": 0,
+      "explanation": "Liquidation overhang = total preference stack. If €30M raised with 1x preferences, that €30M must be paid before common sees anything."
+    },
+    {
+      "id": "q0331", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a founder-friendly term sheet?",
+      "options": [
+        "A term sheet written in simple language that founders without legal training can understand",
+        "A deal structure with fewer investor protections, lower preferences, and more founder control",
+        "A term sheet that guarantees the founder will retain majority ownership after the round",
+        "A deal negotiated without lawyers, relying on trust between the parties"
+      ],
+      "correct_answer": 1,
+      "explanation": "Founder-friendly typically means 1x non-participating, broad-based weighted average anti-dilution, minimal board control for investors."
+    },
+    {
+      "id": "q0332", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a Beteiligungsvertrag?",
+      "options": [
+        "A German-language investment agreement that governs the terms of a VC investment",
+        "A type of German government bond that funds early-stage technology companies",
+        "A regulatory filing required by BaFin before any venture capital investment in Germany",
+        "A formal partnership agreement between two German fund management companies"
+      ],
+      "correct_answer": 0,
+      "explanation": "The Beteiligungsvertrag is the core German VC investment agreement, covering share subscription, investor rights, founder obligations, and all deal terms."
+    },
+    {
+      "id": "q0333", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a Gesellschaftervereinbarung?",
+      "options": [
+        "The German term for a shareholders' agreement governing rights and obligations between GmbH shareholders",
+        "A mandatory German tax declaration filed annually by all company shareholders",
+        "A German employment contract that includes equity compensation for executives",
+        "A formal partnership dissolution agreement required under German commercial law"
+      ],
+      "correct_answer": 0,
+      "explanation": "The Gesellschaftervereinbarung is the German SHA — a private contract between shareholders covering transfer restrictions, information rights, etc."
+    },
+    {
+      "id": "q0334", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a distribution waterfall?",
+      "options": [
+        "The sequential order in which exit or liquidation proceeds flow to each class of shareholder",
+        "A chart showing the declining cash balance of a fund as investments are distributed",
+        "The process by which dividends are distributed equally to all shareholders on record",
+        "A graphical representation of the fund's portfolio across different sectors"
+      ],
+      "correct_answer": 0,
+      "explanation": "The waterfall defines payout priority: creditors, then preferred by seniority, then common. Each step fills before proceeds flow to the next."
+    },
+    {
+      "id": "q0335", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is single-trigger acceleration?",
+      "options": [
+        "Vesting of all unvested shares accelerates upon a single event, typically a change of control",
+        "The ability to exercise options after a single year of employment regardless of schedule",
+        "A mechanism that triggers liquidation preferences after a single missed dividend payment",
+        "An automatic conversion of preferred shares that activates after a single qualifying event"
+      ],
+      "correct_answer": 0,
+      "explanation": "Single-trigger: one event (usually acquisition) causes all unvested equity to vest immediately. Investors dislike this — removes retention incentive."
+    },
+    {
+      "id": "q0336", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is double-trigger acceleration?",
+      "options": [
+        "Vesting accelerates only when two events occur: a change of control AND involuntary termination within a set period",
+        "The requirement that both board and shareholders must approve an acceleration event",
+        "A mechanism where vesting speed doubles after the employee passes the cliff period",
+        "The ability to exercise at twice the normal rate during the final year of vesting"
+      ],
+      "correct_answer": 0,
+      "explanation": "Double-trigger requires acquisition AND termination (or constructive dismissal). Balances founder protection with acquirer retention needs."
+    },
+    {
+      "id": "q0337", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a redemption right?",
+      "options": [
+        "The right for preferred shareholders to force the company to buy back their shares after a specified period",
+        "The right to redeem loyalty points earned through attending board meetings",
+        "The right of the company to redeem outstanding debt before maturity",
+        "The right for employees to redeem unused vacation days for stock options"
+      ],
+      "correct_answer": 0,
+      "explanation": "Redemption rights let investors force buyback (typically after 5-7 years). Rarely exercised but used as leverage if no exit materializes."
+    },
+    {
+      "id": "q0338", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a pre-money option pool?",
+      "options": [
+        "Equity reserved for future employee grants, established before the investment, diluting existing shareholders but not the new investor",
+        "An option pool created before the company's first-ever round using only founder shares",
+        "Capital set aside from the pre-money valuation to cover legal costs of the round",
+        "Options granted to incoming investors as additional incentive alongside their equity"
+      ],
+      "correct_answer": 0,
+      "explanation": "When the pool is from pre-money, existing shareholders (founders) bear the dilution. The investor's ownership is calculated on post-money which already includes the pool."
+    },
+    {
+      "id": "q0339", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a most favored nation (MFN) clause in a SAFE or convertible note?",
+      "options": [
+        "A provision ensuring that if the company later issues SAFEs with better terms, the earlier investor's terms are upgraded to match",
+        "A clause guaranteeing the investor receives the highest return across all shareholders",
+        "A diplomatic agreement giving investors from a specific country preferential access",
+        "A provision requiring the company to offer opportunities to all existing investors equally"
+      ],
+      "correct_answer": 0,
+      "explanation": "MFN protects early SAFE/note holders by auto-upgrading their terms if the company later offers better terms (lower cap, higher discount) to new investors."
+    },
+    {
+      "id": "q0340", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is a dividend preference?",
+      "options": [
+        "The right of preferred shareholders to receive dividend payments before common shareholders",
+        "An investor's stated preference for receiving dividends rather than capital appreciation",
+        "A tax election allowing shareholders to choose between cash and stock dividends",
+        "The historical average dividend payout ratio a company has maintained over time"
+      ],
+      "correct_answer": 0,
+      "explanation": "Preferred shareholders may have priority on declared dividends. In VC, dividends are rare, but cumulative preferences can stack and increase the liquidation overhang."
+    },
+    {
+      "id": "q0341", "tier": 2, "category": "Term Sheet Essentials", "difficulty": 2,
+      "question": "What is down round protection?",
+      "options": [
+        "Insurance that reimburses investors if the company raises at a lower valuation",
+        "Anti-dilution mechanisms that adjust the conversion price when a company raises at a lower valuation",
+        "A legal provision preventing the company from ever raising below the previous round",
+        "A guarantee that investors will receive full capital back in a down round"
+      ],
+      "correct_answer": 1,
+      "explanation": "Down round protection adjusts the conversion ratio of existing preferred, giving investors more common shares at conversion to offset the lower valuation."
+    }
+  ],
+
+  "new_questions_tier3_compare": [
+    {
+      "id": "q0400", "tier": 3, "category": "Equity Structures", "difficulty": 3,
+      "question": "What is the key difference between an ESOP and a VSOP?",
+      "options": [
+        "ESOP grants actual company shares with voting rights; VSOP grants virtual participation rights that pay cash at exit without real ownership",
+        "ESOP is only available to C-level executives while VSOP is available to all employees regardless of seniority",
+        "ESOP vests over two years with no cliff while VSOP always requires four-year vesting with a one-year cliff",
+        "ESOP is the international standard while VSOP is Germany-specific and cannot be used outside Germany"
+      ],
+      "correct_answer": 0,
+      "explanation": "ESOP = real shares/options. VSOP = phantom shares that mimic economic upside without actual equity. In German GmbHs, VSOPs avoid costly notarization of share transfers."
+    },
+    {
+      "id": "q0401", "tier": 3, "category": "Equity Structures", "difficulty": 3,
+      "question": "Why would a German GmbH choose VSOP over ESOP for employee incentives?",
+      "options": [
+        "VSOPs provide employees with stronger legal protections under German employment law",
+        "Each GmbH share transfer requires a notary (€500-2000+), making real equity grants prohibitively expensive for many employees",
+        "German tax law prohibits granting real equity to employees through any stock ownership plan",
+        "VSOPs are mandatory for companies that have received venture capital from institutional investors"
+      ],
+      "correct_answer": 1,
+      "explanation": "Under §15 GmbHG, every share transfer needs notarization. For 50 employees, that's 50 notary visits. VSOPs provide the economic benefit without this burden."
+    },
+    {
+      "id": "q0402", "tier": 3, "category": "Liquidation Preferences", "difficulty": 3,
+      "question": "What is the practical difference between participating and non-participating preferred?",
+      "options": [
+        "Participating preferred gets their preference back AND shares in remaining proceeds; non-participating chooses the higher of preference OR pro-rata share",
+        "Participating preferred can attend board meetings while non-participating cannot attend",
+        "Participating preferred converts to common at exit while non-participating retains preferred status",
+        "Participating applies only in IPO scenarios while non-participating applies only in acquisitions"
+      ],
+      "correct_answer": 0,
+      "explanation": "Participating = double dip (preference + pro-rata). Non-participating = choose the better of preference or conversion. At high exit multiples they converge."
+    },
+    {
+      "id": "q0403", "tier": 3, "category": "Anti-Dilution", "difficulty": 3,
+      "question": "What is the difference between full ratchet and weighted average anti-dilution?",
+      "options": [
+        "Full ratchet reprices ALL existing preferred to the new lower price; weighted average calculates a blended price based on the size and price of the new round",
+        "Full ratchet only applies in acquisitions while weighted average applies in all rounds",
+        "Full ratchet protects founders while weighted average protects investors from dilution",
+        "Full ratchet adjusts share count while weighted average adjusts the liquidation preference"
+      ],
+      "correct_answer": 0,
+      "explanation": "Full ratchet is nuclear — reprices everything regardless of how small the down round is. Weighted average is proportional — adjustment depends on how much was raised at the lower price."
+    },
+    {
+      "id": "q0404", "tier": 3, "category": "Anti-Dilution", "difficulty": 3,
+      "question": "What distinguishes broad-based from narrow-based weighted average anti-dilution?",
+      "options": [
+        "Broad-based includes all outstanding shares in the denominator, producing a smaller price adjustment; narrow-based uses fewer shares, producing a larger adjustment",
+        "Broad-based applies to all investor classes while narrow-based only applies to the specific triggering investor",
+        "Broad-based has a wider activation range while narrow-based only activates for drops exceeding twenty percent",
+        "Broad-based is standard in US deals while narrow-based is exclusively used in European transactions"
+      ],
+      "correct_answer": 0,
+      "explanation": "The denominator matters. Broad-based (more shares) = smaller adjustment = founder-friendly. Narrow-based (fewer shares) = larger adjustment = investor-friendly."
+    },
+    {
+      "id": "q0405", "tier": 3, "category": "Transfer Rights", "difficulty": 3,
+      "question": "How do drag-along and tag-along rights differ in their purpose?",
+      "options": [
+        "Drag-along allows a qualified majority to FORCE all shareholders to sell; tag-along allows minority shareholders the OPTION to join a sale on the same terms",
+        "Drag-along protects minorities from being left behind while tag-along allows majority to block exits",
+        "Drag-along applies only during IPOs while tag-along applies only during acquisitions",
+        "Drag-along gives investors the right to sell first while tag-along gives founders the right to sell first"
+      ],
+      "correct_answer": 0,
+      "explanation": "Drag = mandatory (majority forces minority). Tag = optional (minority can choose to join). Drag protects majority from holdouts. Tag protects minorities from being left behind."
+    },
+    {
+      "id": "q0406", "tier": 3, "category": "Transfer Rights", "difficulty": 3,
+      "question": "How does a right of first refusal (ROFR) differ from a pre-emption right?",
+      "options": [
+        "ROFR applies to secondary sales (existing shares changing hands); pre-emption applies to primary issuances (new shares from the company)",
+        "ROFR allows investors to refuse a deal while pre-emption allows investors to preemptively block a round",
+        "ROFR is stronger and overrides pre-emption whenever both apply to the same transaction",
+        "ROFR applies only to founders selling while pre-emption applies to any shareholder selling"
+      ],
+      "correct_answer": 0,
+      "explanation": "ROFR: when someone sells existing shares, others get first dibs. Pre-emption: when the company issues new shares, existing holders can buy proportionally."
+    },
+    {
+      "id": "q0407", "tier": 3, "category": "Convertible Instruments", "difficulty": 3,
+      "question": "What is the key difference between a convertible note and a SAFE?",
+      "options": [
+        "A convertible note is debt with interest and a maturity date; a SAFE is not debt and has no interest, no maturity, and no repayment obligation",
+        "A convertible note converts at the next round while a SAFE converts only at an exit event",
+        "A convertible note is used in US deals while a SAFE is the European equivalent",
+        "A convertible note has a valuation cap while a SAFE converts at a fixed price per share"
+      ],
+      "correct_answer": 0,
+      "explanation": "Convertible note = debt (accrues interest, has maturity). SAFE = equity-like instrument (no debt). Both convert to equity, but legal treatment differs significantly."
+    },
+    {
+      "id": "q0408", "tier": 3, "category": "Convertible Instruments", "difficulty": 3,
+      "question": "How does a Wandeldarlehen differ from a US-style SAFE?",
+      "options": [
+        "A Wandeldarlehen is actual debt under German law with interest and maturity; a SAFE has no debt characteristics whatsoever",
+        "A Wandeldarlehen converts automatically while a SAFE requires investor consent to convert",
+        "A Wandeldarlehen cannot include a valuation cap while a SAFE always requires one",
+        "A Wandeldarlehen is exclusively for bridge financing while SAFEs are for seed rounds"
+      ],
+      "correct_answer": 0,
+      "explanation": "Wandeldarlehen = German convertible loan. Real debt that accrues interest and must be repaid at maturity if no qualifying financing. SAFEs have no debt characteristics."
+    },
+    {
+      "id": "q0409", "tier": 3, "category": "Convertible Instruments", "difficulty": 3,
+      "question": "When does a valuation cap benefit the investor more than a discount?",
+      "options": [
+        "When the next round valuation significantly exceeds the cap, the cap gives a lower conversion price than the discount would",
+        "When the company raises below the cap, the cap provides additional downside protection",
+        "The cap always benefits the investor more regardless of the next round valuation",
+        "When the company achieves profitability before the next round, making the discount irrelevant"
+      ],
+      "correct_answer": 0,
+      "explanation": "€5M cap, 20% discount. Series A at €20M → cap converts at €5M (much better). Series A at €6M → discount converts at €4.8M (better). Higher next valuation = more cap value."
+    },
+    {
+      "id": "q0410", "tier": 3, "category": "Vesting & Equity", "difficulty": 3,
+      "question": "What is the difference between good leaver and bad leaver in a VSOP?",
+      "options": [
+        "Good leaver keeps vested virtual shares; bad leaver forfeits everything including already-vested shares",
+        "Good leaver receives a cash bonus while bad leaver receives only base salary",
+        "Good leaver can transfer shares to another employee while bad leaver cannot",
+        "Good leaver keeps all shares including unvested while bad leaver keeps half of vested"
+      ],
+      "correct_answer": 0,
+      "explanation": "Good leaver (mutual termination, illness) = keep vested, lose unvested. Bad leaver (cause, breach) = forfeit everything. Definitions are heavily negotiated."
+    },
+    {
+      "id": "q0411", "tier": 3, "category": "Vesting & Equity", "difficulty": 3,
+      "question": "How does reverse vesting differ from standard (forward) vesting?",
+      "options": [
+        "In reverse vesting, founders receive all shares upfront but the company can repurchase unvested shares if they leave; in forward vesting, shares are granted gradually",
+        "Reverse vesting runs backward from year four while forward vesting runs from year one",
+        "Reverse vesting applies to investor shares while forward vesting applies to employee options",
+        "Reverse vesting accelerates upon any termination while forward vesting stops upon departure"
+      ],
+      "correct_answer": 0,
+      "explanation": "Reverse vesting = founders already hold shares, company has repurchase right on unvested. Forward vesting = employees receive shares/options over time."
+    },
+    {
+      "id": "q0412", "tier": 3, "category": "Vesting & Equity", "difficulty": 3,
+      "question": "What is the difference between single-trigger and double-trigger acceleration?",
+      "options": [
+        "Single-trigger vests all shares on one event (acquisition); double-trigger requires two events (acquisition AND termination within a defined period)",
+        "Single-trigger applies to one person while double-trigger applies to the entire option pool",
+        "Single-trigger accelerates fifty percent while double-trigger accelerates one hundred percent",
+        "Single-trigger requires board approval while double-trigger activates automatically"
+      ],
+      "correct_answer": 0,
+      "explanation": "Single-trigger: acquisition alone vests everything (investors dislike this). Double-trigger: acquisition + termination (balances protection with retention)."
+    },
+    {
+      "id": "q0413", "tier": 3, "category": "Governance", "difficulty": 3,
+      "question": "What is the difference between protective provisions and consent rights?",
+      "options": [
+        "They are essentially the same — protective provisions ARE investor veto rights, blocking specific company actions like new issuances or asset sales",
+        "Protective provisions automatically activate while consent rights must be exercised each time",
+        "Protective provisions apply to all shareholders while consent rights apply only to board members",
+        "Protective provisions expire after a set period while consent rights last the life of the company"
+      ],
+      "correct_answer": 0,
+      "explanation": "Protective provisions are investor veto rights — specific actions requiring investor consent. The terms are used interchangeably in practice."
+    },
+    {
+      "id": "q0414", "tier": 3, "category": "Liquidation Preferences", "difficulty": 3,
+      "question": "What is the difference between seniority and pari passu in a liquidation?",
+      "options": [
+        "Seniority means later rounds get paid first (Series B before A); pari passu means all preferred classes share proceeds proportionally at the same rank",
+        "Seniority gives older investors priority while pari passu gives newer investors priority",
+        "Seniority applies to debt while pari passu applies exclusively to equity share classes",
+        "Seniority is used in US transactions while pari passu is the standard European approach"
+      ],
+      "correct_answer": 0,
+      "explanation": "Senior: C → B → A → common. Pari passu: all preferred share pro-rata, then common. The choice dramatically affects returns in small exits."
+    },
+    {
+      "id": "q0415", "tier": 3, "category": "Fund Mechanics", "difficulty": 3,
+      "question": "What is the relationship between management fee, hurdle rate, and carried interest?",
+      "options": [
+        "Management fee covers operations (2%); hurdle rate is the minimum LP return before GP earns carry; carry is the GP's profit share (20%) above the hurdle",
+        "Management fee is paid from carry; hurdle rate determines fee percentage; carry is total return",
+        "Management fee reduces the hurdle; hurdle determines carry percentage; carry is paid before fees",
+        "Management fee and hurdle rate are the same concept; carry applies equally across all structures"
+      ],
+      "correct_answer": 0,
+      "explanation": "LPs commit capital → pay 2% fee → fund invests → returns must clear hurdle (~8%) before GP earns 20% carry on profits. Three distinct economic components."
+    },
+    {
+      "id": "q0416", "tier": 3, "category": "Valuation", "difficulty": 3,
+      "question": "What is the difference between a pre-money SAFE and a post-money SAFE?",
+      "options": [
+        "A pre-money SAFE's ownership changes depending on total SAFEs raised; a post-money SAFE gives a fixed, calculable ownership percentage at conversion",
+        "A pre-money SAFE converts before the round while a post-money SAFE converts after closing",
+        "A pre-money SAFE has no valuation cap while a post-money SAFE always requires one",
+        "A pre-money SAFE is for seed rounds while a post-money SAFE is for Series A and later"
+      ],
+      "correct_answer": 0,
+      "explanation": "Pre-money SAFE: ownership uncertain until round closes. Post-money SAFE (YC standard): ownership = investment / cap. Much more predictable."
+    },
+    {
+      "id": "q0417", "tier": 3, "category": "Fund Mechanics", "difficulty": 3,
+      "question": "How do DPI and TVPI tell different stories about fund performance?",
+      "options": [
+        "DPI measures actual cash returned (realized); TVPI includes paper gains — a fund can have 3x TVPI but 0.2x DPI if most value is still in portfolio",
+        "DPI measures total invested while TVPI measures total value including management fees",
+        "DPI is important in early years while TVPI only becomes relevant after full liquidation",
+        "DPI counts profitable exits only while TVPI includes all exits including write-downs"
+      ],
+      "correct_answer": 0,
+      "explanation": "High TVPI + low DPI = great on paper, but cash hasn't returned. In year 3, TVPI matters. In year 8+, DPI is the true measure. 'You can't eat TVPI.'"
+    },
+    {
+      "id": "q0418", "tier": 3, "category": "Anti-Dilution", "difficulty": 3,
+      "question": "What happens if an investor with anti-dilution protection doesn't participate in a down round with pay-to-play?",
+      "options": [
+        "Their preferred converts to common, losing anti-dilution and ALL other preferred rights",
+        "Their anti-dilution protection remains since it was negotiated separately from pay-to-play",
+        "They receive partial anti-dilution proportional to their investment in the down round",
+        "Pay-to-play is automatically waived for investors holding anti-dilution protections"
+      ],
+      "correct_answer": 0,
+      "explanation": "Pay-to-play is the great equalizer. Don't invest in the down round → preferred converts to common, stripping ALL preferred rights including anti-dilution."
+    },
+    {
+      "id": "q0419", "tier": 3, "category": "Transfer Rights", "difficulty": 3,
+      "question": "How does a ROFR interact with a tag-along right when a founder wants to sell shares?",
+      "options": [
+        "ROFR triggers first — existing holders can buy; only if they decline does tag-along activate for the external sale",
+        "Tag-along triggers first — minorities join, then ROFR applies to remaining shares",
+        "Both trigger simultaneously and the founder chooses which mechanism to honor",
+        "They cannot coexist because they serve contradictory purposes under contract law"
+      ],
+      "correct_answer": 0,
+      "explanation": "Waterfall: ROFR holders get first right to buy. If they pass, tag-along kicks in for minorities who want to join the external sale."
+    },
+    {
+      "id": "q0420", "tier": 3, "category": "Convertible Instruments", "difficulty": 3,
+      "question": "Multiple SAFEs with different caps are outstanding. What is the critical issue at a priced round?",
+      "options": [
+        "Each SAFE converts at its own cap, meaning lower-cap SAFEs get more shares per euro, creating different effective prices and complicating the cap table",
+        "All SAFEs must convert at the highest cap to ensure equal treatment of all investors",
+        "The company must repay all SAFEs in cash before the priced round can close",
+        "All SAFEs automatically merge into a single instrument at the average cap before conversion"
+      ],
+      "correct_answer": 0,
+      "explanation": "A €4M cap SAFE converts at a lower price than a €10M cap. With 5 SAFEs at different caps, total dilution can be much larger than expected."
+    },
+    {
+      "id": "q0421", "tier": 3, "category": "Equity Structures", "difficulty": 3,
+      "question": "What is the difference between preferred shares and common shares in a VC context?",
+      "options": [
+        "Preferred carry special rights (liquidation preference, anti-dilution, protective provisions) and rank above common; common is standard equity with no special protections",
+        "Preferred are held by founders while common are for investors who prefer simpler structures",
+        "Preferred can only be sold at a premium while common can be sold at any market price",
+        "Preferred automatically convert to common after five years regardless of any other terms"
+      ],
+      "correct_answer": 0,
+      "explanation": "In VC: investors hold preferred (with downside protection). Founders/employees hold common (basic equity). The preference stack is what makes exits complex."
+    },
+    {
+      "id": "q0422", "tier": 3, "category": "Anti-Dilution", "difficulty": 3,
+      "question": "Why is full ratchet considered 'nuclear' compared to weighted average?",
+      "options": [
+        "Full ratchet reprices ALL prior preferred to the new low price regardless of round size — even a tiny down round can massively dilute founders; weighted average accounts for round size",
+        "Full ratchet requires immediate cash compensation while weighted average only adjusts on paper",
+        "Full ratchet triggers legal proceedings while weighted average is resolved through negotiation",
+        "Full ratchet applies retroactively to all previous rounds while weighted average only affects the latest"
+      ],
+      "correct_answer": 0,
+      "explanation": "Series A at €10/share, tiny bridge at €5/share. Full ratchet reprices ALL Series A to €5 — doubling investor shares. Weighted average would only adjust modestly."
+    },
+    {
+      "id": "q0423", "tier": 3, "category": "Vesting & Equity", "difficulty": 3,
+      "question": "How does a 90-day post-termination exercise period compare to a 10-year one?",
+      "options": [
+        "90 days forces departing employees to exercise quickly (requiring upfront cash and triggering taxes); 10 years lets them wait until an exit to decide",
+        "90 days is more generous because it provides certainty while 10 years creates uncertainty",
+        "90 days applies to common options while 10 years applies only to preferred options",
+        "90 days is the legal minimum in most jurisdictions while 10 years exceeds what regulations permit"
+      ],
+      "correct_answer": 0,
+      "explanation": "Short PTEPs are golden handcuffs — leaving means paying exercise price + taxes with no guarantee of return. Longer PTEPs are employee-friendly."
+    },
+    {
+      "id": "q0424", "tier": 3, "category": "Liquidation Preferences", "difficulty": 3,
+      "question": "How does a participation cap interact with a liquidation preference?",
+      "options": [
+        "Investor gets 1x preference plus pro-rata of remaining, but total payout is capped at a multiple (e.g., 3x); beyond the cap, shares convert to common",
+        "The cap sets the maximum liquidation preference amount regardless of original investment",
+        "The cap limits how many preferred investors can participate in a liquidation simultaneously",
+        "The cap sets the minimum exit valuation required for the preference to activate"
+      ],
+      "correct_answer": 0,
+      "explanation": "€5M invested, 3x cap. Get 1x preference (€5M) + pro-rata until total hits €15M. Beyond that, convert to common. Limits the double-dip."
+    },
+    {
+      "id": "q0425", "tier": 3, "category": "Convertible Instruments", "difficulty": 3,
+      "question": "A convertible note has both a cap and a discount. How does conversion work?",
+      "options": [
+        "The investor converts at whichever mechanism gives the lower price per share — cap and discount are compared and the more favorable applies",
+        "The cap and discount are added together to determine the conversion price",
+        "The cap applies to the first half and the discount applies to the second half of the investment",
+        "The investor must choose between the cap or discount at the time of signing"
+      ],
+      "correct_answer": 0,
+      "explanation": "Investor gets the BETTER deal. €6M cap, 20% discount. Series A at €10M → cap = €6M, discount = €8M. Cap wins. At €7M → cap = €6M, discount = €5.6M. Discount wins."
+    },
+    {
+      "id": "q0426", "tier": 3, "category": "Equity Structures", "difficulty": 3,
+      "question": "What is the difference between a strike price and fair market value (FMV) for stock options?",
+      "options": [
+        "Strike price is the fixed purchase price set at grant; FMV is the current assessed value — the spread between them is the option's intrinsic value",
+        "Strike price is the exit sale price while FMV is the price at the most recent round",
+        "Strike price applies to preferred while FMV applies exclusively to common shares",
+        "Strike price is determined by the board while FMV is always set by an external firm"
+      ],
+      "correct_answer": 0,
+      "explanation": "Strike locked at grant. FMV changes. Strike = €1, FMV grows to €10 → option worth €9 intrinsic. Options typically granted at or near FMV for tax reasons."
+    },
+    {
+      "id": "q0427", "tier": 3, "category": "Transfer Rights", "difficulty": 3,
+      "question": "A SHA includes ROFR, tag-along, and drag-along. In what order do they typically activate?",
+      "options": [
+        "ROFR first (existing holders can buy), then if declined, tag-along for minorities on the external sale; drag-along is separate — only when a qualifying majority sells the whole company",
+        "Drag-along overrides everything, then tag-along, then ROFR is the last resort",
+        "Tag-along first to protect minorities, then ROFR for remaining shares, then drag-along",
+        "All three activate simultaneously and legal counsel decides which takes precedence"
+      ],
+      "correct_answer": 0,
+      "explanation": "Hierarchy: ROFR gives first dibs on transfers. If passed, tag-along lets minorities join external sale. Drag-along is separate — forced sale mechanism needing qualifying majority."
+    },
+    {
+      "id": "q0428", "tier": 3, "category": "Vesting & Equity", "difficulty": 3,
+      "question": "What is the relationship between option pool, authorized shares, and fully diluted share count?",
+      "options": [
+        "The pool is carved from authorized shares; fully diluted includes all issued shares PLUS all pool shares (granted and ungranted) PLUS all convertible instruments",
+        "The pool reduces authorized count; fully diluted only counts exercised and outstanding shares",
+        "Authorized shares set pool size; fully diluted means total shares after removing the pool",
+        "The pool is separate from authorized; fully diluted ignores ungranted options in the pool"
+      ],
+      "correct_answer": 0,
+      "explanation": "Fully diluted = common + preferred (as-converted) + all options (granted + ungranted) + all convertibles. This is the denominator for ownership calculations."
+    },
+    {
+      "id": "q0429", "tier": 3, "category": "Liquidation Preferences", "difficulty": 3,
+      "question": "When does a 1x non-participating preference actually hurt the investor compared to no preference?",
+      "options": [
+        "A 1x non-participating preference never hurts — it either helps or has no effect, because the investor chooses the higher of preference or conversion",
+        "In a very high exit where the pro-rata share far exceeds their preference, forcing them to choose",
+        "When acquired at exactly the same valuation as the last round, making the preference irrelevant",
+        "When the investor holds less than five percent, making the preference amount negligible"
+      ],
+      "correct_answer": 0,
+      "explanation": "A 1x non-participating never hurts — investor picks the HIGHER of preference or conversion. In a huge exit, they convert. The floor can only help."
+    },
+    {
+      "id": "q0430", "tier": 3, "category": "Governance", "difficulty": 3,
+      "question": "What is the practical difference between information rights and reporting obligations?",
+      "options": [
+        "They serve the same function — both ensure investors get updates — but information rights are investor-negotiated while reporting obligations are company duties in the SHA",
+        "Information rights give access to confidential data while reporting obligations cover only public info",
+        "Information rights apply to board members while reporting obligations apply to all shareholders",
+        "Information rights expire after three years while reporting obligations last the company's lifetime"
+      ],
+      "correct_answer": 0,
+      "explanation": "Same coin, two sides. Information rights = what investors can request. Reporting obligations = what the company must proactively provide. Usually negotiated together."
+    },
+    {
+      "id": "q0431", "tier": 3, "category": "Transfer Rights", "difficulty": 3,
+      "question": "How does a pre-emption right differ from a pro-rata right in practice?",
+      "options": [
+        "Both maintain ownership percentage on new issuances — pre-emption is typically statutory/articles-based while pro-rata is contractually negotiated, but they overlap significantly",
+        "Pre-emption allows buying at a discount while pro-rata requires paying the round price",
+        "Pre-emption applies to all shareholders by default while pro-rata only covers preferred investors",
+        "Pre-emption blocks new share issuances entirely while pro-rata lets investors match them"
+      ],
+      "correct_answer": 0,
+      "explanation": "Both achieve maintaining ownership %, but pre-emption is often statutory (articles/Satzung) while pro-rata is in the investment agreement. In practice, they overlap."
+    }
+  ]
+}
