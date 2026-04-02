@@ -1,7 +1,6 @@
-export function calculateXP({ difficulty, isCorrect, timeTakenSeconds, combo, isNewCard, activeBoost }) {
+export function calculateXP({ difficulty, isCorrect, timeTakenSeconds, combo, isNewCard, currentStreak }) {
   if (!isCorrect) return 0;
 
-  // Base XP differs for new vs review
   const base = isNewCard ? 20 : 10;
   const difficultyBonus = isNewCard ? difficulty * 10 : difficulty * 5;
   const speedBonus = timeTakenSeconds < 5 ? 10 : 0;
@@ -15,7 +14,17 @@ export function calculateXP({ difficulty, isCorrect, timeTakenSeconds, combo, is
 
   let xp = Math.round(baseTotal + speedBonus + streakBonus);
 
-  if (activeBoost === 'double') xp *= 2;
+  // Automatic streak-based multiplier
+  if (currentStreak >= 100) xp *= 3;
+  else if (currentStreak >= 40) xp = Math.round(xp * 2.5);
+  else if (currentStreak >= 20) xp *= 2;
 
   return xp;
+}
+
+export function getStreakMultiplier(currentStreak) {
+  if (currentStreak >= 100) return 3;
+  if (currentStreak >= 40) return 2.5;
+  if (currentStreak >= 20) return 2;
+  return 1;
 }

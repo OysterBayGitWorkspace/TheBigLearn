@@ -78,7 +78,14 @@ function buildLeaderboard(rows, currentUser, currentState) {
 
   // Sort by XP descending
   entries.sort((a, b) => b.xp - a.xp);
-  entries.forEach((e, i) => { e.rank = i + 1; });
+  entries.forEach((e, i) => {
+    e.rank = i + 1;
+    // Compute badges from bestStreak
+    e.badges = [];
+    if (e.streak >= 20) e.badges.push('streak_master');
+    if (e.streak >= 40) e.badges.push('elite');
+    if (e.streak >= 100) e.badges.push('dragon_king');
+  });
 
   const userRank = entries.find(e => e.isUser)?.rank || entries.length;
   const above = userRank > 1 ? entries[userRank - 2] : null;

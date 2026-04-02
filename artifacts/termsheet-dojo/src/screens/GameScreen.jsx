@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useGame } from '../context/GameContext';
 import { Icons } from '../icons/icons';
 import { playCorrectSound, playWrongSound } from '../sounds';
+import { getStreakMultiplier } from '../engine/xp';
 
 export default function GameScreen({ go }) {
   const { state, dispatch } = useGame();
@@ -186,9 +187,19 @@ export default function GameScreen({ go }) {
         <p className="q-text">{q.question}</p>
       </div>
 
-      {/* Streak indicator */}
+      {/* Streak indicator + multiplier badge */}
       {!done && state.currentStreak > 0 && (
-        <div className="streak-ind">{Icons.fire("#FF7B54", 14)} {state.currentStreak} in a row!</div>
+        <div style={{display:'flex',alignItems:'center',gap:8,alignSelf:'center',marginBottom:8}}>
+          <div className="streak-ind" style={{margin:0}}>{Icons.fire("#FF7B54", 14)} {state.currentStreak} in a row!</div>
+          {getStreakMultiplier(state.currentStreak) > 1 && (
+            <span style={{
+              fontSize:11,fontWeight:800,padding:'4px 10px',borderRadius:100,
+              background: state.currentStreak >= 100 ? 'var(--sand-soft)' : state.currentStreak >= 40 ? 'var(--lavender-soft)' : 'var(--coral-soft)',
+              color: state.currentStreak >= 100 ? '#C5A43E' : state.currentStreak >= 40 ? 'var(--lavender)' : 'var(--coral)',
+              border: `1.5px solid ${state.currentStreak >= 100 ? '#D8B050' : state.currentStreak >= 40 ? 'var(--lavender)' : 'var(--coral)'}`,
+            }}>{getStreakMultiplier(state.currentStreak)}x XP</span>
+          )}
+        </div>
       )}
 
       {/* Tap-to-select option cards */}
@@ -356,12 +367,6 @@ export default function GameScreen({ go }) {
             {session.currentIndex + 1 >= session.questions.length ? "See Results" : "Next Question"} {"\u2192"}
           </button>
         </div>
-      )}
-
-      {!done && state.currentStreak >= 3 && !state.activeBoost && (
-        <button className="boost" onClick={() => dispatch({ type: 'ACTIVATE_BOOST', payload: 'double' })}>
-          {Icons.lightning("#B8A0D2", 18)} 2x XP Boost!
-        </button>
       )}
 
       {/* Inline keyframe animations */}

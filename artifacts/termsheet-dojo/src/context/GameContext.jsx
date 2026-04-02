@@ -55,18 +55,18 @@ function gameReducer(state, action) {
       const updatedCard = gradeCard(existingCard, rating);
       const isNewCard = !state.cardStates[q.id] || state.cardStates[q.id].state === 0;
 
-      // XP calculation
+      // Streak
+      const newStreak = isCorrect ? state.currentStreak + 1 : 0;
+
+      // XP calculation (streak-based multiplier, no manual boost)
       const xpGain = calculateXP({
         difficulty: q.difficulty,
         isCorrect,
         timeTakenSeconds: timeTaken,
         combo: session.combo,
         isNewCard,
-        activeBoost: state.activeBoost,
+        currentStreak: newStreak,
       });
-
-      // Streak
-      const newStreak = isCorrect ? state.currentStreak + 1 : 0;
 
       // Quest progress
       const qp = { ...state.questProgress };
@@ -121,7 +121,6 @@ function gameReducer(state, action) {
           [q.id]: updatedCard,
         },
         questionProgress: updatedQuestionProgress,
-        activeBoost: state.activeBoost === 'double' ? null : state.activeBoost,
         session: {
           ...session,
           questions: updatedQuestions,
@@ -228,10 +227,6 @@ function gameReducer(state, action) {
       };
     }
 
-    case 'ACTIVATE_BOOST': {
-      return { ...state, activeBoost: action.payload };
-    }
-
     case 'RESET_DAILY': {
       return checkDailyReset(state);
     }
@@ -246,7 +241,6 @@ function gameReducer(state, action) {
         ...state,
         ...action.payload,
         session: state.session,
-        activeBoost: state.activeBoost,
         _lastAnswer: null,
         _newAchievements: null,
         _perfectRound: null,
@@ -276,7 +270,6 @@ export function GameProvider({ children, userId, userEmail }) {
   const [state, dispatch] = useReducer(gameReducer, {
     ...checkedState,
     session: { ...INITIAL_SESSION },
-    activeBoost: null,
     _lastAnswer: null,
     _newAchievements: null,
     _perfectRound: null,
@@ -294,7 +287,7 @@ export function GameProvider({ children, userId, userEmail }) {
     let cancelled = false;
     fetchCloudState(userId).then((cloudData) => {
       if (cancelled || !cloudData) return;
-      const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, activeBoost, ...localPersistent } = stateRef.current;
+      const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, ...localPersistent } = stateRef.current;
       const merged = mergeStates(localPersistent, cloudData);
       if (merged !== localPersistent) {
         dispatch({ type: 'LOAD_STATE', payload: merged });
@@ -308,7 +301,7 @@ export function GameProvider({ children, userId, userEmail }) {
     setupOnlineSync(
       () => userIdRef.current,
       () => {
-        const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, activeBoost, ...persistent } = stateRef.current;
+        const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, ...persistent } = stateRef.current;
         return persistent;
       }
     );
@@ -316,7 +309,7 @@ export function GameProvider({ children, userId, userEmail }) {
 
   // Persist state on changes (localStorage + cloud)
   useEffect(() => {
-    const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, activeBoost, ...persistent } = state;
+    const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, ...persistent } = state;
     persistState(persistent);
     // Cloud sync (debounced)
     if (userId) {
@@ -327,7 +320,7 @@ export function GameProvider({ children, userId, userEmail }) {
   // Sync write after answer (critical for FSRS card state)
   useEffect(() => {
     if (state._lastAnswer) {
-      const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, activeBoost, ...persistent } = state;
+      const { session, _lastAnswer, _newAchievements, _perfectRound, _chestXP, ...persistent } = state;
       persistCardStates(persistent);
     }
   }, [state._lastAnswer]);
