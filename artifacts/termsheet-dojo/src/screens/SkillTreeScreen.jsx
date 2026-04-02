@@ -159,6 +159,19 @@ export default function SkillTreeScreen({ go }) {
                     {masteredCount}/{total} mastered ({percent}%)
                   </div>
 
+                  {/* Skippable hint for Tier 1 */}
+                  {tier.skippable && percent < 70 && (
+                    <div style={{
+                      fontSize: 11,
+                      fontWeight: 600,
+                      fontStyle: 'italic',
+                      color: 'var(--text-faint)',
+                      marginTop: 4,
+                    }}>
+                      Optional, skip to Term Sheet Essentials if you're ready
+                    </div>
+                  )}
+
                   {/* Lock message */}
                   {!unlocked && req && (
                     <div style={{

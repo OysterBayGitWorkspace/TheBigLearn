@@ -39,8 +39,8 @@ export default function HomeScreen({ go }) {
   const totalMastered = ALL_QUESTIONS.filter(q => {
     const qp = (state.questionProgress || {})[q.id];
     if (!qp) return false;
-    const diffToTier = { 0: 'basics', 1: 'foundations', 2: 'intermediate', 3: 'advanced' };
-    const tierId = diffToTier[q.difficulty] || 'foundations';
+    const diffToTier = { 1: 'basics', 2: 'essentials', 3: 'compare', 4: 'applied', 5: 'expert' };
+    const tierId = diffToTier[q.difficulty] || 'essentials';
     const threshold = getMasteryThreshold(tierId);
     return qp.correctCount >= threshold;
   }).length;

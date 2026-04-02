@@ -5,53 +5,58 @@ export const TIERS = [
     id: "basics",
     name: "Basics",
     tier: 1,
-    description: "Pure definitions — What is X?",
+    description: "General VC ecosystem knowledge",
     icon: "book",
     color: { bg: 'var(--lavender-soft)', border: 'var(--lavender)', label: 'var(--lavender)' },
     unlockRequirement: null,
-    masteryThreshold: 3, // Must get each question correct 3 times
+    skippable: true,
   },
   {
-    id: "foundations",
-    name: "Foundations",
+    id: "essentials",
+    name: "Term Sheet Essentials",
     tier: 2,
-    description: "Compare, differentiate, recognize patterns",
+    description: "Every definition in a real term sheet",
     icon: "book",
     color: { bg: 'var(--teal-soft)', border: 'var(--teal)', label: 'var(--teal)' },
-    unlockRequirement: { tierId: "basics", percent: 100 }, // Must master ALL basics
+    unlockRequirement: null, // Open by default, Tier 1 is skippable
   },
   {
-    id: "intermediate",
-    name: "Intermediate",
+    id: "compare",
+    name: "Differentiate & Compare",
     tier: 3,
-    description: "Apply knowledge, calculations, short scenarios",
+    description: "Compare concepts, recognize patterns, understand relationships",
     icon: "brain",
     color: { bg: 'var(--sand-soft)', border: '#D8B050', label: '#C5A43E' },
-    unlockRequirement: { tierId: "foundations", percent: 70 },
+    unlockRequirement: { tierId: "essentials", percent: 70 },
   },
   {
-    id: "advanced",
-    name: "Advanced",
+    id: "applied",
+    name: "Applied Scenarios",
     tier: 4,
-    description: "Complex scenarios, time pressure, edge cases",
+    description: "Calculations, real-world applications, negotiation judgment",
+    icon: "fire",
+    color: { bg: 'var(--coral-soft)', border: 'var(--coral)', label: 'var(--coral)' },
+    unlockRequirement: { tierId: "compare", percent: 70 },
+  },
+  {
+    id: "expert",
+    name: "Expert Scenarios",
+    tier: 5,
+    description: "Complex multi-concept scenarios, German specifics, edge cases",
     icon: "fire",
     color: { bg: 'var(--rose-soft)', border: 'var(--rose)', label: 'var(--rose)' },
-    unlockRequirement: { tierId: "intermediate", percent: 70 },
+    unlockRequirement: { tierId: "applied", percent: 70 },
   },
 ];
 
 const tierIndex = new Map(TIERS.map(t => [t.id, t]));
 
-// Map difficulty level to tier ID
-// difficulty 0 = Basics (pure definitions)
-// difficulty 1 = Foundations (applied basics)
-// difficulty 2 = Intermediate
-// difficulty 3 = Advanced
 const difficultyToTierId = {
-  0: "basics",
-  1: "foundations",
-  2: "intermediate",
-  3: "advanced",
+  1: "basics",
+  2: "essentials",
+  3: "compare",
+  4: "applied",
+  5: "expert",
 };
 
 export function getQuestionsForTier(tierId) {
@@ -62,7 +67,7 @@ export function getQuestionsForTier(tierId) {
 
 export function getMasteryThreshold(tierId) {
   const tier = tierIndex.get(tierId);
-  return tier?.masteryThreshold || 2; // Default 2, Basics requires 3
+  return tier?.masteryThreshold || 2;
 }
 
 export function isQuestionMastered(questionId, questionProgress, tierId) {
@@ -113,7 +118,6 @@ export const isTopicUnlocked = isTierUnlocked;
 export const isTopicMastered = isTierMastered;
 export const getTopicProgress = getTierProgress;
 
-// Keep getTopicForCategory working for storage.js imports
 const categoryToTier = new Map();
 for (const q of ALL_QUESTIONS) {
   if (!categoryToTier.has(q.category)) {
