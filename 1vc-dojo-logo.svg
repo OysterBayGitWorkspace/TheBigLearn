@@ -1,0 +1,44 @@
+<svg width="480" height="200" viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg">
+
+<rect x="0" y="0" width="680" height="200" rx="16" fill="#FDF3ED"/>
+
+<!-- Torii gate -->
+<g transform="translate(148, 75)" fill="none" stroke="#E85D3A" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M-48 -32 Q-28 -38 0 -39 Q28 -38 48 -32" stroke-width="6"/>
+  <path d="M-36 -22 Q0 -25 36 -22" stroke-width="3.5"/>
+  <path d="M-30 -22 Q-32 5 -29 35" stroke-width="5"/>
+  <path d="M30 -22 Q32 5 29 35" stroke-width="5"/>
+  <path d="M-48 -32 Q-54 -37 -52 -40" stroke-width="5"/>
+  <path d="M48 -32 Q54 -37 52 -40" stroke-width="5"/>
+</g>
+
+<!-- VC DOJO lettering -->
+<g transform="translate(255, 56)" fill="#E85D3A" stroke="none">
+  <!-- V -->
+  <path d="M0-2 L2-2 L10.5 28 L13 28 L13 30 L9 30 L9 28 Q5 16 1.5 4 L0 4Z"/>
+  <path d="M20-2 L22-2 L22 4 L14 28 L14 30 L10 30 L10 28 L11.5 28 L18.5 4 L20 4Z"/>
+  <!-- C -->
+  <path d="M48 4 Q47 0 42 -1 Q34 -2 31 6 Q28 14 31 24 Q34 31 42 30 Q47 29 48 25 L51 25 Q50 32 42 33 Q32 34 28 24 Q24 14 28 6 Q32 -4 42 -4 Q50 -3 52 4Z"/>
+  <!-- D -->
+  <g transform="translate(76, 0)">
+    <rect x="0" y="-2" width="4" height="34" rx="0.5"/>
+    <path d="M4 -1 Q22 -2 24 15 Q22 32 4 31 L4 28 Q18 28 20 15 Q18 2 4 2Z"/>
+  </g>
+  <!-- O -->
+  <g transform="translate(112, 0)">
+    <path d="M14 -3 Q4 -2 1 8 Q-1 16 1 24 Q4 33 14 33 Q24 33 27 24 Q29 16 27 8 Q24 -2 14 -3Z M14 1 Q21 1 23 8 Q25 16 23 24 Q21 29 14 29 Q7 29 5 24 Q3 16 5 8 Q7 1 14 1Z"/>
+  </g>
+  <!-- J -->
+  <g transform="translate(148, 0)">
+    <path d="M10 -2 L14 -2 L14 24 Q14 33 6 33 Q1 33 -1 28 L2 26 Q3 30 6 30 Q10 30 10 24Z"/>
+  </g>
+  <!-- O -->
+  <g transform="translate(174, 0)">
+    <path d="M14 -3 Q4 -2 1 8 Q-1 16 1 24 Q4 33 14 33 Q24 33 27 24 Q29 16 27 8 Q24 -2 14 -3Z M14 1 Q21 1 23 8 Q25 16 23 24 Q21 29 14 29 Q7 29 5 24 Q3 16 5 8 Q7 1 14 1Z"/>
+  </g>
+</g>
+
+<!-- Subtitle -->
+<text x="255" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#C4836A" font-weight="400" letter-spacing="0.5">Master German VC deal terms</text>
+
+</svg>
