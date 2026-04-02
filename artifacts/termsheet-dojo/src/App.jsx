@@ -209,6 +209,7 @@ const CSS = `
 
 /* --- Container --- */
 .sf3-wrap{position:relative;display:flex;align-items:center;gap:6px}
+.sf3-flame-area{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
 
 /* --- Glow layers --- */
 .sf3-glow-base,.sf3-glow-inferno,.sf3-glow-void,.sf3-glow-king{position:absolute;border-radius:50%;pointer-events:none;top:50%;left:50%;z-index:0}

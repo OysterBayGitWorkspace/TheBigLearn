@@ -225,17 +225,21 @@ export default function StreakFire({ count }) {
   const countSz = 22 + Math.min(count, 20) * 0.35;
 
   return (
-    <div className={`sf3-wrap${ti === 3 ? ' sf3-void-pulse' : ''}`} style={{flexDirection:'row',alignItems:'center'}}>
-      <div className={glowClass} style={{
-        width: gs, height: gs,
-        background: `radial-gradient(circle, ${tier.glow}, transparent 70%)`,
-      }}/>
-      <Sparks count={count} color={tier.color}/>
-      {ti === 0 && <EmberFlame count={count}/>}
-      {ti === 1 && <OnFireFlame count={count}/>}
-      {ti === 2 && <InfernoFlame count={count}/>}
-      {ti === 3 && <VoidFlame count={count}/>}
-      {ti === 4 && <><KingFlame count={count}/><LightningBolts count={count}/></>}
+    <div className="sf3-wrap" style={{flexDirection:'row',alignItems:'center'}}>
+      <div className="sf3-flame-area">
+        <div className={glowClass} style={{
+          width: gs, height: gs,
+          background: `radial-gradient(circle, ${tier.glow}, transparent 70%)`,
+        }}/>
+        <Sparks count={count} color={tier.color}/>
+        <div className={ti === 3 ? 'sf3-void-pulse' : undefined}>
+          {ti === 0 && <EmberFlame count={count}/>}
+          {ti === 1 && <OnFireFlame count={count}/>}
+          {ti === 2 && <InfernoFlame count={count}/>}
+          {ti === 3 && <VoidFlame count={count}/>}
+          {ti === 4 && <><KingFlame count={count}/><LightningBolts count={count}/></>}
+        </div>
+      </div>
       <div className="sf3-count" style={{
         fontSize: countSz, color: tier.color,
         textShadow: `0 2px 8px ${tier.glow}`,
