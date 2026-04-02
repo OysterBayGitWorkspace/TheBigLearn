@@ -225,10 +225,9 @@ export default function StreakFire({ count }) {
   const countSz = 22 + Math.min(count, 20) * 0.35;
 
   return (
-    <div className="sf3-wrap" style={{flexDirection:'row',alignItems:'center'}}>
+    <div className="sf3-wrap">
       <div className="sf3-flame-area">
         <div className={glowClass} style={{
-          width: gs, height: gs,
           background: `radial-gradient(circle, ${tier.glow}, transparent 70%)`,
         }}/>
         <Sparks count={count} color={tier.color}/>
@@ -239,18 +238,18 @@ export default function StreakFire({ count }) {
           {ti === 3 && <VoidFlame count={count}/>}
           {ti === 4 && <><KingFlame count={count}/><LightningBolts count={count}/></>}
         </div>
+        {burst && (
+          <div className="sf3-burst">
+            <div className="sf3-burst-ring" style={{ borderColor: burst.color }}/>
+            <div className="sf3-burst-text" style={{ color: burst.color }}>{burst.text}</div>
+          </div>
+        )}
       </div>
       <div className="sf3-count" style={{
         fontSize: countSz, color: tier.color,
         textShadow: `0 2px 8px ${tier.glow}`,
         animation: burst ? 'sf3CountPop 0.5s ease-out' : 'none',
       }}>{count}</div>
-      {burst && (
-        <div className="sf3-burst">
-          <div className="sf3-burst-ring" style={{ borderColor: burst.color }}/>
-          <div className="sf3-burst-text" style={{ color: burst.color }}>{burst.text}</div>
-        </div>
-      )}
     </div>
   );
 }

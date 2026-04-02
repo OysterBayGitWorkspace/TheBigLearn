@@ -198,7 +198,7 @@ const CSS = `
 .hero-icon{position:relative;z-index:1;margin-bottom:4px}
 .hero-title{font-family:'Baloo 2',cursive;font-size:56px;font-weight:800;line-height:1;position:relative;z-index:1;background:linear-gradient(135deg,var(--text) 40%,var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{font-size:14px;color:var(--text-light);position:relative;z-index:1;font-weight:600}
-.vitals-bar{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:480px;padding:10px 16px;background:var(--white);border:2px solid var(--border-light);border-radius:var(--r);margin:12px 0;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.vitals-bar{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:480px;padding:10px 16px;background:var(--white);border:2px solid var(--border-light);border-radius:var(--r);margin:12px 0;box-shadow:0 2px 12px rgba(0,0,0,.04);overflow:hidden}
 ./* ============================================================
    STREAK FIRE v3 â€” Ember / On Fire / Inferno / Void / King
    
@@ -208,20 +208,20 @@ const CSS = `
    ============================================================ */
 
 /* --- Container --- */
-.sf3-wrap{position:relative;display:flex;align-items:center;gap:6px}
-.sf3-flame-area{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.sf3-wrap{display:flex;flex-direction:row;align-items:center;gap:6px;overflow:hidden}
+.sf3-flame-area{position:relative;overflow:hidden;width:50px;height:50px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
-/* --- Glow layers --- */
-.sf3-glow-base,.sf3-glow-inferno,.sf3-glow-void,.sf3-glow-king{position:absolute;border-radius:50%;pointer-events:none;top:50%;left:50%;z-index:0}
+/* --- Glow layers (contained within flame-area) --- */
+.sf3-glow-base,.sf3-glow-inferno,.sf3-glow-void,.sf3-glow-king{position:absolute;border-radius:50%;pointer-events:none;top:50%;left:50%;z-index:0;width:48px;height:48px;overflow:hidden}
 .sf3-glow-base{animation:sf3GP 1.5s ease-in-out infinite}
 .sf3-glow-inferno{animation:sf3GI 1s ease-in-out infinite}
 .sf3-glow-void{animation:sf3GV 2.2s ease-in-out infinite}
 .sf3-glow-king{animation:sf3GK .8s ease-in-out infinite}
 
-@keyframes sf3GP{0%,100%{opacity:.4;transform:translate(-50%,-50%) scale(1)}50%{opacity:.65;transform:translate(-50%,-50%) scale(1.15)}}
-@keyframes sf3GI{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:.8;transform:translate(-50%,-50%) scale(1.25)}}
-@keyframes sf3GV{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1)}30%{opacity:.85;transform:translate(-50%,-50%) scale(1.12)}70%{opacity:.65;transform:translate(-50%,-50%) scale(1.06)}}
-@keyframes sf3GK{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}20%{opacity:1;transform:translate(-50%,-50%) scale(1.35)}50%{opacity:.6;transform:translate(-50%,-50%) scale(1.05)}80%{opacity:.95;transform:translate(-50%,-50%) scale(1.3)}}
+@keyframes sf3GP{0%,100%{opacity:.4;transform:translate(-50%,-50%)}50%{opacity:.65;transform:translate(-50%,-50%)}}
+@keyframes sf3GI{0%,100%{opacity:.5;transform:translate(-50%,-50%)}50%{opacity:.8;transform:translate(-50%,-50%)}}
+@keyframes sf3GV{0%,100%{opacity:.55;transform:translate(-50%,-50%)}30%{opacity:.85;transform:translate(-50%,-50%)}70%{opacity:.65;transform:translate(-50%,-50%)}}
+@keyframes sf3GK{0%,100%{opacity:.5;transform:translate(-50%,-50%)}20%{opacity:1;transform:translate(-50%,-50%)}50%{opacity:.6;transform:translate(-50%,-50%)}80%{opacity:.95;transform:translate(-50%,-50%)}}
 
 /* --- Flame SVG --- */
 .sf3-flame{position:relative;z-index:2;display:block}
